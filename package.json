@@ -1,6 +1,6 @@
 {
   "name": "@flowui/react",
-  "version": "0.1.0-alpha.2",
+  "version": "0.1.0-alpha.3",
   "private": false,
   "main": "cjs/index.js",
   "module": "esm/index.js",
