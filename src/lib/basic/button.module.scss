@@ -1,0 +1,533 @@
+.button {
+  @apply overflow-hidden relative text-sm text-center select-none transition-all;
+
+  &.focusable:focus {
+    @apply outline-none ring-2 ring-primary-2 ring-offset-1 ring-offset-basic-50;
+  }
+
+  &.widthFull {
+    @apply w-full;
+  }
+
+  .buttonContent {
+    @apply w-full;
+  }
+
+  .buttonContentContainer {
+    @apply max-w-full;
+  }
+
+  &.widthFit {
+    @apply w-fit;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed opacity-50 bg-zinc-200;
+  }
+
+  &:not(:disabled) {
+    @apply active:scale-95;
+  }
+
+  &.solid {
+    @apply text-white;
+    &.primary {
+      @apply bg-primary-2;
+      &:not(:disabled):hover {
+        @apply bg-primary-3;
+      }
+    }
+    &.secondary {
+      @apply bg-basic-600;
+      &:not(:disabled):hover {
+        @apply bg-basic-500;
+      }
+    }
+    &.success {
+      @apply bg-green-500;
+      &:not(:disabled):hover {
+        @apply bg-green-600;
+      }
+    }
+    &.warning {
+      @apply bg-yellow-500;
+      &:not(:disabled):hover {
+        @apply bg-yellow-600;
+      }
+    }
+    &.error {
+      @apply bg-red-500;
+      &:not(:disabled):hover {
+        @apply bg-red-600;
+      }
+    }
+    &.gradient {
+      @apply bg-gradient-to-tl from-purple-600 to-primary-3;
+      &:not(:disabled):hover {
+        @apply bg-gradient-to-tl from-purple-500 to-primary-2;
+      }
+    }
+  }
+
+  &.flat {
+    &.primary {
+      @apply text-primary-3 bg-primary-1/30;
+      &:not(:disabled):hover {
+        @apply bg-primary-2/30;
+      }
+    }
+    &.secondary {
+      @apply text-basic-600 bg-basic-400/30;
+      &:not(:disabled):hover {
+        @apply bg-basic-500/30;
+      }
+    }
+    &.success {
+      @apply text-green-600 bg-green-400/30;
+      &:not(:disabled):hover {
+        @apply bg-green-500/30;
+      }
+    }
+    &.warning {
+      @apply text-yellow-600 bg-yellow-400/30;
+      &:not(:disabled):hover {
+        @apply bg-yellow-500/30;
+      }
+    }
+    &.error {
+      @apply text-red-600 bg-red-400/30;
+      &:not(:disabled):hover {
+        @apply bg-red-500/30;
+      }
+    }
+    &.gradient {
+      @apply text-purple-600 bg-gradient-to-tl from-purple-500/30 to-primary-1/30;
+      &:not(:disabled):hover {
+        @apply bg-gradient-to-tl from-purple-600/30 to-primary-2/30;
+      }
+    }
+  }
+
+  &.bordered {
+    &.primary {
+      @apply text-primary-2 border-2 border-primary-2;
+      &:not(:disabled):hover {
+        @apply bg-primary-2/5;
+      }
+    }
+    &.secondary {
+      @apply text-basic-600 border-2 border-basic-600;
+      &:not(:disabled):hover {
+        @apply bg-basic-600/5;
+      }
+    }
+    &.success {
+      @apply text-green-500 border-2 border-green-500;
+      &:not(:disabled):hover {
+        @apply bg-green-500/5;
+      }
+    }
+    &.warning {
+      @apply text-yellow-500 border-2 border-yellow-500;
+      &:not(:disabled):hover {
+        @apply bg-yellow-500/5;
+      }
+    }
+    &.error {
+      @apply text-red-500 border-2 border-red-500;
+      &:not(:disabled):hover {
+        @apply bg-red-500/5;
+      }
+    }
+    &.gradient {
+      @apply text-purple-600 bg-gradient-to-tl from-purple-500 to-primary-2;
+      &:not(:disabled):hover {
+        .buttonContent {
+          @apply bg-gradient-to-tl from-purple-600/10 to-primary-3/10;
+        }
+      }
+    }
+  }
+
+  &.text {
+    &.primary {
+      @apply text-primary-2;
+      &:not(:disabled):hover {
+        @apply bg-primary-2/10;
+      }
+    }
+    &.secondary {
+      @apply text-basic-600;
+      &:not(:disabled):hover {
+        @apply bg-basic-600/10;
+      }
+    }
+    &.success {
+      @apply text-green-600;
+      &:not(:disabled):hover {
+        @apply bg-green-600/10;
+      }
+    }
+    &.warning {
+      @apply text-yellow-600;
+      &:not(:disabled):hover {
+        @apply bg-yellow-600/10;
+      }
+    }
+    &.error {
+      @apply text-red-600;
+      &:not(:disabled):hover {
+        @apply bg-red-600/10;
+      }
+    }
+    &.gradient {
+      @apply text-primary-2;
+      &:not(:disabled):hover {
+        @apply bg-gradient-to-tl from-purple-600/10 to-primary-3/10;
+      }
+    }
+  }
+
+  &.shadow {
+    &.primary {
+      @apply shadow-lg shadow-primary-2/50;
+    }
+    &.secondary {
+      @apply shadow-lg shadow-secondary-2/50;
+    }
+    &.success {
+      @apply shadow-lg shadow-green-500/50;
+    }
+    &.warning {
+      @apply shadow-lg shadow-yellow-500/50;
+    }
+    &.error {
+      @apply shadow-lg shadow-red-500/50;
+    }
+    &.gradient {
+      @apply shadow-lg shadow-secondary-2/50;
+    }
+  }
+
+  &:not(.iconOnly):not(.bordered.gradient) {
+    &.auto {
+      @apply px-2 py-1 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.xs {
+      @apply px-2 py-1 text-xs;
+
+      &:not(.circle) {
+        @apply rounded-lg;
+      }
+    }
+    &.sm {
+      @apply px-3 py-1.5 text-sm;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.md {
+      @apply px-4 py-2 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.lg {
+      @apply px-5 py-2.5 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.xl {
+      @apply px-6 py-3 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+  }
+
+  &:not(.iconOnly):not(.gradient).bordered {
+    &.auto {
+      @apply px-2 py-1 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.xs {
+      @apply px-2 py-1 text-xs;
+
+      &:not(.circle) {
+        @apply rounded-lg;
+      }
+    }
+    &.sm {
+      @apply px-3 py-1 text-sm;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.md {
+      @apply px-4 py-1.5 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.lg {
+      @apply px-5 py-2 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+    &.xl {
+      @apply px-6 py-2.5 text-base;
+
+      &:not(.circle) {
+        @apply rounded-xl;
+      }
+    }
+  }
+
+  &.bordered.gradient {
+    @apply p-0.5;
+    &.auto {
+      @apply text-base;
+      border-radius: 0.75rem;
+      .buttonContent {
+        @apply px-1 py-0.5 bg-white;
+        border-radius: 0.65rem;
+      }
+    }
+    &.xs {
+      @apply text-xs;
+      border-radius: 0.5rem;
+      .buttonContent {
+        @apply px-2 py-1 bg-white;
+        border-radius: 0.4rem;
+      }
+    }
+    &.sm {
+      @apply text-sm;
+      border-radius: 0.75rem;
+      .buttonContent {
+        @apply px-3 py-1 bg-white;
+        border-radius: 0.65rem;
+      }
+    }
+    &.md {
+      @apply text-base;
+      border-radius: 0.75rem;
+      .buttonContent {
+        @apply px-4 py-1.5 bg-white;
+        border-radius: 0.65rem;
+      }
+    }
+    &.lg {
+      @apply text-base;
+      border-radius: 0.75rem;
+      .buttonContent {
+        @apply px-5 py-2 bg-white;
+        border-radius: 0.65rem;
+      }
+    }
+    &.xl {
+      @apply text-base;
+      border-radius: 0.75rem;
+      .buttonContent {
+        @apply px-6 py-2.5 bg-white;
+        border-radius: 0.65rem;
+      }
+    }
+  }
+
+  &.iconOnly {
+    @apply p-2;
+
+    &:not(.circle) {
+      @apply rounded-lg;
+    }
+  }
+
+  &.circle {
+    @apply rounded-full;
+  }
+
+  &.loading {
+    @apply cursor-wait;
+  }
+
+  .loadingIcon {
+    @apply animate-spin;
+  }
+}
+
+:global(.dark) {
+  .button {
+    &.focusable:focus {
+      @apply outline-none ring-2 ring-primary-2 ring-offset-1 ring-offset-basic-900;
+    }
+
+    &.solid {
+      &.primary {
+        @apply bg-primary-3;
+        &:not(:disabled):hover {
+          @apply bg-primary-3/80;
+        }
+      }
+      &.secondary {
+        @apply bg-basic-700;
+        &:not(:disabled):hover {
+          @apply bg-basic-800;
+        }
+      }
+      &.success {
+        @apply bg-green-600;
+        &:not(:disabled):hover {
+          @apply bg-green-700;
+        }
+      }
+      &.warning {
+        @apply bg-yellow-600;
+        &:not(:disabled):hover {
+          @apply bg-yellow-700;
+        }
+      }
+      &.error {
+        @apply bg-red-600;
+        &:not(:disabled):hover {
+          @apply bg-red-700;
+        }
+      }
+      &.gradient {
+        @apply bg-gradient-to-tl from-purple-600 to-primary-3;
+        &:not(:disabled):hover {
+          @apply bg-gradient-to-tl from-purple-600/75 to-primary-3/75;
+        }
+      }
+    }
+
+    &.bordered {
+      &.primary {
+        @apply text-primary-2 border-primary-2;
+        &:not(:disabled):hover {
+          @apply bg-primary-3/20;
+        }
+      }
+      &.secondary {
+        @apply text-basic-400 border-basic-400;
+        &:not(:disabled):hover {
+          @apply bg-basic-500/20;
+        }
+      }
+      &.success:not(:disabled):hover {
+        @apply bg-green-500/20;
+      }
+      &.warning:not(:disabled):hover {
+        @apply bg-yellow-500/20;
+      }
+      &.error:not(:disabled):hover {
+        @apply bg-red-500/20;
+      }
+      &.gradient {
+        @apply text-purple-400;
+
+        .buttonContent {
+          @apply bg-black;
+        }
+
+        &:hover {
+          .buttonContent {
+            @apply bg-gradient-to-tl from-basic-500/20 to-primary-2/20;
+          }
+        }
+      }
+    }
+
+    &.flat {
+      &.primary {
+        @apply text-primary-2;
+      }
+      &.secondary {
+        @apply text-basic-300;
+      }
+      &.success {
+        @apply text-green-400;
+      }
+      &.warning {
+        @apply text-yellow-400;
+      }
+      &.error {
+        @apply text-red-400;
+      }
+      &.gradient {
+        @apply text-purple-400;
+      }
+    }
+
+    &.text {
+      &.primary {
+        @apply text-primary-2;
+        &:not(:disabled):hover {
+          @apply bg-primary-3/20;
+        }
+      }
+      &.secondary {
+        @apply text-basic-400;
+        &:not(:disabled):hover {
+          @apply bg-basic-500/20;
+        }
+      }
+      &.success:not(:disabled):hover {
+        @apply bg-green-500/20;
+      }
+      &.warning:not(:disabled):hover {
+        @apply bg-yellow-500/20;
+      }
+      &.error:not(:disabled):hover {
+        @apply bg-red-500/20;
+      }
+      &.gradient {
+        @apply text-purple-400;
+        &:hover {
+          @apply bg-gradient-to-tl from-purple-500/20 to-primary-2/20;
+        }
+      }
+    }
+
+    &.shadow {
+      &.primary {
+        @apply shadow-xl shadow-primary-2/70;
+      }
+      &.secondary {
+        @apply shadow-xl shadow-basic-500/50;
+      }
+      &.success {
+        @apply shadow-xl shadow-green-800/50;
+      }
+      &.warning {
+        @apply shadow-xl shadow-yellow-800/50;
+      }
+      &.error {
+        @apply shadow-xl shadow-red-800/50;
+      }
+      &.gradient {
+        @apply shadow-xl shadow-basic-500/50;
+      }
+    }
+
+    &:disabled {
+      @apply bg-zinc-800;
+    }
+  }
+}

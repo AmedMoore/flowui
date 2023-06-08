@@ -1,0 +1,7 @@
+.dropdownMenu {
+  @apply inline-flex fixed z-50;
+
+  .card {
+    @apply fixed p-1;
+  }
+}

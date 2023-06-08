@@ -1,0 +1,43 @@
+.buttonGroup {
+  @apply w-fit overflow-hidden p-1 border;
+
+  &:not(.iconOnly) {
+    @apply rounded-xl;
+  }
+
+  &.iconOnly {
+    @apply rounded-full;
+  }
+
+  &.widthFull {
+    @apply w-full;
+  }
+
+  &.primary {
+    @apply border-primary-2;
+  }
+
+  &.secondary {
+    @apply border-basic-400;
+  }
+
+  &.success {
+    @apply border-green-500;
+  }
+
+  &.warning {
+    @apply border-yellow-500;
+  }
+
+  &.error {
+    @apply border-red-500;
+  }
+}
+
+:global(.dark) {
+  .buttonGroup {
+    &.secondary {
+      @apply border-basic-600;
+    }
+  }
+}

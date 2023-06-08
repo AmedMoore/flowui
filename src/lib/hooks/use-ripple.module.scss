@@ -1,0 +1,31 @@
+.ripple {
+  @apply absolute rounded-full;
+
+  animation: ripple 600ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.primary {
+    @apply bg-primary-2/50;
+  }
+  &.secondary {
+    @apply bg-secondary-2/50;
+  }
+  &.success {
+    @apply bg-green-400/50;
+  }
+  &.warning {
+    @apply bg-yellow-400/50;
+  }
+  &.error {
+    @apply bg-red-400/50;
+  }
+  &.gradient {
+    @apply bg-secondary-2/50;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    @apply opacity-0;
+  }
+}

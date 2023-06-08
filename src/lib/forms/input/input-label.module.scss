@@ -1,0 +1,13 @@
+.label {
+  @apply px-0.5 mb-0.5 w-full text-zinc-700;
+
+  &.empty {
+    @apply hidden;
+  }
+}
+
+:global(.dark) {
+  .label {
+    @apply text-zinc-300;
+  }
+}

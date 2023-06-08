@@ -1,0 +1,20 @@
+.link {
+  @apply text-primary-2 hover:underline px-1 rounded-md;
+
+  &:focus,
+  &:active {
+    @apply outline-none;
+  }
+
+  &:focus {
+    @apply ring-2 ring-primary-2 ring-offset-1 ring-offset-basic-50;
+  }
+}
+
+:global(.dark) {
+  .link {
+    &:focus {
+      @apply ring-2 ring-primary-2 ring-offset-1 ring-offset-basic-900;
+    }
+  }
+}

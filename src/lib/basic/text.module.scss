@@ -1,0 +1,103 @@
+.text {
+  &.left {
+    @apply text-left;
+  }
+  &.center {
+    @apply text-center;
+  }
+  &.right {
+    @apply text-right;
+  }
+  &.justify {
+    @apply text-justify;
+  }
+  &.xs {
+    @apply text-xs;
+  }
+  &.sm {
+    @apply text-sm;
+  }
+  &.md {
+    @apply text-base;
+  }
+  &.lg {
+    @apply text-lg;
+  }
+  &.xl {
+    @apply text-xl;
+  }
+  &._2xl {
+    @apply text-2xl;
+  }
+  &._3xl {
+    @apply text-3xl;
+  }
+  &._4xl {
+    @apply text-4xl;
+  }
+  &._5xl {
+    @apply text-5xl;
+  }
+  &._6xl {
+    @apply text-6xl;
+  }
+  &._7xl {
+    @apply text-7xl;
+  }
+  &._8xl {
+    @apply text-8xl;
+  }
+  &._9xl {
+    @apply text-9xl;
+  }
+  &.thin {
+    @apply font-thin;
+  }
+  &.extraLight {
+    @apply font-extralight;
+  }
+  &.light {
+    @apply font-light;
+  }
+  &.normal {
+    @apply font-normal;
+  }
+  &.medium {
+    @apply font-medium;
+  }
+  &.semibold {
+    @apply font-semibold;
+  }
+  &.bold {
+    @apply font-bold;
+  }
+  &.extraBold {
+    @apply font-extrabold;
+  }
+  &.black {
+    @apply font-black;
+  }
+  &.primary {
+    @apply text-basic-900;
+  }
+  &.secondary {
+    @apply text-basic-700;
+  }
+  &.hint {
+    @apply text-basic-400;
+  }
+}
+
+:global(.dark) {
+  .text {
+    &.primary {
+      @apply text-basic-100;
+    }
+    &.secondary {
+      @apply text-basic-300;
+    }
+    &.hint {
+      @apply text-basic-500;
+    }
+  }
+}

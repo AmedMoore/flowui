@@ -1,0 +1,65 @@
+{
+  "name": "@flowui/react",
+  "version": "0.1.0-alpha.2",
+  "private": false,
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "unpkg": "umd/flow-ui.min.js",
+  "types": "types/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier -w -l \"**/*.{js,ts,tsx,css,scss}\"",
+    "docgen": "react-docgen -o out/docgen.json \"./src/lib/**/*.tsx\"",
+    "clean": "node scripts/clean.mjs",
+    "build:lib": "node scripts/build.mjs --version prerelease",
+    "build:lib:ci": "node scripts/build.mjs"
+  },
+  "peerDependencies": {
+    "next": ">=13.4.0",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  },
+  "dependencies": {
+    "clsx": "1.2.1",
+    "usehooks-ts": "2.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.21.5",
+    "@babel/core": "7.22.1",
+    "@babel/preset-env": "7.22.4",
+    "@babel/preset-react": "7.22.3",
+    "@babel/preset-typescript": "7.21.5",
+    "@react-docgen/cli": "1.0.0-alpha.1",
+    "@types/node": "20.2.5",
+    "@types/react": "18.2.8",
+    "@types/react-dom": "18.2.4",
+    "autoprefixer": "10.4.14",
+    "babel-loader": "9.1.2",
+    "babel-plugin-css-modules-transform": "1.6.2",
+    "chalk": "5.2.0",
+    "eslint": "8.42.0",
+    "eslint-config-next": "13.4.4",
+    "execa": "7.1.1",
+    "framer-motion": "10.12.16",
+    "fs-extra": "11.1.1",
+    "next": "13.4.4",
+    "postcss": "8.4.24",
+    "postcss-import": "15.1.0",
+    "prettier": "2.8.8",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.62.1",
+    "semver": "7.5.1",
+    "tailwindcss": "3.3.2",
+    "typescript": "5.1.3",
+    "webpack": "5.86.0",
+    "zod": "3.21.4"
+  },
+  "engines": {
+    "pnpm": ">=8.5.1"
+  }
+}

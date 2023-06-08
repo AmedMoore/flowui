@@ -1,0 +1,31 @@
+.progressCircleContainer {
+  @apply inline-flex items-center justify-center overflow-hidden rounded-full;
+
+  .circleBorder {
+    @apply text-basic-400;
+  }
+
+  .circle {
+    @apply text-primary-2;
+  }
+
+  .valueText {
+    @apply absolute text-xl text-primary-2;
+  }
+}
+
+:global(.dark) {
+  .progressCircleContainer {
+    .circleBorder {
+      @apply text-basic-500;
+    }
+
+    .circle {
+      @apply text-primary-3;
+    }
+
+    .valueText {
+      @apply text-primary-3;
+    }
+  }
+}

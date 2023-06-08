@@ -1,0 +1,45 @@
+.card {
+  @apply w-fit rounded-xl bg-white p-2;
+
+  &.bordered {
+    @apply border;
+  }
+
+  &.fullWidth {
+    @apply w-full;
+  }
+
+  &.shadow_0 {
+    @apply shadow-none;
+  }
+
+  &.shadow_1 {
+    @apply shadow-sm;
+  }
+
+  &.shadow_2 {
+    @apply shadow-md;
+  }
+
+  &.shadow_3 {
+    @apply shadow-lg;
+  }
+
+  &.shadow_4 {
+    @apply shadow-xl;
+  }
+
+  &.shadow_5 {
+    @apply shadow-2xl;
+  }
+
+  &.shadow_inner {
+    @apply shadow-inner;
+  }
+}
+
+:global(.dark) {
+  .card {
+    @apply bg-basic-900 border-basic-600;
+  }
+}

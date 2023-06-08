@@ -1,0 +1,9 @@
+.paper {
+  @apply p-6 bg-basic-100 text-basic-900 overflow-hidden;
+}
+
+:global(.dark) {
+  .paper {
+    @apply bg-black text-basic-50;
+  }
+}
