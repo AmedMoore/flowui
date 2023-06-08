@@ -26,6 +26,9 @@
     "paths": {
       "@flowui/react/*": [
         "./src/lib/*"
+      ],
+      "@/components/*": [
+        "./src/components/*"
       ]
     }
   },
