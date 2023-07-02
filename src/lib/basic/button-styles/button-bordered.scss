@@ -1,0 +1,198 @@
+.button {
+  &.bordered {
+    &.primary {
+      @apply text-primary-500 border-2 border-primary-500;
+      &:not(:disabled):hover {
+        @apply bg-primary-500/5;
+      }
+    }
+
+    &.secondary {
+      @apply text-basic-300 border-2 border-basic-300;
+      &:not(:disabled):hover {
+        @apply bg-basic-300/5;
+      }
+    }
+
+    &.success {
+      @apply text-green-500 border-2 border-green-500;
+      &:not(:disabled):hover {
+        @apply bg-green-500/5;
+      }
+    }
+
+    &.warning {
+      @apply text-yellow-500 border-2 border-yellow-500;
+      &:not(:disabled):hover {
+        @apply bg-yellow-500/5;
+      }
+    }
+
+    &.error {
+      @apply text-red-500 border-2 border-red-500;
+      &:not(:disabled):hover {
+        @apply bg-red-500/5;
+      }
+    }
+
+    &.gradient {
+      @apply p-0.5 text-secondary-600 bg-gradient-to-tl from-secondary-500 to-primary-500;
+
+      &:not(:disabled):hover {
+        .buttonContent {
+          @apply bg-gradient-to-tl from-secondary-600/10 to-primary-600/10;
+        }
+      }
+
+      &.auto {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-1 py-0.5 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.xs {
+        @apply text-xs;
+        border-radius: 0.5rem;
+        .buttonContent {
+          @apply px-2 py-1 bg-white;
+          border-radius: 0.4rem;
+        }
+      }
+
+      &.sm {
+        @apply text-sm;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-3 py-1 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.md {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-4 py-1.5 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.lg {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-5 py-2 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.xl {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-6 py-2.5 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+    }
+
+    &:not(.iconOnly):not(.gradient) {
+      &.auto {
+        @apply px-2 py-1 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.xs {
+        @apply px-2 py-1 text-xs;
+
+        &:not(.circle) {
+          @apply rounded-lg;
+        }
+      }
+
+      &.sm {
+        @apply px-3 py-1 text-sm;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.md {
+        @apply px-4 py-1.5 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.lg {
+        @apply px-5 py-2 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.xl {
+        @apply px-6 py-2.5 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+    }
+  }
+}
+
+:global(.dark) {
+  .button {
+    &.bordered {
+      &.primary {
+        @apply text-primary-500 border-primary-500;
+        &:not(:disabled):hover {
+          @apply bg-primary-600/20;
+        }
+      }
+
+      &.secondary {
+        @apply text-basic-400 border-basic-400;
+        &:not(:disabled):hover {
+          @apply bg-basic-200/20;
+        }
+      }
+
+      &.success:not(:disabled):hover {
+        @apply bg-green-500/20;
+      }
+
+      &.warning:not(:disabled):hover {
+        @apply bg-yellow-500/20;
+      }
+
+      &.error:not(:disabled):hover {
+        @apply bg-red-500/20;
+      }
+
+      &.gradient {
+        @apply text-secondary-400;
+
+        .buttonContent {
+          @apply bg-black;
+        }
+
+        &:hover {
+          .buttonContent {
+            @apply bg-gradient-to-tl from-basic-200/20 to-primary-500/20;
+          }
+        }
+      }
+    }
+  }
+}

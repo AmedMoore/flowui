@@ -47,6 +47,7 @@ export default function useDarkModeSwitch() {
 
   return {
     mode: ternaryDarkMode,
+    isDarkMode: isDarkMode && ternaryDarkMode != "light",
     setLight,
     setDark,
     setSystem,

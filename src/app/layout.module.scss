@@ -1,0 +1,23 @@
+.background {
+  @apply absolute flex w-full h-full left-0 top-0 bg-gradient-to-br from-transparent via-transparent to-primary-50 z-10;
+}
+
+.content {
+  @apply z-20 overflow-hidden;
+
+  *::selection {
+    @apply bg-warn-200;
+  }
+}
+
+:global(.dark) {
+  .background {
+    @apply from-transparent via-transparent to-primary-950/50;
+  }
+
+  .content {
+    *::selection {
+      @apply bg-secondary-400;
+    }
+  }
+}

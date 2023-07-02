@@ -1,18 +1,26 @@
 import React from "react";
-import type { PropsWithChildren } from "react";
 import clsx from "clsx";
-
-import Column from "./column";
+import Column, { type ColumnComponent, type ColumnProps } from "./column";
 import styles from "./paper.module.scss";
 
-export type PaperProps = PropsWithChildren<{
-  customClassName?: string;
-}>;
+function PaperWithForwardedRef(
+  props: ColumnProps,
+  ref: React.ForwardedRef<HTMLDivElement>,
+) {
+  const { children, expand, customClassName, ...restProps } = props;
 
-export default function Paper({ children, customClassName }: PaperProps) {
   return (
-    <Column customClassName={clsx(styles.paper, customClassName)} expand>
+    <Column
+      {...restProps}
+      ref={ref}
+      customClassName={clsx(styles.paper, customClassName)}
+      expand
+    >
       {children}
     </Column>
   );
 }
+
+const Paper: ColumnComponent = React.forwardRef(PaperWithForwardedRef);
+
+export default Paper;

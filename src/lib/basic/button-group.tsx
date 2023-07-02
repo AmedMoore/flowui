@@ -44,7 +44,7 @@ export default function ButtonGroup({
         if (React.isValidElement<ButtonProps>(child)) {
           return React.cloneElement(child, {
             size,
-            color,
+            color: child.props.color ?? color,
             variant: child.props.variant ?? variant,
             iconOnly,
             disabled,

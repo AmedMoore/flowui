@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
+import { useIsomorphicLayoutEffect } from "usehooks-ts";
 import useDarkModeSwitch from "../hooks/use-dark-mode-switch";
 import ButtonGroup from "./button-group";
 import Button from "./button";
 import IconSun from "../icons/icon-sun";
 import IconMoon from "../icons/icon-moon";
 import IconSystem from "../icons/icon-system";
-import { useIsomorphicLayoutEffect } from "usehooks-ts";
 
 export default function DarkModeSwitch() {
   const { mode, setLight, setDark, setSystem } = useDarkModeSwitch();
@@ -19,7 +19,7 @@ export default function DarkModeSwitch() {
   }, [mode]);
 
   return (
-    <ButtonGroup iconOnly color="secondary">
+    <ButtonGroup iconOnly color="basic">
       <Button
         iconOnly
         circle

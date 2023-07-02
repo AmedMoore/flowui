@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-
 import { justifyStyleName } from "./justify-style-name";
 import { itemsStyleName } from "./items-style-name";
 import { type FlexGap, gapStyleName } from "./gap-style-name";
@@ -10,6 +9,7 @@ import type { ElementPropsWithChildren } from "../types/element-props";
 
 export type ColumnProps = ElementPropsWithChildren<{
   expand?: boolean;
+  scrollable?: boolean;
   justify?: keyof typeof justifyStyleName;
   items?: keyof typeof itemsStyleName;
   gap?: FlexGap;
@@ -28,6 +28,7 @@ function ColumnWithForwardedRef(
   const {
     children,
     expand,
+    scrollable,
     justify,
     items,
     gap,
@@ -42,6 +43,7 @@ function ColumnWithForwardedRef(
       className={clsx(
         styles.column,
         { [flexStyles.expand]: expand },
+        { [styles.scrollable]: scrollable },
         justify && flexStyles[justifyStyleName[justify]],
         items && flexStyles[itemsStyleName[items]],
         gap && flexStyles[gapStyleName[gap]],

@@ -2,11 +2,11 @@
 
 import React from "react";
 import clsx from "clsx";
-
 import { Column, Row } from "../layout";
 import { useManagedInputType } from "../hooks";
 import { useReadonlyInput } from "./input/use-readonly-input";
 import InputLabel from "./input/input-label";
+import InputInlineLabel from "./input/input-inline-label";
 import PasswordToggleButton from "./input/password-toggle-button";
 import ClearButton from "./input/clear-button";
 import styles from "./input.module.scss";
@@ -92,14 +92,14 @@ function InputWithForwardedRed(
           {(Boolean(leadingIcon) || Boolean(leadingLabel)) && (
             <Row customClassName={styles.inlineLabel} gap="1" items="center">
               {Boolean(leadingIcon) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={leadingIcon}
                   name={name}
                 />
               )}
               {Boolean(leadingLabel) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={leadingLabel}
                   name={name}
@@ -124,7 +124,7 @@ function InputWithForwardedRed(
               value={value}
             />
             {Boolean(placeholder) && (
-              <Label floating label={placeholder} name={name} />
+              <InputInlineLabel floating label={placeholder} name={name} />
             )}
             {(clearable || isPassword) && (
               <Row
@@ -144,14 +144,14 @@ function InputWithForwardedRed(
           {(Boolean(trailingLabel) || Boolean(trailingIcon)) && (
             <Row customClassName={styles.inlineLabel} gap="1" items="center">
               {Boolean(trailingLabel) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={trailingLabel}
                   name={name}
                 />
               )}
               {Boolean(trailingIcon) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={trailingIcon}
                   name={name}
@@ -171,31 +171,6 @@ function InputWithForwardedRed(
         </div>
       )}
     </Column>
-  );
-}
-
-function Label({
-  name,
-  label,
-  floating,
-  hasErrors,
-}: {
-  name?: string;
-  label?: string | JSX.Element;
-  floating?: boolean;
-  hasErrors?: boolean;
-}) {
-  if (!label) return null;
-  return (
-    <label
-      className={clsx(styles.placeholder, {
-        [styles.floatingLabel]: floating,
-        [styles.errorText]: hasErrors,
-      })}
-      htmlFor={name}
-    >
-      {label}
-    </label>
   );
 }
 

@@ -1,103 +1,167 @@
 .text {
+  // Alignment
+
   &.left {
     @apply text-left;
   }
+
   &.center {
     @apply text-center;
   }
+
   &.right {
     @apply text-right;
   }
+
   &.justify {
     @apply text-justify;
   }
+
+  // Font Size
+
   &.xs {
     @apply text-xs;
   }
+
   &.sm {
     @apply text-sm;
   }
+
   &.md {
     @apply text-base;
   }
+
   &.lg {
     @apply text-lg;
   }
+
   &.xl {
     @apply text-xl;
   }
+
   &._2xl {
     @apply text-2xl;
   }
+
   &._3xl {
     @apply text-3xl;
   }
+
   &._4xl {
     @apply text-4xl;
   }
+
   &._5xl {
     @apply text-5xl;
   }
+
   &._6xl {
     @apply text-6xl;
   }
+
   &._7xl {
     @apply text-7xl;
   }
+
   &._8xl {
     @apply text-8xl;
   }
+
   &._9xl {
     @apply text-9xl;
   }
+
+  // Font Weight
+
   &.thin {
     @apply font-thin;
   }
+
   &.extraLight {
     @apply font-extralight;
   }
+
   &.light {
     @apply font-light;
   }
+
   &.normal {
     @apply font-normal;
   }
+
   &.medium {
     @apply font-medium;
   }
+
   &.semibold {
     @apply font-semibold;
   }
+
   &.bold {
     @apply font-bold;
   }
+
   &.extraBold {
     @apply font-extrabold;
   }
-  &.black {
-    @apply font-black;
+
+  // Colors
+
+  &.white {
+    @apply text-white;
   }
-  &.primary {
+
+  &.black {
+    @apply text-black;
+  }
+
+  &.basic {
     @apply text-basic-900;
   }
-  &.secondary {
-    @apply text-basic-700;
+
+  &.primary {
+    @apply text-primary-500 hover:text-primary-600;
   }
+
+  &.secondary {
+    @apply text-secondary-500 hover:text-secondary-600;
+  }
+
   &.hint {
     @apply text-basic-400;
+  }
+
+  // Transform
+
+  &.upper {
+    @apply uppercase;
+  }
+
+  &.lower {
+    @apply lowercase;
+  }
+
+  &.capital {
+    @apply capitalize;
   }
 }
 
 :global(.dark) {
   .text {
-    &.primary {
+    &.basic {
       @apply text-basic-100;
     }
-    &.secondary {
-      @apply text-basic-300;
+
+    &.primary {
+      @apply text-primary-400 hover:text-primary-300;
     }
+
+    &.secondary {
+      @apply text-secondary-400 hover:text-secondary-300;
+    }
+
     &.hint {
-      @apply text-basic-500;
+      @apply text-basic-200;
     }
   }
 }

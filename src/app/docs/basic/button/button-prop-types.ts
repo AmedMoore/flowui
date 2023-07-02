@@ -1,0 +1,103 @@
+import type { ButtonProps } from "@flowui/react/basic";
+import type { ComponentPropTypeData } from "@/types/component-prop-type-data";
+
+export const ButtonPropTypes: ComponentPropTypeData<ButtonProps>[] = [
+  {
+    name: "as",
+    type: "React.ElementType",
+    default: '"button"',
+    required: false,
+    description: "Changes which tag component outputs",
+  },
+  {
+    name: "variant",
+    type: "ButtonVariant",
+    default: '"solid"',
+    required: false,
+    description: "",
+  },
+  {
+    name: "color",
+    type: "Color",
+    default: '"primary"',
+    required: false,
+    description: "Button color",
+  },
+  {
+    name: "size",
+    type: "Size",
+    default: '"md"',
+    required: false,
+    description: "Button size",
+  },
+  {
+    name: "width",
+    type: "ButtonWidth",
+    default: '"auto"',
+    required: false,
+    description: "Button width",
+  },
+  {
+    name: "shadow",
+    type: "boolean",
+    default: "none",
+    required: false,
+    description: "",
+  },
+  {
+    name: "type",
+    type: "ButtonType",
+    default: '"button"',
+    required: false,
+    description: "",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    required: false,
+    description: "",
+  },
+  {
+    name: "loading",
+    type: "boolean",
+    default: "false",
+    required: false,
+    description: "",
+  },
+  {
+    name: "iconOnly",
+    type: "boolean",
+    default: "false",
+    required: false,
+    description: "",
+  },
+  {
+    name: "circle",
+    type: "boolean",
+    default: "false",
+    required: false,
+    description: "",
+  },
+  {
+    name: "focusable",
+    type: "boolean",
+    default: "false",
+    required: false,
+    description: "",
+  },
+  {
+    name: "leadingIcon",
+    type: "JSX.Element",
+    default: "undefined",
+    required: false,
+    description: "",
+  },
+  {
+    name: "trailingIcon",
+    type: "JSX.Element",
+    default: "undefined",
+    required: false,
+    description: "",
+  },
+];

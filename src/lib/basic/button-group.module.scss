@@ -13,12 +13,16 @@
     @apply w-full;
   }
 
+  &.basic {
+    @apply border-basic-500;
+  }
+
   &.primary {
-    @apply border-primary-2;
+    @apply border-primary-500;
   }
 
   &.secondary {
-    @apply border-basic-400;
+    @apply border-secondary-500;
   }
 
   &.success {
@@ -36,8 +40,28 @@
 
 :global(.dark) {
   .buttonGroup {
-    &.secondary {
+    &.basic {
       @apply border-basic-600;
+    }
+
+    &.primary {
+      @apply border-primary-600;
+    }
+
+    &.secondary {
+      @apply border-secondary-600;
+    }
+
+    &.success {
+      @apply border-green-600;
+    }
+
+    &.warning {
+      @apply border-yellow-600;
+    }
+
+    &.error {
+      @apply border-red-600;
     }
   }
 }

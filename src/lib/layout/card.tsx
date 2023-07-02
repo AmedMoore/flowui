@@ -6,9 +6,9 @@ import { shadowStyleName, type Shadow } from "./shadow-style-name";
 import styles from "./card.module.scss";
 
 export type CardProps = ColumnProps & {
-  readonly bordered?: boolean;
-  readonly shadow?: true | Shadow;
-  readonly fullWidth?: boolean;
+  bordered?: boolean;
+  shadow?: true | Shadow;
+  fullWidth?: boolean;
 };
 
 export type CardComponent = (

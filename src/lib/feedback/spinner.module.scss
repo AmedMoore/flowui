@@ -1,9 +1,9 @@
 .spinner {
-  @apply inline mr-2 text-basic-800 animate-spin fill-primary-2;
+  @apply inline mr-2 text-basic-800 animate-spin fill-primary-500;
 }
 
 :global(.dark) {
   .spinner {
-    @apply fill-primary-3 text-basic-200;
+    @apply fill-primary-600 text-basic-200;
   }
 }

@@ -1,0 +1,59 @@
+div.card {
+  @apply p-1 overflow-x-auto;
+}
+
+.table {
+  @apply border-collapse text-sm;
+
+  .headCol {
+    @apply bg-basic-100 first:rounded-l-lg last:rounded-r-lg text-left px-8 py-4 uppercase font-semibold;
+  }
+
+  .bodyRow {
+    &:nth-child(even) {
+      .bodyCol {
+        @apply bg-basic-50/50;
+      }
+    }
+
+    &:hover {
+      .bodyCol {
+        @apply bg-primary-50;
+      }
+    }
+
+    .bodyCol {
+      @apply first:rounded-l-lg last:rounded-r-lg px-8 py-4 text-basic-900;
+    }
+  }
+
+  .caption {
+    @apply caption-bottom px-8 py-2;
+  }
+}
+
+:global(.dark) {
+  table {
+    .headCol {
+      @apply bg-basic-900;
+    }
+
+    .bodyRow {
+      &:nth-child(even) {
+        .bodyCol {
+          @apply bg-basic-900/20;
+        }
+      }
+
+      &:hover {
+        .bodyCol {
+          @apply bg-primary-950/20;
+        }
+      }
+
+      .bodyCol {
+        @apply text-basic-100;
+      }
+    }
+  }
+}

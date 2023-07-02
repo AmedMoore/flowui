@@ -144,10 +144,9 @@ const copyStaticFiles = step("Copy static files", async () => {
     { spaces: 2 },
   );
 
-  await fse.copy(
-    join(rootDir, "tailwind.config.js"),
-    join(libDistDir, "tailwind.config.js"),
-  );
+  for (const file of ["LICENSE", "README.md", "tailwind.config.js"]) {
+    await fse.copy(join(rootDir, file), join(libDistDir, file));
+  }
 });
 
 function release() {

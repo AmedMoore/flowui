@@ -1,0 +1,84 @@
+.button {
+  &.text {
+    &.primary {
+      @apply text-primary-500;
+      &:not(:disabled):hover {
+        @apply bg-primary-500/10;
+      }
+    }
+
+    &.secondary {
+      @apply text-basic-300;
+      &:not(:disabled):hover {
+        @apply bg-basic-300/10;
+      }
+    }
+
+    &.success {
+      @apply text-green-600;
+      &:not(:disabled):hover {
+        @apply bg-green-600/10;
+      }
+    }
+
+    &.warning {
+      @apply text-yellow-600;
+      &:not(:disabled):hover {
+        @apply bg-yellow-600/10;
+      }
+    }
+
+    &.error {
+      @apply text-red-600;
+      &:not(:disabled):hover {
+        @apply bg-red-600/10;
+      }
+    }
+
+    &.gradient {
+      @apply text-primary-500;
+      &:not(:disabled):hover {
+        @apply bg-gradient-to-tl from-secondary-600/10 to-primary-600/10;
+      }
+    }
+  }
+}
+
+:global(.dark) {
+  .button {
+    &.text {
+      &.primary {
+        @apply text-primary-500;
+        &:not(:disabled):hover {
+          @apply bg-primary-600/20;
+        }
+      }
+
+      &.secondary {
+        @apply text-secondary-500;
+        &:not(:disabled):hover {
+          @apply bg-secondary-600/20;
+        }
+      }
+
+      &.success:not(:disabled):hover {
+        @apply bg-green-500/20;
+      }
+
+      &.warning:not(:disabled):hover {
+        @apply bg-yellow-500/20;
+      }
+
+      &.error:not(:disabled):hover {
+        @apply bg-red-500/20;
+      }
+
+      &.gradient {
+        @apply text-secondary-400;
+        &:hover {
+          @apply bg-gradient-to-tl from-secondary-500/20 to-primary-500/20;
+        }
+      }
+    }
+  }
+}

@@ -87,7 +87,7 @@ export function DropdownToggleButton<T extends React.ElementType = "button">(
   const { toggleButtonRef } = React.useContext(DropdownContext);
   const handleClick = useOnClickHandler({
     toggleMenuOnClick: true,
-    handler: onClick,
+    handler: onClick as () => void,
   });
 
   return (
@@ -195,7 +195,7 @@ export function DropdownMenuItem<T extends React.ElementType = "button">(
 
   const handleClick = useOnClickHandler({
     toggleMenuOnClick,
-    handler: onClick,
+    handler: onClick as () => void,
   });
 
   return (

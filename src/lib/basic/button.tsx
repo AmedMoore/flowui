@@ -2,7 +2,6 @@
 
 import React from "react";
 import clsx from "clsx";
-
 import type { ElementPropsWithChildren } from "../types/element-props";
 import type Color from "../types/color";
 import type Size from "../types/size";
@@ -38,7 +37,7 @@ type ButtonComponentProps<T extends React.ElementType> = ButtonProps<T> &
   Omit<React.ComponentProps<T>, "as">;
 
 export type ButtonComponent = <T extends React.ElementType = "button">(
-  props: ButtonComponentProps<T>, // React.PropsWithRef<ButtonComponentProps<T>>
+  props: ButtonComponentProps<T>,
 ) => React.ReactNode;
 
 function ButtonWithForwardedRef<T extends React.ElementType>(
@@ -105,6 +104,7 @@ function ButtonWithForwardedRef<T extends React.ElementType>(
       disabled,
       className,
       type: type ?? "button",
+      role: "button",
     },
     [
       <Row

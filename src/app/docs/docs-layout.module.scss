@@ -1,0 +1,7 @@
+.contentContainer {
+  @apply min-h-0 container;
+}
+
+.content {
+  @apply p-6 overflow-y-auto;
+}

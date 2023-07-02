@@ -1,4 +1,7 @@
 type Color =
+  | "basic"
+  | "white"
+  | "black"
   | "primary"
   | "secondary"
   | "success"
