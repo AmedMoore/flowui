@@ -1,13 +1,13 @@
 import { indices } from "@/utils/array";
 import { Row } from "@flowui/react/layout";
-import { Button, Link, Text } from "@flowui/react/basic";
+import { Button, Link, Text, DarkModeSwitch } from "@flowui/react/basic";
 import { Chip } from "@flowui/react/data";
-import { DarkModeSwitch } from "./dark-mode-switch";
+// import { DarkModeSwitch } from "./dark-mode-switch";
 import { NavbarLink, type NavbarLinkProps } from "./navbar-link";
 import styles from "./navbar.module.scss";
 import Image from "next/image";
 
-function Navbar({ lastKnownColorScheme }: { lastKnownColorScheme: string }) {
+function Navbar() {
   return (
     <Row justify="center" customClassName={styles.navbar}>
       <Row items="center" justify="between" customClassName="container">
@@ -43,7 +43,7 @@ function Navbar({ lastKnownColorScheme }: { lastKnownColorScheme: string }) {
               height={96 / 4}
             />
           </Button>
-          <DarkModeSwitch lastKnownColorScheme={lastKnownColorScheme} />
+          <DarkModeSwitch />
         </Row>
       </Row>
     </Row>

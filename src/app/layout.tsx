@@ -1,10 +1,10 @@
 import "@flowui/react/styles.scss";
 import type { Metadata } from "next";
-import { use, type PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import { Inter } from "next/font/google";
 import { Column, Paper } from "@flowui/react/layout";
-import { getColorScheme } from "@/services/session/get-color-scheme";
-import { cookies } from "next/headers";
+// import { getColorScheme } from "@/services/session/get-color-scheme";
+// import { cookies } from "next/headers";
 import Navbar from "@/components/navbar";
 import styles from "./layout.module.scss";
 import clsx from "clsx";
@@ -12,14 +12,14 @@ import clsx from "clsx";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout({ children }: PropsWithChildren) {
-  const colorScheme = use(getColorScheme(cookies()));
+  // const colorScheme = use(getColorScheme(cookies()));
 
   return (
-    <html lang="en" className={colorScheme}>
+    <html lang="en">
       <body className={clsx(inter.className, "antialiased")}>
         <Paper>
           <div className={styles.background} />
-          <Navbar lastKnownColorScheme={colorScheme} />
+          <Navbar />
           <Column expand items="center" customClassName={styles.content}>
             {children}
           </Column>
