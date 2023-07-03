@@ -1,0 +1,13 @@
+.card {
+  @apply w-72 h-96 border-secondary-300 relative cursor-default select-none transition-all hover:scale-95 hover:rotate-1;
+
+  .footer {
+    @apply p-4 bg-secondary-500/30 backdrop-filter backdrop-blur-sm z-10;
+  }
+}
+
+:global(.dark) {
+  .card {
+    @apply border-secondary-800;
+  }
+}

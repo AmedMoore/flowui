@@ -4,7 +4,6 @@ import * as Icons from "@flowui/react/icons";
 import type { SVGProps } from "@flowui/react/icons";
 import { useCallback, useMemo, useState } from "react";
 import { useCopyToClipboard, useDebounce, useIsMounted } from "usehooks-ts";
-import { capitalCase } from "change-case";
 import { Row, Column, Grid, Card } from "@flowui/react/layout";
 import { Text } from "@flowui/react/basic";
 import { Input } from "@flowui/react/forms";
@@ -93,25 +92,21 @@ function IconCard({ name, icon: Icon }: { name: string; icon: Icon }) {
 
   return (
     <button onClick={copy}>
-      <Card
-        customClassName={clsx(
-          "w-32 h-32 p-3 hover:bg-basic-50 dark:hover:bg-basic-800",
-          {
-            "!bg-success-200 dark:!bg-success-800": copied,
-          },
-        )}
-      >
-        <Column expand items="center" justify="center">
-          <Row expand items="center">
-            <Icon />
-          </Row>
-          <Row expand items="center">
-            <Text size="sm" color="basic" align="center">
-              {copied ? "Copied!" : capitalCase(name)}
-            </Text>
-          </Row>
-        </Column>
-      </Card>
+      <Column gap={3}>
+        <Card
+          items="center"
+          justify="center"
+          customClassName={clsx(
+            "w-32 h-32 p-3 hover:bg-basic-50 dark:hover:bg-basic-800",
+            { "!bg-success-200 dark:!bg-success-800": copied },
+          )}
+        >
+          <Icon size={20} />
+        </Card>
+        <Text size="sm" color="basic" align="center">
+          {copied ? "Copied!" : name}
+        </Text>
+      </Column>
     </button>
   );
 }

@@ -1,18 +1,13 @@
-"use client";
-
 import { Card, Column, Row } from "@flowui/react/layout";
 import { Button, Text } from "@flowui/react/basic";
 import { Chip } from "@flowui/react/data";
 import Image from "next/image";
+import styles from "./page.module.scss";
 
 export default function CardPage() {
   return (
     <Column gap={4} expand>
-      <Card
-        shadow={4}
-        justify="between"
-        customClassName="w-72 h-96 border-secondary-300 dark:border-secondary-800 relative cursor-default select-none transition-all hover:scale-95 hover:rotate-1"
-      >
+      <Card shadow={4} justify="between" customClassName={styles.card}>
         <Image
           src="/images/product-image-5.jpg"
           alt="Product Image"
@@ -27,10 +22,7 @@ export default function CardPage() {
             Canon Camera
           </Text>
         </Column>
-        <Row
-          justify="between"
-          customClassName="p-4 bg-secondary-500/30 backdrop-filter backdrop-blur-sm z-10"
-        >
+        <Row justify="between" customClassName={styles.footer}>
           <Column>
             <Text size="sm" color="white">
               Available soon.
