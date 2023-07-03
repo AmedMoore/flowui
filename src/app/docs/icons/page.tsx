@@ -138,7 +138,7 @@ function IconsPage() {
           Icons
         </Text>
       </Row>
-      <Row customClassName="w-60">
+      <Row customClassName="w-full md:w-2/3 lg:w-1/3 xl:w-80">
         <Input
           name="search"
           placeholder="Find icon..."
