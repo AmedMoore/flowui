@@ -3,8 +3,8 @@
 import React from "react";
 import { useIsomorphicLayoutEffect } from "usehooks-ts";
 import useDarkModeSwitch from "../hooks/use-dark-mode-switch";
-import ButtonGroup from "./button-group";
-import Button from "./button";
+import ButtonGroup from "../basic/button-group";
+import Button from "../basic/button";
 import IconSun from "../icons/icon-sun";
 import IconMoon from "../icons/icon-moon";
 import IconSystem from "../icons/icon-system";

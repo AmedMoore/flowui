@@ -1,6 +1,14 @@
 .html,
 .body {
-  @apply antialiased min-h-screen w-screen;
+  @apply antialiased min-h-screen w-screen overflow-x-hidden;
+}
+
+.html {
+  @apply bg-basic-100;
+
+  @media (prefers-color-scheme: dark) {
+    @apply bg-black;
+  }
 }
 
 .body {

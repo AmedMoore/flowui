@@ -1,6 +1,6 @@
 {
   "name": "@flowui/react",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0-alpha.5",
   "private": false,
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -47,6 +47,7 @@
     "autoprefixer": "10.4.14",
     "babel-loader": "9.1.2",
     "babel-plugin-css-modules-transform": "1.6.2",
+    "bowser": "2.11.0",
     "chalk": "5.2.0",
     "change-case": "4.1.2",
     "eslint": "8.42.0",
