@@ -2,10 +2,9 @@ import { indices } from "@/utils/array";
 import { Row } from "@flowui/react/layout";
 import { Button, Link, Text, DarkModeSwitch } from "@flowui/react/basic";
 import { Chip } from "@flowui/react/data";
-// import { DarkModeSwitch } from "./dark-mode-switch";
+import { IconGithub } from "@flowui/react/icons";
 import { NavbarLink, type NavbarLinkProps } from "./navbar-link";
 import styles from "./navbar.module.scss";
-import Image from "next/image";
 
 function Navbar() {
   return (
@@ -27,22 +26,25 @@ function Navbar() {
                 {indices(links).includes(index) && (
                   <Text
                     size="xs"
-                    customClassName="select-none cursor-default opacity-25 dark:opacity-35"
+                    customClassName="select-none cursor-default opacity-25"
                   >
                     &#x2022;
                   </Text>
                 )}
               </Row>
             ))}
+            <Button
+              as="a"
+              circle
+              iconOnly
+              variant="text"
+              color="basic"
+              href="https://github.com/AmedMoore/flowui"
+              target="_blank"
+            >
+              <IconGithub />
+            </Button>
           </Row>
-          <Button as="a" circle iconOnly variant="text" color="basic">
-            <Image
-              src="/icons/github/github-mark-white.svg"
-              alt="Github"
-              width={98 / 4}
-              height={96 / 4}
-            />
-          </Button>
           <DarkModeSwitch />
         </Row>
       </Row>

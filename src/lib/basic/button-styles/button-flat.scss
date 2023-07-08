@@ -1,32 +1,32 @@
 .button {
   &.flat {
     &.basic {
-      @apply text-basic-600 bg-basic-100 hover:bg-basic-200;
+      @apply text-basic-700 bg-basic-200 hover:bg-basic-300;
     }
 
     &.primary {
-      @apply text-primary-600 bg-primary-100 hover:bg-primary-200;
+      @apply text-primary-700 bg-primary-200 hover:bg-primary-300;
     }
 
     &.secondary {
-      @apply text-secondary-600 bg-secondary-100 hover:bg-secondary-200;
+      @apply text-secondary-700 bg-secondary-200 hover:bg-secondary-300;
     }
 
     &.success {
-      @apply text-success-600 bg-success-100 hover:bg-success-200;
+      @apply text-success-700 bg-success-200 hover:bg-success-300;
     }
 
     &.warning {
-      @apply text-warn-600 bg-warn-100 hover:bg-warn-200;
+      @apply text-warn-700 bg-warn-200 hover:bg-warn-300;
     }
 
     &.error {
-      @apply text-error-600 bg-error-100 hover:bg-error-200;
+      @apply text-error-700 bg-error-200 hover:bg-error-300;
     }
 
     &.gradient {
-      @apply text-secondary-600 bg-gradient-to-tl from-secondary-100 to-primary-100;
-      @apply hover:bg-gradient-to-tl hover:from-secondary-200 hover:to-primary-200;
+      @apply text-secondary-700 bg-gradient-to-tl from-secondary-200 to-primary-200;
+      @apply hover:bg-gradient-to-tl hover:from-secondary-300 hover:to-primary-300;
     }
   }
 }
@@ -35,7 +35,7 @@
   .button {
     &.flat {
       &.basic {
-        @apply text-basic-100 bg-basic-950 hover:bg-basic-900;
+        @apply text-basic-100 bg-basic-800 hover:bg-basic-700;
       }
 
       &.primary {

@@ -1,9 +1,18 @@
+.html,
+.body {
+  @apply antialiased min-h-screen w-screen;
+}
+
+.body {
+  @apply flex;
+}
+
 .background {
-  @apply absolute flex w-full h-full left-0 top-0 bg-gradient-to-br from-transparent via-transparent to-primary-50 z-10;
+  @apply fixed w-full h-full left-0 top-0 bg-gradient-to-br from-transparent via-transparent to-primary-50 z-10;
 }
 
 .content {
-  @apply z-20 overflow-hidden;
+  @apply z-20;
 
   *::selection {
     @apply bg-warn-200;

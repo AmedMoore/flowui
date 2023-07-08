@@ -1,16 +1,16 @@
 import "@flowui/react/styles.scss";
 import type { PropsWithChildren } from "react";
-import { Column, Row } from "@flowui/react/layout";
-import SideMenu from "./side-menu";
+import { Row } from "@flowui/react/layout";
+import { SideMenu } from "./side-menu";
+import { ContentsMenu } from "./contents-menu";
 import styles from "./docs-layout.module.scss";
 
 export default function DocsLayout({ children }: PropsWithChildren) {
   return (
-    <Row expand customClassName={styles.contentContainer}>
+    <Row expand customClassName={styles.content}>
       <SideMenu />
-      <Column expand customClassName={styles.content}>
-        <div className="mt-16">{children}</div>
-      </Column>
+      <div className="float-left flex-1 mt-16 px-4">{children}</div>
+      <ContentsMenu />
     </Row>
   );
 }

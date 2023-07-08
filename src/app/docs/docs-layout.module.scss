@@ -1,7 +1,7 @@
-.contentContainer {
-  @apply min-h-0 container;
-}
-
 .content {
-  @apply p-6 overflow-y-auto;
+  @apply p-6 w-full;
+
+  @media screen and (min-width: 1536px) {
+    max-width: 1536px;
+  }
 }

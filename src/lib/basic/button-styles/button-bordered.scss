@@ -1,46 +1,55 @@
 .button {
   &.bordered {
-    &.primary {
-      @apply text-primary-500 border-2 border-primary-500;
+    @apply border-2;
+
+    &.basic {
+      @apply text-basic-600 border-basic-500;
       &:not(:disabled):hover {
-        @apply bg-primary-500/5;
+        @apply bg-basic-500/10;
+      }
+    }
+
+    &.primary {
+      @apply text-primary-600 border-primary-500;
+      &:not(:disabled):hover {
+        @apply bg-primary-500/10;
       }
     }
 
     &.secondary {
-      @apply text-basic-300 border-2 border-basic-300;
+      @apply text-secondary-600 border-secondary-500;
       &:not(:disabled):hover {
-        @apply bg-basic-300/5;
+        @apply bg-secondary-500/10;
       }
     }
 
     &.success {
-      @apply text-green-500 border-2 border-green-500;
+      @apply text-success-600 border-green-500;
       &:not(:disabled):hover {
-        @apply bg-green-500/5;
+        @apply bg-green-500/10;
       }
     }
 
     &.warning {
-      @apply text-yellow-500 border-2 border-yellow-500;
+      @apply text-warn-600 border-yellow-500;
       &:not(:disabled):hover {
-        @apply bg-yellow-500/5;
+        @apply bg-yellow-500/10;
       }
     }
 
     &.error {
-      @apply text-red-500 border-2 border-red-500;
+      @apply text-error-600 border-red-500;
       &:not(:disabled):hover {
-        @apply bg-red-500/5;
+        @apply bg-red-500/10;
       }
     }
 
     &.gradient {
-      @apply p-0.5 text-secondary-600 bg-gradient-to-tl from-secondary-500 to-primary-500;
+      @apply border-0 p-0.5 text-secondary-600 bg-gradient-to-tl from-secondary-500 to-primary-500;
 
       &:not(:disabled):hover {
         .buttonContent {
-          @apply bg-gradient-to-tl from-secondary-600/10 to-primary-600/10;
+          @apply bg-gradient-to-tl from-secondary-500/10 to-primary-500/10;
         }
       }
 
@@ -154,30 +163,46 @@
 :global(.dark) {
   .button {
     &.bordered {
-      &.primary {
-        @apply text-primary-500 border-primary-500;
+      &.basic {
+        @apply text-basic-400 border-basic-400;
         &:not(:disabled):hover {
-          @apply bg-primary-600/20;
+          @apply bg-basic-500/20;
+        }
+      }
+
+      &.primary {
+        @apply text-primary-400 border-primary-400;
+        &:not(:disabled):hover {
+          @apply bg-primary-500/20;
         }
       }
 
       &.secondary {
-        @apply text-basic-400 border-basic-400;
+        @apply text-secondary-400 border-secondary-400;
         &:not(:disabled):hover {
-          @apply bg-basic-200/20;
+          @apply bg-secondary-500/20;
         }
       }
 
-      &.success:not(:disabled):hover {
-        @apply bg-green-500/20;
+      &.success {
+        @apply text-success-400 border-success-400;
+        &:not(:disabled):hover {
+          @apply bg-success-500/20;
+        }
       }
 
-      &.warning:not(:disabled):hover {
-        @apply bg-yellow-500/20;
+      &.warning {
+        @apply text-warn-400 border-warn-400;
+        &:not(:disabled):hover {
+          @apply bg-warn-500/20;
+        }
       }
 
-      &.error:not(:disabled):hover {
-        @apply bg-red-500/20;
+      &.error {
+        @apply text-error-400 border-error-400;
+        &:not(:disabled):hover {
+          @apply bg-error-500/20;
+        }
       }
 
       &.gradient {
@@ -189,7 +214,7 @@
 
         &:hover {
           .buttonContent {
-            @apply bg-gradient-to-tl from-basic-200/20 to-primary-500/20;
+            @apply bg-gradient-to-tl from-basic-500/20 to-primary-500/20;
           }
         }
       }

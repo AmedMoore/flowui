@@ -4,7 +4,8 @@ import { unsealData } from "iron-session";
 import { sessionOptions } from "./session-options";
 
 /**
- * Can be called in page/layout server component to get the latest known color scheme.
+ * Can be called in page/layout server component
+ * to get the latest known color scheme.
  */
 export async function getColorScheme(
   cookies: ReadonlyRequestCookies,

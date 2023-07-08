@@ -136,7 +136,11 @@ export default function ButtonPage() {
               { label: "Name", dataKey: "name" },
               { label: "Type", dataKey: "type", component: ButtonPropLink },
               { label: "Required", dataKey: "required" },
-              { label: "Default", dataKey: "default" },
+              {
+                label: "Default",
+                dataKey: "default",
+                format: (value) => JSON.stringify(value),
+              },
               { label: "Description", dataKey: "description" },
             ]}
             data={ButtonPropTypes}

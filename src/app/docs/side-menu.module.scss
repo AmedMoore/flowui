@@ -1,5 +1,17 @@
 .sideMenu {
-  @apply w-64 h-full mt-16 pt-4 pb-32 pl-3 pr-6;
+  float: left;
+  min-width: 16rem;
+
+  &.contentsMenu {
+    @apply hidden xl:block;
+  }
+
+  .contentContainer {
+    @apply fixed pb-4;
+    top: 6rem;
+    max-height: calc(100vh - 7rem);
+    width: 16rem;
+  }
 
   .sectionIconContainer {
     @apply bg-gradient-to-b from-primary-500/60 via-primary-500/30 to-primary-500/10 p-1.5 rounded-md text-primary-800;

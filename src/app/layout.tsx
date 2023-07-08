@@ -3,8 +3,6 @@ import type { Metadata } from "next";
 import { type PropsWithChildren } from "react";
 import { Inter } from "next/font/google";
 import { Column, Paper } from "@flowui/react/layout";
-// import { getColorScheme } from "@/services/session/get-color-scheme";
-// import { cookies } from "next/headers";
 import Navbar from "@/components/navbar";
 import styles from "./layout.module.scss";
 import clsx from "clsx";
@@ -12,11 +10,9 @@ import clsx from "clsx";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Layout({ children }: PropsWithChildren) {
-  // const colorScheme = use(getColorScheme(cookies()));
-
   return (
-    <html lang="en">
-      <body className={clsx(inter.className, "antialiased")}>
+    <html lang="en" className={styles.html}>
+      <body className={clsx(styles.body, inter.className)}>
         <Paper>
           <div className={styles.background} />
           <Navbar />
