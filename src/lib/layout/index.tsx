@@ -12,7 +12,6 @@ import Dropdown, {
 } from "./dropdown";
 import Paper from "./paper";
 import Row from "./row";
-import Skeleton from "./skeleton";
 import Spacer from "./spacer";
 import DarkModeSwitch from "./dark-mode-switch";
 import Divider from "./divider";
@@ -30,7 +29,6 @@ export {
   DropdownToggleButton,
   Paper,
   Row,
-  Skeleton,
   Spacer,
   DarkModeSwitch,
   Divider,
@@ -49,7 +47,6 @@ const Layout = {
   DropdownToggleButton,
   Paper,
   Row,
-  Skeleton,
   Spacer,
   DarkModeSwitch,
   Divider,
