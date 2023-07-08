@@ -1,16 +1,31 @@
 import { use } from "react";
-import { getDocPageContent } from "@/services/docs/get-doc-page-content";
-import { getDocPageSlugs } from "@/services/docs/get-doc-page-slugs";
-import { serialize } from "next-mdx-remote/serialize";
 import type { Props } from "./props";
-import { DocPageContent } from "./page-content";
+import { getDocPageContent } from "@/services/docs/get-doc-page-content";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { CodeBlock } from "@/components/code-block";
+import Basic from "@flowui/react/basic";
+import Data from "@flowui/react/data";
+import Feedback from "@flowui/react/feedback";
+import Forms from "@flowui/react/forms";
+import Icons from "@flowui/react/icons";
+import Layout from "@flowui/react/layout";
 
 export default function DocsPage({ params }: Props) {
   const page = use(getDocPageContent(params.catSlug, params.pageSlug));
-  const mdxSource = use(serialize(page!.content));
-  return <DocPageContent source={mdxSource} />;
-}
-
-export async function generateStaticParams() {
-  return await getDocPageSlugs();
+  return (
+    <MDXRemote
+      source={page!.content}
+      components={
+        {
+          CodeBlock,
+          ...Basic,
+          ...Data,
+          ...Feedback,
+          ...Forms,
+          ...Icons,
+          ...Layout,
+        } as any
+      }
+    />
+  );
 }
