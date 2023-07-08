@@ -146,7 +146,7 @@ export default function TextPage() {
       </Column>
 
       <Column gap="6">
-        <Text>Let's dive deep in using Text component through an advanced example 😃.</Text>
+        <Text>Lets dive deep in using Text component through an advanced example 😃.</Text>
         <Column gap={3}>
           <Text weight="semibold" size="3xl" align="center" color="primary">Article Title</Text>
           <Text as="h2" size="lg">Author Name: <Text as="span" weight="semibold">Michael Phillips</Text></Text>
