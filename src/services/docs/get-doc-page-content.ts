@@ -3,7 +3,6 @@ import "server-only";
 import { cache } from "react";
 import { join } from "node:path";
 import { readFile } from "node:fs/promises";
-import { packageDirectory } from "pkg-dir";
 import type { DocPageContent } from "@/types/doc-page-content";
 import matter from "gray-matter";
 
@@ -18,11 +17,8 @@ export const getDocPageContent = cache(
     componentSlug?: string,
   ): Promise<DocPageContent | null> => {
     try {
-      const pkgDir = await packageDirectory();
-      if (!pkgDir) return null;
-
       const filePath = `${join(
-        pkgDir,
+        process.cwd(),
         "public",
         "docs",
         cleanDirName(categorySlug),

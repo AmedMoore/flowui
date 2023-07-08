@@ -3,7 +3,6 @@ import "server-only";
 import { cache } from "react";
 import { join, parse } from "node:path";
 import { readdir, readFile } from "node:fs/promises";
-import { packageDirectory } from "pkg-dir";
 import { IconIconStar } from "@flowui/react/icons";
 import type { SideMenuItemsGroup } from "@/types/side-menu-item";
 import matter from "gray-matter";
@@ -19,10 +18,7 @@ export const getSideMenuItems = cache(
 );
 
 async function readDocsDir() {
-  const pkgDir = await packageDirectory();
-  if (!pkgDir) return [];
-
-  const docsPath = join(pkgDir, "public", "docs");
+  const docsPath = join(process.cwd(), "public", "docs");
   const dirs = await readdir(docsPath, { withFileTypes: true });
 
   const items: SideMenuItemsGroup[] = [];
