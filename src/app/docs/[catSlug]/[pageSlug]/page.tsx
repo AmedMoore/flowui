@@ -1,4 +1,4 @@
-import { use } from "react";
+import { PropsWithChildren, use } from "react";
 import type { Metadata } from "next";
 import type { Props } from "./props";
 import { getDocPageContent } from "@/services/docs/get-doc-page-content";
@@ -31,6 +31,42 @@ export default function DocsPage({ params }: Props) {
           ...Forms,
           ...Icons,
           ...Layout,
+          h1: ({ children }: PropsWithChildren) => (
+            <Basic.Text as="h1" size="2xl">
+              {children}
+            </Basic.Text>
+          ),
+          h2: ({ children }: PropsWithChildren) => (
+            <Basic.Text as="h2" size="xl">
+              {children}
+            </Basic.Text>
+          ),
+          h3: ({ children }: PropsWithChildren) => (
+            <Basic.Text as="h3" size="lg">
+              {children}
+            </Basic.Text>
+          ),
+          h4: ({ children }: PropsWithChildren) => (
+            <Basic.Text as="h4" size="md">
+              {children}
+            </Basic.Text>
+          ),
+          h5: ({ children }: PropsWithChildren) => (
+            <Basic.Text as="h5" size="sm">
+              {children}
+            </Basic.Text>
+          ),
+          h6: ({ children }: PropsWithChildren) => (
+            <Basic.Text as="h6" size="xs">
+              {children}
+            </Basic.Text>
+          ),
+          p: ({ children }: PropsWithChildren) => (
+            <Basic.Text as="p">{children}</Basic.Text>
+          ),
+          a: ({ href, children }: PropsWithChildren<{ href: string }>) => (
+            <Basic.Link href={href}>{children}</Basic.Link>
+          ),
         } as any
       }
     />
