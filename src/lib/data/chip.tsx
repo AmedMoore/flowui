@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import type Color from "../types/color";
 import type Size from "../types/size";
+import type { ElementType } from "../types/element-type";
 import styles from "./chip.module.scss";
 
 export type ChipProps = React.PropsWithChildren<{
@@ -9,9 +10,7 @@ export type ChipProps = React.PropsWithChildren<{
   size?: Size;
 }>;
 
-export type ChipComponent = (
-  props: ChipProps & { ref?: React.ForwardedRef<HTMLDivElement> },
-) => React.ReactNode;
+export type ChipComponent = ElementType<ChipProps, HTMLDivElement>;
 
 function ChipWithForwardedRef(
   { color = "basic", size = "md", children }: ChipProps,
@@ -24,6 +23,6 @@ function ChipWithForwardedRef(
   );
 }
 
-const Chip: ChipComponent = React.forwardRef(ChipWithForwardedRef);
+const Chip = React.forwardRef(ChipWithForwardedRef) as ChipComponent;
 
 export default Chip;

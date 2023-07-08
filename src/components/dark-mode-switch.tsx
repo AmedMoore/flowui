@@ -1,6 +1,6 @@
 "use client";
 
-import Switch from "@flowui/react/basic/dark-mode-switch";
+import Switch from "@flowui/react/layout/dark-mode-switch";
 import { useDarkModeSwitch } from "@flowui/react/hooks";
 import { useLayoutEffect } from "react";
 

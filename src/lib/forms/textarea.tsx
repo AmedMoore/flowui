@@ -8,6 +8,7 @@ import { useReadonlyInput } from "./input/use-readonly-input";
 import InputLabel from "./input/input-label";
 import InputInlineLabel from "./input/input-inline-label";
 import ClearButton from "./input/clear-button";
+import type { ElementType } from "@flowui/react/types/element-type";
 import styles from "./input.module.scss";
 
 export type TextAreaProps = {
@@ -34,6 +35,8 @@ export type TextAreaProps = {
   onFocus?: () => void;
   onBlur?: () => void;
 };
+
+export type TextAreaComponent = ElementType<TextAreaProps, HTMLTextAreaElement>;
 
 function TextAreaWithForwardedRed(
   {
@@ -172,6 +175,8 @@ function TextAreaWithForwardedRed(
   );
 }
 
-const TextArea = React.forwardRef(TextAreaWithForwardedRed);
+const TextArea = React.forwardRef(
+  TextAreaWithForwardedRed,
+) as TextAreaComponent;
 
 export default TextArea;

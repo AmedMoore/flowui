@@ -1,0 +1,14 @@
+.git
+.github
+.idea
+.turbo
+.next
+*.env*
+node_modules
+tests
+e2e
+jest.*.ts
+playwright.*.ts
+out
+dist
+build

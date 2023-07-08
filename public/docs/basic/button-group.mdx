@@ -1,0 +1,65 @@
+---
+title: "Button Group"
+description: "FlowUI ButtonGroup component"
+---
+
+<Column gap="12">
+  <Column gap="8">
+    <Text>Button Group</Text>
+  </Column>
+  <Column gap="8">
+    <Text>Demos</Text>
+
+    <Column gap="8">
+      <Text>Variants</Text>
+      <Column gap="8">
+        {[
+          "solid",
+          "flat",
+          "bordered",
+          "text",
+        ].map((variant) => (
+          <Column gap="4" key={variant}>
+            <Text>{variant}</Text>
+            <ButtonGroup variant={variant}>
+              <Button>One</Button>
+              <Button>Two</Button>
+              <Button>Three</Button>
+            </ButtonGroup>
+          </Column>
+        ))}
+      </Column>
+    </Column>
+
+    <Column gap="8">
+      <Text>Colors</Text>
+      <Column gap="8">
+        {[
+          "solid",
+          "flat",
+          "bordered",
+          "text",
+        ].map((variant) => (
+          <Column gap="4" key={variant}>
+            <Text>{variant} Colors</Text>
+            {[
+              "basic",
+              "primary",
+              "secondary",
+              "success",
+              "warning",
+              "error",
+              "gradient",
+            ].map((color) => (
+              <ButtonGroup variant={variant} color={color} key={color}>
+                <Button>One</Button>
+                <Button>Two</Button>
+                <Button>Three</Button>
+              </ButtonGroup>
+            ))}
+          </Column>
+        ))}
+      </Column>
+    </Column>
+  </Column>
+</Column>

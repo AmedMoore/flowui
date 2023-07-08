@@ -2,6 +2,26 @@
   float: left;
   min-width: 16rem;
 
+  &.customScrollBar {
+    &:hover {
+      ::-webkit-scrollbar-track {
+        @apply bg-basic-500/25;
+      }
+      ::-webkit-scrollbar-thumb {
+        @apply bg-basic-500/50 hover:bg-basic-500;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      @apply w-2;
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb {
+      @apply bg-transparent rounded-md;
+    }
+  }
+
   &.contentsMenu {
     @apply hidden xl:block;
   }

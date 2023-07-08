@@ -1,0 +1,151 @@
+---
+title: "Chip"
+description: ""
+---
+
+<Column gap="6">
+  <Column gap="8">
+    <Text as="h1" size="5xl">
+      Chip
+    </Text>
+  </Column>
+
+  <Column gap="5" items="start">
+    <Text>Basic</Text>
+    <Chip>Basic</Chip>
+    <CodeBlock code={`
+import { Chip } from "@flowui/react/data";
+
+export default SingleChip = () => {
+    return (
+        <Chip>Basic</Chip>
+    );
+}
+`} />
+  </Column>
+
+  <Column gap="5" items="start">
+    <Text>Colors</Text>
+    <Grid gap="2">
+      <Chip color="primary">Primary</Chip>
+      <Chip color="secondary">Secondary</Chip>
+      <Chip color="success">Success</Chip>
+      <Chip color="warning">Warning</Chip>
+      <Chip color="error">Error</Chip>
+      <Chip color="gradient">Gradient</Chip>
+    </Grid>
+    <CodeBlock code={`
+import { Chip } from "@flowui/react/data";
+import { Grid } from "@flowui/react/layout";
+
+export default Chips = () => {
+    return (
+        <Grid gap="2">
+            <Chip color="primary">Primary</Chip>
+            <Chip color="secondary">Secondary</Chip>
+            <Chip color="success">Success</Chip>
+            <Chip color="warning">Warning</Chip>
+            <Chip color="error">Error</Chip>
+            <Chip color="gradient">Gradient</Chip>
+        </Grid>
+    );
+}
+`} />
+  </Column>
+
+  <Column gap="5" items="start">
+    <Text>Sizes</Text>
+    <Grid gap="2">
+      <Chip size="xs">Extra Small</Chip>
+      <Chip size="sm">Small</Chip>
+      <Chip size="md">Medium</Chip>
+      <Chip size="lg">Large</Chip>
+      <Chip size="xl">Extra Large</Chip>
+    </Grid>
+    <CodeBlock code={`
+import { Chip } from "@flowui/react/data";
+import { Grid } from "@flowui/react/layout";
+
+export default Chips = () => {
+    return (
+        <Grid gap="2">
+          <Chip size="xs">Extra Small</Chip>
+          <Chip size="sm">Small</Chip>
+          <Chip size="md">Medium</Chip>
+          <Chip size="lg">Large</Chip>
+          <Chip size="xl">Extra Large</Chip>
+        </Grid>
+    );
+}
+`} />
+  </Column>
+
+  <Column gap="8">
+    <Text as="h2" size="2xl">
+      API
+    </Text>
+
+    <Column gap="4">
+      <Text as="h3" size="xl">
+        Import
+      </Text>
+      <CodeBlock code={`
+import { Chip } from '@flowui/react/data'
+// or
+import Chip from '@flowui/react/data/chip'
+`} />
+    </Column>
+
+    <Column gap="4">
+      <Text as="h3" size="xl">
+        Props
+      </Text>
+      <Table
+        columns={[
+          { label: "Name", dataKey: "name" },
+          { label: "Type", dataKey: "type" },
+          { label: "Required", dataKey: "required" },
+          { label: "Default", dataKey: "default" },
+          { label: "Description", dataKey: "description" },
+        ]}
+        data={[
+          {
+            name: "color",
+            default: '"basic"',
+            type: "Color",
+            required: false,
+            description: "property to change the chip background color",
+          },
+          {
+            name: "size",
+            default: '"md"',
+            type: "Size",
+            required: false,
+            description: "property to change the Chip element size",
+          },
+        ]}
+        shadow={4}
+      />
+    </Column>
+
+    <Column gap="4">
+      <Text as="h3" size="xl">
+        Types
+      </Text>
+
+      <Column gap="4" id="Size">
+        <Text>Size</Text>
+        <CodeBlock code={`
+type Size = "auto" | "xs" | "sm" | "md" | "lg" | "xl";
+`} />
+      </Column>
+
+      <Column gap="4" id="Color">
+        <Text>Color</Text>
+        <CodeBlock code={`
+type Color = "basic" | "white" | "black" | "primary" | "secondary" | "success" | "warning" | "error" | "gradient";
+`} />
+      </Column>
+    </Column>
+  </Column>
+</Column>

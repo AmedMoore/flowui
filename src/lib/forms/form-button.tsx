@@ -9,7 +9,7 @@ export default function FormButton({
   disabled,
   children,
   ...props
-}: React.PropsWithChildren<ButtonProps>) {
+}: React.PropsWithChildren<ButtonProps>): JSX.Element {
   const { loading } = useForm();
 
   return (

@@ -1,6 +1,6 @@
 import { indices } from "@/utils/array";
-import { Row } from "@flowui/react/layout";
-import { Button, Link, Text, DarkModeSwitch } from "@flowui/react/basic";
+import { Row, DarkModeSwitch } from "@flowui/react/layout";
+import { Button, Link, Text } from "@flowui/react/basic";
 import { Chip } from "@flowui/react/data";
 import { IconGithub } from "@flowui/react/icons";
 import { NavbarLink, type NavbarLinkProps } from "./navbar-link";

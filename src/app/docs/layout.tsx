@@ -15,7 +15,6 @@ export default function DocsLayout({ children }: PropsWithChildren) {
   );
 }
 
-// noinspection JSUnusedGlobalSymbols
 export const metadata = {
   title: {
     template: "%s - FlowUI",
