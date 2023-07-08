@@ -14,7 +14,6 @@ export function DocPageContent({
 }: {
   source: MDXRemoteSerializeResult;
 }) {
-  throw new Error("something went wrong");
   return (
     <MDXRemote
       {...source}
