@@ -66,13 +66,11 @@ export default GreetingUser = () => {
     </Grid>
 
     <Column gap="4">
-      <Text as="h3" weight="semibold">
-        Example on
-        <a href="#TextSize" className="text-blue-500">
-          sizes
-        </a>
-        using 2xl
-      </Text>
+        <Text as="h3">
+            Example on
+            <a href="#TextSize" className="text-blue-500"> sizes </a>
+            using 2xl
+        </Text>
       <Text size="2xl">Welcome Ahmed, howdy?</Text>
       <CodeBlock code={`
 import { Text } from "@flowui/react/basic";
@@ -109,11 +107,9 @@ export default GreetingUser = () => {
     </Grid>
 
     <Column gap="4">
-      <Text as="h3" weight="semibold">
+      <Text as="h3">
         Example on
-        <a href={"#FontWeight"} className={"text-blue-500"}>
-          weights
-        </a>
+        <a href="#FontWeight" className="text-blue-500"> weights </a>
         using extraBold
       </Text>
       <Text weight="extraBold">Welcome Ahmed, howdy?</Text>
@@ -143,12 +139,10 @@ export default GreetingUser = () => {
     </Grid>
 
     <Column gap="4">
-      <Text as="h3" weight="semibold">
-        Example on
-        <a href={"#TextTransform"} className={"text-blue-500"}>
-          transforms
-        </a>
-        using uppercase
+      <Text as="h3">
+         Example on
+         <a href="#TextTransform" className="text-blue-500"> transforms </a>
+         using uppercase
       </Text>
       <Text transform="uppercase">Welcome Ahmed, howdy?</Text>
       <CodeBlock code={`
@@ -177,13 +171,11 @@ export default GreetingUser = () => {
     </Grid>
 
     <Column gap="4">
-      <Text as="h3" weight="semibold">
-        Example on
-        <a href={"#Color"} className={"text-blue-500"}>
-          colors
-        </a>
-        using primary
-      </Text>
+       <Text as="h3">
+         Example on
+         <a href="#Color" className="text-blue-500"> colors </a>
+         using primary
+        </Text>
       <Text color="primary">Welcome Ahmed, howdy?</Text>
       <CodeBlock code={`
 import { Text } from "@flowui/react/basic";
@@ -210,11 +202,9 @@ export default GreetingUser = () => {
       ))}
     </Grid>
     <Column gap="4" customClassName="w-full">
-      <Text as="h3" weight="semibold">
+      <Text as="h3">
         Example on
-        <a href={"#TextAlignment"} className={"text-blue-500"}>
-          alignments
-        </a>
+        <a href={"#TextAlignment"} className={"text-blue-500"}> alignments </a>
         using center
       </Text>
       <Text align="center">Welcome Ahmed, howdy?</Text>
@@ -242,10 +232,7 @@ export default GreetingUser = () => {
         Article Title
       </Text>
       <Text as="h2" size="lg">
-        Author Name:
-        <Text as="span" weight="semibold">
-          Michael Phillips
-        </Text>
+        Author Name: <Text as="span" weight="semibold">Michael Phillips</Text>
       </Text>
       <Text as="p" color="hint">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
@@ -268,7 +255,7 @@ export default GreetingUser = () => {
     <CodeBlock code={`
 import { Text, Column } from "@flowui/react/basic";
 
-export default ArticeItem = () => {
+export default const ArticleItem = () => {
     return (
         <Column gap={3}>
           <Text weight="semibold" size="3xl" align="center" color="primary">Article Title</Text>

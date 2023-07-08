@@ -25,7 +25,7 @@ export default function Text({
   ...restProps
 }: TextProps) {
   return React.createElement(
-    as,
+    "p",
     {
       ...restProps,
       className: clsx(
