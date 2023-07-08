@@ -17,7 +17,7 @@ export default function Grid({
   expand,
   customClassName,
   children,
-}: GridProps) {
+}: GridProps): JSX.Element {
   return (
     <Row
       customClassName={clsx(

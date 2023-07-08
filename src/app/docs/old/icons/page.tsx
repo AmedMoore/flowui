@@ -123,10 +123,6 @@ function IconsPage() {
     );
   }, [debounceSearch]);
 
-  const handleSearchChange = useCallback((value: string) => {
-    setSearch(value);
-  }, []);
-
   const handleClearSearch = useCallback(() => {
     setSearch("");
   }, []);
@@ -144,7 +140,7 @@ function IconsPage() {
           placeholder="Find icon..."
           leadingIcon={<Icons.IconSearch />}
           value={search}
-          onChange={handleSearchChange}
+          onValueChange={setSearch}
           onClear={handleClearSearch}
           clearable
         />

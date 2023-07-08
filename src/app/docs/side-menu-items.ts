@@ -6,30 +6,18 @@ import {
   IconInput,
   IconLayout,
   IconUser,
-  type SVGProps,
 } from "@flowui/react/icons";
-
-export type SideMenuItem = {
-  label: string;
-  slug: string;
-};
-
-export type SideMenuItemsGroup = {
-  title: string;
-  slug: string;
-  icon: (props: SVGProps) => JSX.Element;
-  links: SideMenuItem[];
-};
+import type { SideMenuItemsGroup } from "@/types/side-menu-item";
 
 export const sideMenuItems: SideMenuItemsGroup[] = [
   {
     title: "Getting Started",
-    slug: "docs",
+    slug: "getting-started",
     icon: IconDocument,
     links: [
       {
         label: "Overview",
-        slug: "",
+        slug: "overview",
       },
       {
         label: "Installation",
@@ -39,7 +27,7 @@ export const sideMenuItems: SideMenuItemsGroup[] = [
   },
   {
     title: "Basic",
-    slug: "docs/basic",
+    slug: "basic",
     icon: IconInput,
     links: [
       {
@@ -58,7 +46,7 @@ export const sideMenuItems: SideMenuItemsGroup[] = [
   },
   {
     title: "Data Display",
-    slug: "docs/data",
+    slug: "data",
     icon: IconUser,
     links: [
       {
@@ -69,7 +57,7 @@ export const sideMenuItems: SideMenuItemsGroup[] = [
   },
   {
     title: "Layout",
-    slug: "docs/layout",
+    slug: "layout",
     icon: IconLayout,
     links: [
       {
@@ -112,7 +100,7 @@ export const sideMenuItems: SideMenuItemsGroup[] = [
   },
   {
     title: "Forms",
-    slug: "docs/forms",
+    slug: "forms",
     icon: IconForm,
     links: [
       {
@@ -139,7 +127,7 @@ export const sideMenuItems: SideMenuItemsGroup[] = [
   },
   {
     title: "Icons",
-    slug: "docs/icons",
+    slug: "icons",
     icon: IconIconStar,
     links: [
       {
@@ -150,7 +138,7 @@ export const sideMenuItems: SideMenuItemsGroup[] = [
   },
   {
     title: "Hooks",
-    slug: "docs/hooks",
+    slug: "hooks",
     icon: IconCode,
     links: [
       {

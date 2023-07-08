@@ -9,12 +9,21 @@ import InputLabel from "./input/input-label";
 import InputInlineLabel from "./input/input-inline-label";
 import PasswordToggleButton from "./input/password-toggle-button";
 import ClearButton from "./input/clear-button";
+import type { ElementType } from "../types/element-type";
 import styles from "./input.module.scss";
 
-export type InputProps = {
+export type InputType =
+  | "number"
+  | "password"
+  | "search"
+  | "tel"
+  | "text"
+  | "url";
+
+export type InputProps = React.ComponentProps<"input"> & {
   ref?: React.ForwardedRef<HTMLInputElement>;
   name: string;
-  type?: "text" | "number" | "email" | "password";
+  type?: InputType;
   label?: React.ReactNode;
   placeholder?: string;
   helperText?: string;
@@ -28,11 +37,14 @@ export type InputProps = {
   autoComplete?: string;
   value?: string;
   error?: string | null;
-  onChange?: (value: string) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onValueChange?: (value: string) => void;
   onClear?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
 };
+
+export type InputComponent = ElementType<InputProps, HTMLInputElement>;
 
 function InputWithForwardedRed(
   {
@@ -52,6 +64,7 @@ function InputWithForwardedRed(
     value,
     error,
     onChange,
+    onValueChange,
     onClear,
     onFocus,
     onBlur,
@@ -71,10 +84,13 @@ function InputWithForwardedRed(
   const handleChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       if (onChange) {
-        onChange(event.target.value);
+        onChange(event);
+      }
+      if (onValueChange) {
+        onValueChange(event.target.value);
       }
     },
-    [onChange],
+    [onChange, onValueChange],
   );
 
   return (
@@ -174,6 +190,6 @@ function InputWithForwardedRed(
   );
 }
 
-const Input = React.forwardRef(InputWithForwardedRed);
+const Input = React.forwardRef(InputWithForwardedRed) as InputComponent;
 
 export default Input;

@@ -5,9 +5,10 @@ import { execa } from "execa";
 import webpack from "webpack";
 import postcss from "postcss";
 import semver from "semver";
-import { __dirname, step } from "./utils.mjs";
+import { __dirname, exclude, pick, step } from "./utils.mjs";
 import webpackConfig from "../config/webpack-config-lib.mjs";
 import postcssConfig from "../config/postcss-config-lib.js";
+import flowUIConfig from "../config/flowui-config.js";
 
 const rootDir = resolve(__dirname, "..");
 const configDir = join(rootDir, "config");
@@ -138,13 +139,23 @@ const writeNodeProxyFiles = step("Write node proxy files", async () => {
 const copyStaticFiles = step("Copy static files", async () => {
   const pkgJson = await fse.readJson(join(rootDir, "package.json"));
 
+  const { dependencies, devDependencies } = pkgJson;
+
   await fse.writeJson(
     join(libDistDir, "package.json"),
-    { ...pkgJson, scripts: {} },
+    {
+      ...pkgJson,
+      scripts: {},
+      dependencies: pick(dependencies, flowUIConfig.depsWhitelist),
+      devDependencies: {
+        ...devDependencies,
+        ...exclude(dependencies, flowUIConfig.depsWhitelist),
+      },
+    },
     { spaces: 2 },
   );
 
-  for (const file of ["LICENSE", "README.md", "tailwind.config.js"]) {
+  for (const file of flowUIConfig.publicFiles) {
     await fse.copy(join(rootDir, file), join(libDistDir, file));
   }
 });

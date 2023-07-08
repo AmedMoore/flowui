@@ -5,6 +5,7 @@ import clsx from "clsx";
 import type { ElementPropsWithChildren } from "../types/element-props";
 import type Color from "../types/color";
 import type Size from "../types/size";
+import type { ElementType } from "../types/element-type";
 import useRipple from "../hooks/use-ripple";
 import Column from "../layout/column";
 import Row from "../layout/row";
@@ -38,12 +39,12 @@ type ButtonComponentProps<T extends React.ElementType> = ButtonProps<T> &
 
 export type ButtonComponent = <T extends React.ElementType = "button">(
   props: ButtonComponentProps<T>,
-) => React.ReactNode;
+) => JSX.Element;
 
 function ButtonWithForwardedRef<T extends React.ElementType>(
   props: ButtonComponentProps<T>,
   ref: React.ForwardedRef<HTMLElement>,
-) {
+): JSX.Element {
   const {
     as = "button",
     type,
@@ -133,6 +134,6 @@ function ButtonWithForwardedRef<T extends React.ElementType>(
   );
 }
 
-const Button: ButtonComponent = React.forwardRef(ButtonWithForwardedRef);
+const Button = React.forwardRef(ButtonWithForwardedRef) as ButtonComponent;
 
 export default Button;

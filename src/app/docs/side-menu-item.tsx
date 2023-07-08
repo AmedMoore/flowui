@@ -4,7 +4,7 @@ import { Text } from "@flowui/react/basic";
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { Row } from "@flowui/react/layout";
-import type { SideMenuItem } from "./side-menu-items";
+import type { SideMenuItem } from "@/types/side-menu-item";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -17,7 +17,7 @@ export function SideMenuItem({ sectionSlug, link }: SideMenuItemProps) {
   const pathname = usePathname();
 
   const href = useMemo(() => {
-    return ["", ...[sectionSlug, link.slug].filter((slug) => slug)].join("/");
+    return ["", "docs", sectionSlug, link.slug].join("/");
   }, [link.slug, sectionSlug]);
 
   const active = useMemo(() => {
