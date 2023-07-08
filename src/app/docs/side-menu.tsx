@@ -1,23 +1,17 @@
 import { use } from "react";
-import { headers } from "next/headers";
 import { Column, Row } from "@flowui/react/layout";
 import { Text } from "@flowui/react/basic";
 import { SideMenuItem } from "./side-menu-item";
 import { getSideMenuItems } from "@/services/docs/get-side-menu-items";
 import styles from "./side-menu.module.scss";
-import Bowser from "bowser";
 import clsx from "clsx";
 
-export function SideMenu() {
+export function SideMenu({
+  hasCustomScrollBar,
+}: {
+  hasCustomScrollBar: boolean;
+}) {
   const items = use(getSideMenuItems());
-
-  const userAgent = headers().get("user-agent");
-
-  let hasCustomScrollBar = false;
-  if (userAgent) {
-    const browser = Bowser.parse(userAgent);
-    hasCustomScrollBar = browser.os.name?.toUpperCase() === "WINDOWS";
-  }
 
   return (
     <Column
