@@ -1,6 +1,7 @@
 "use client";
 
 import { MDXRemote, type MDXRemoteSerializeResult } from "next-mdx-remote";
+import { CodeBlock } from "@/components/code-block";
 import Basic from "@flowui/react/basic";
 import Data from "@flowui/react/data";
 import Feedback from "@flowui/react/feedback";
@@ -17,6 +18,7 @@ export function DocPageContent({
     <MDXRemote
       {...source}
       components={{
+        CodeBlock,
         ...Basic,
         ...Data,
         ...Feedback,
