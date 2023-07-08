@@ -25,7 +25,7 @@ export function SideMenuItem({ sectionSlug, link }: SideMenuItemProps) {
   }, [href, pathname]);
 
   return (
-    <Link href={href}>
+    <Link href={href} prefetch={false}>
       <Row
         gap={2}
         items="center"

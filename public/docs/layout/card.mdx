@@ -2,8 +2,6 @@
 title: "Card"
 ---
 
-import Image from "next/image";
-
 # Card
 
 <Column gap={4} expand>
@@ -12,11 +10,10 @@ import Image from "next/image";
     justify="between"
     customClassName="w-72 h-96 border-secondary-300 relative cursor-default select-none transition-all hover:scale-95 hover:rotate-1 dark:border-secondary-800"
   >
-    <Image
+    <img
       src="/images/product-image-5.jpg"
       alt="Product Image"
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-      fill
+      className="absolute top-0 left-0 w-full object-cover"
     />
     <Column gap={2} customClassName="p-4 z-10">
       <Chip color="secondary" size="xs">
