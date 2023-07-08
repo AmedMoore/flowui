@@ -2,9 +2,8 @@ import "server-only";
 
 import { cache } from "react";
 import { join } from "node:path";
-import { readFile } from "node:fs/promises";
 import type { DocPageContent } from "@/types/doc-page-content";
-import matter from "gray-matter";
+import { readMdxFile } from "@/services/docs/read-mdx-file";
 
 function cleanDirName(dirName?: string): string {
   if (!dirName || /[^a-zA-Z0-9-]/.test(dirName)) return "";
@@ -29,9 +28,7 @@ export const getDocPageContent = cache(
         return null;
       }
 
-      const fileContent = await readFile(filePath, { encoding: "utf-8" });
-
-      const { content, data } = matter(fileContent);
+      const { content, data } = await readMdxFile(filePath);
 
       return { meta: data, content: content.trim() };
     } catch (e) {

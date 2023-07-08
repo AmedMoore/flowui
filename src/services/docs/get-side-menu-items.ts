@@ -2,10 +2,10 @@ import "server-only";
 
 import { cache } from "react";
 import { join, parse } from "node:path";
-import { readdir, readFile } from "node:fs/promises";
+import { readdir } from "node:fs/promises";
 import { IconIconStar } from "@flowui/react/icons";
+import { readMdxFile } from "@/services/docs/read-mdx-file";
 import type { SideMenuItemsGroup } from "@/types/side-menu-item";
-import matter from "gray-matter";
 
 export const getSideMenuItems = cache(
   async (): Promise<SideMenuItemsGroup[]> => {
@@ -45,23 +45,15 @@ async function readDocsDir() {
 
       // eslint-disable-next-line max-depth
       if (filename === "index") {
-        const fileContent = await readFile(
-          join(docsPath, dir.name, file.name),
-          {
-            encoding: "utf-8",
-          },
-        );
-
-        const { data } = matter(fileContent);
-
+        const { data } = await readMdxFile(join(docsPath, dir.name, file.name));
         item.title = data.title;
         item.order = data.order;
-
         continue;
       }
 
+      const { data } = await readMdxFile(join(docsPath, dir.name, file.name));
       item.links.push({
-        label: filename,
+        label: data.title ?? filename,
         slug: filename,
       });
     }
