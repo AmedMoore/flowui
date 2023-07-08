@@ -3,16 +3,23 @@ import { Column, Grid } from "@flowui/react/layout";
 import { Button, Text } from "@flowui/react/basic";
 import { Table } from "@flowui/react/data";
 import { IconUser } from "@flowui/react/icons";
-import { Code } from "@/components/code";
 import type { ButtonVariant } from "@flowui/react/basic/button";
 import type Color from "@flowui/react/types/color";
+
+import { Code } from "@/components/code";
+
+// API Snippets
+import ButtonImportSnippet from "./snippets/api/button-import-snippet.mdx";
+import ButtonVariantSnippet from "./snippets/api/button-variant-snippet.mdx";
+import ButtonColorSnippet from "./snippets/api/button-color-snippet.mdx";
+import ButtonSizeSnippet from "./snippets/api/button-size-snippet.mdx";
+import ButtonWidthSnippet from "./snippets/api/button-width-snippet.mdx";
+import ButtonTypeSnippet from "./snippets/api/button-type-snippet.mdx";
+
+// Example Snippets
+import VariantsExample from './snippets/code/variants-example.mdx';
+
 import { ButtonPropTypes } from "./button-prop-types";
-import ButtonImportSnippet from "./snippets/button-import-snippet.mdx";
-import ButtonVariantSnippet from "./snippets/button-variant-snippet.mdx";
-import ButtonColorSnippet from "./snippets/button-color-snippet.mdx";
-import ButtonSizeSnippet from "./snippets/button-size-snippet.mdx";
-import ButtonWidthSnippet from "./snippets/button-width-snippet.mdx";
-import ButtonTypeSnippet from "./snippets/button-type-snippet.mdx";
 
 // noinspection JSUnusedGlobalSymbols
 export default function ButtonPage() {
@@ -40,6 +47,7 @@ export default function ButtonPage() {
               </Button>
             ))}
           </Grid>
+          <VariantsExample />
         </Column>
 
         <Column gap="8">
@@ -171,6 +179,7 @@ export default function ButtonPage() {
   );
 }
 
+// TODO: refactor this ButtonPropLink and move it to components folder to use it another components
 function ButtonPropLink({ children }: PropsWithChildren) {
   return (
     <Code>
