@@ -4,9 +4,9 @@ import { cache } from "react";
 import { join, parse } from "node:path";
 import { readdir, readFile } from "node:fs/promises";
 import { packageDirectory } from "pkg-dir";
+import { IconIconStar } from "@flowui/react/icons";
 import type { SideMenuItemsGroup } from "@/types/side-menu-item";
 import matter from "gray-matter";
-import { IconCode } from "@flowui/react/icons";
 
 export const getSideMenuItems = cache(
   async (): Promise<SideMenuItemsGroup[]> => {
@@ -33,7 +33,7 @@ async function readDocsDir() {
     const item: SideMenuItemsGroup = {
       title: dir.name,
       slug: dir.name,
-      icon: IconCode,
+      icon: IconIconStar,
       links: [],
     };
 
@@ -42,10 +42,12 @@ async function readDocsDir() {
     });
 
     for (const file of files) {
+      // eslint-disable-next-line max-depth
       if (!file.isFile()) continue;
 
       const filename = parse(file.name).name.toLowerCase();
 
+      // eslint-disable-next-line max-depth
       if (filename === "index") {
         const fileContent = await readFile(
           join(docsPath, dir.name, file.name),
