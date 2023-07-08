@@ -25,3 +25,14 @@ export function step(name, fn) {
     }
   };
 }
+
+export function pick(obj, props) {
+  return props.reduce((pre, cur) => ({ ...pre, [cur]: obj[cur] }), {});
+}
+
+export function exclude(obj, props) {
+  return pick(
+    obj,
+    Object.keys(obj).filter((prop) => !props.includes(prop)),
+  );
+}

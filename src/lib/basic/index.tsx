@@ -1,11 +1,17 @@
-export { default as Button } from "./button";
-export { default as ButtonGroup } from "./button-group";
-export { default as DarkModeSwitch } from "./dark-mode-switch";
-export { default as Divider } from "./divider";
-export { default as Text } from "./text";
-export { default as Link } from "./link";
+import Button, { type ButtonProps } from "./button";
+import ButtonGroup, { type ButtonGroupProps } from "./button-group";
+import Text, { type TextProps } from "./text";
+import Link, { type LinkProps } from "./link";
 
-export { type ButtonProps } from "./button";
-export { type ButtonGroupProps } from "./button-group";
-export { type TextProps } from "./text";
-export { type LinkProps } from "./link";
+export { Button, ButtonGroup, Text, Link };
+
+export type { ButtonProps, ButtonGroupProps, TextProps, LinkProps };
+
+const Basic = {
+  Button,
+  ButtonGroup,
+  Text,
+  Link,
+};
+
+export default Basic;

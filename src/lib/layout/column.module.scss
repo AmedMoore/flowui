@@ -1,3 +1,7 @@
 .column {
   @apply flex flex-col;
+
+  &.scrollable {
+    @apply overflow-auto;
+  }
 }

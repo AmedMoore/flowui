@@ -6,6 +6,7 @@ import Input, { type InputProps } from "./input";
 import Dropdown, { DropdownMenu, DropdownMenuItem } from "../layout/dropdown";
 import Text from "../basic/text";
 import Column from "../layout/column";
+import type { ElementType } from "@flowui/react/types/element-type";
 import styles from "./select.module.scss";
 
 export type SelectOption = {
@@ -16,10 +17,19 @@ export type SelectOption = {
 
 export type SelectProps = InputProps & {
   options: SelectOption[];
+  multiple?: boolean;
 };
 
+export type SelectComponent = ElementType<SelectProps, HTMLInputElement>;
+
 function SelectWithForwardedRef(
-  { options, value, onChange, ...props }: Omit<SelectProps, "ref">,
+  {
+    options,
+    value,
+    onChange,
+    onValueChange,
+    ...props
+  }: Omit<SelectProps, "ref">,
   forwardedRef: React.ForwardedRef<HTMLInputElement>,
 ) {
   const containerRef = React.useRef<HTMLDivElement>(null);
@@ -44,19 +54,26 @@ function SelectWithForwardedRef(
 
   const handleSelectChange = React.useCallback(
     (value: string) => {
-      if (onChange) {
-        onChange(value);
+      if (onValueChange) {
+        onValueChange(value);
       }
       setFilter("");
     },
-    [onChange],
+    [onValueChange],
+  );
+
+  const handleFilterChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      setFilter(event.target.value);
+    },
+    [],
   );
 
   const handleClearValue = React.useCallback(() => {
-    if (onChange) {
-      onChange("");
+    if (onValueChange) {
+      onValueChange("");
     }
-  }, [onChange]);
+  }, [onValueChange]);
 
   const displayValue = React.useMemo(
     () => filter || options.find((o) => o.value === value)?.label || "",
@@ -69,7 +86,7 @@ function SelectWithForwardedRef(
         {...props}
         ref={inputRef}
         value={displayValue}
-        onChange={setFilter}
+        onChange={handleFilterChange}
         onFocus={openMenu}
         onClear={handleClearValue}
       />
@@ -126,6 +143,6 @@ function SelectOption({
   );
 }
 
-const Select = React.forwardRef(SelectWithForwardedRef);
+const Select = React.forwardRef(SelectWithForwardedRef) as SelectComponent;
 
 export default Select;

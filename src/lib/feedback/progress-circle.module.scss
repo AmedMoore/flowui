@@ -6,26 +6,26 @@
   }
 
   .circle {
-    @apply text-primary-2;
+    @apply text-primary-500;
   }
 
   .valueText {
-    @apply absolute text-xl text-primary-2;
+    @apply absolute text-xl text-primary-500;
   }
 }
 
 :global(.dark) {
   .progressCircleContainer {
     .circleBorder {
-      @apply text-basic-500;
+      @apply text-basic-200;
     }
 
     .circle {
-      @apply text-primary-3;
+      @apply text-primary-600;
     }
 
     .valueText {
-      @apply text-primary-3;
+      @apply text-primary-600;
     }
   }
 }

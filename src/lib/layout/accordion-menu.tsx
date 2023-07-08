@@ -60,7 +60,7 @@ export function AccordionMenuToggleButton<
 >(props: AccordionMenuToggleButtonComponentProps<T>) {
   const { onClick, trailingIcon, children, ...restProps } = props;
   const { expanded } = React.useContext(AccordionMenuContext);
-  const handleClick = useOnClickHandler(onClick);
+  const handleClick = useOnClickHandler(onClick as () => void);
 
   return (
     <Button

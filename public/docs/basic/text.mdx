@@ -1,0 +1,399 @@
+---
+title: "Text"
+description: "FlowUI Text component"
+---
+
+<Column gap="12">
+  <Column gap="8">
+    <Text as="h1" size="5xl">Text</Text>
+  </Column>
+
+  <Column gap="8">
+    <Text as="h2" size="2xl">Demos</Text>
+  </Column>
+
+  <Column gap="4">
+    <Text as="h3" size="xl">Variants</Text>
+    <Grid>
+      {["h1", "h2", "h3", "h4", "h5", "h6", "p", "span"].map(
+        (variant, index) => (
+          <Text key={index} as={variant}>{variant}</Text>
+        )
+      )}
+    </Grid>
+
+    <Column gap="5">
+      <Text as="h3">
+        Example on
+        <a href="#TextVariant" className="text-blue-500"> variants </a>
+        using h1
+      </Text>
+      <Text as="h1">Welcome Ahmed, howdy?</Text>
+      <CodeBlock code={`
+import { Text } from "@flowui/react/basic";
+
+export default GreetingUser = () => {
+    return (
+        // h1 variant
+        <Text as="h1">Welcome Ahmed, howdy?</Text>
+    );
+}
+`} />
+    </Column>
+  </Column>
+
+  <Column gap="4">
+    <Text as="h3" size="xl">
+      Size
+    </Text>
+    <Grid>
+      {[
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "2xl",
+        "3xl",
+        "4xl",
+        "5xl",
+        "6xl",
+      ].map((size, index) => (
+        <Text key={index} size={size}>
+          {size}
+        </Text>
+      ))}
+    </Grid>
+
+    <Column gap="4">
+        <Text as="h3">
+            Example on
+            <a href="#TextSize" className="text-blue-500"> sizes </a>
+            using 2xl
+        </Text>
+      <Text size="2xl">Welcome Ahmed, howdy?</Text>
+      <CodeBlock code={`
+import { Text } from "@flowui/react/basic";
+
+export default GreetingUser = () => {
+    return (
+        // 2xl Size
+        <Text size="2xl">Welcome Ahmed, howdy?</Text>
+    );
+}
+`} />
+    </Column>
+  </Column>
+
+  <Column gap="4">
+    <Text as="h3" size="xl">
+      Weight
+    </Text>
+    <Grid>
+      {[
+        "thin",
+        "extraLight",
+        "light",
+        "normal",
+        "medium",
+        "semibold",
+        "bold",
+        "extraBold",
+      ].map((weight, index) => (
+        <Text key={index} weight={weight}>
+          {weight}
+        </Text>
+      ))}
+    </Grid>
+
+    <Column gap="4">
+      <Text as="h3">
+        Example on
+        <a href="#FontWeight" className="text-blue-500"> weights </a>
+        using extraBold
+      </Text>
+      <Text weight="extraBold">Welcome Ahmed, howdy?</Text>
+      <CodeBlock code={`
+import { Text } from "@flowui/react/basic";
+
+export default GreetingUser = () => {
+    return (
+        // extraBold Weight
+        <Text weight="extraBold">Welcome Ahmed, howdy?</Text>
+    );
+}
+`} />
+    </Column>
+  </Column>
+
+  <Column gap="4">
+    <Text as="h3" size="xl">
+      Transform
+    </Text>
+    <Grid>
+      {["uppercase", "lowercase", "capitalize"].map((transform, index) => (
+        <Text key={index} transform={transform}>
+          {transform}
+        </Text>
+      ))}
+    </Grid>
+
+    <Column gap="4">
+      <Text as="h3">
+         Example on
+         <a href="#TextTransform" className="text-blue-500"> transforms </a>
+         using uppercase
+      </Text>
+      <Text transform="uppercase">Welcome Ahmed, howdy?</Text>
+      <CodeBlock code={`
+import { Text } from "@flowui/react/basic";
+
+export default GreetingUser = () => {
+    return (
+        // uppercase Trasnform
+        <Text transform="uppercase">Welcome Ahmed, howdy?</Text>
+    );
+}
+`} />
+    </Column>
+  </Column>
+
+  <Column gap="4">
+    <Text as="h3" size="xl">
+      Colors
+    </Text>
+    <Grid customClassName="dark:bg-transparent bg-slate-200 w-fit rounded-lg px-4 py-1">
+      {["basic", "primary", "secondary", "hint"].map((color, index) => (
+        <Text key={index} color={color}>
+          {color}
+        </Text>
+      ))}
+    </Grid>
+
+    <Column gap="4">
+       <Text as="h3">
+         Example on
+         <a href="#Color" className="text-blue-500"> colors </a>
+         using primary
+        </Text>
+      <Text color="primary">Welcome Ahmed, howdy?</Text>
+      <CodeBlock code={`
+import { Text } from "@flowui/react/basic";
+
+export default GreetingUser = () => {
+    return (
+        // primary Color
+        <Text color="primary">Welcome Ahmed, howdy?</Text>
+    );
+}
+`} />
+    </Column>
+  </Column>
+
+  <Column gap="4">
+    <Text as="h3" size="xl">
+      Alignments
+    </Text>
+    <Grid customClassName="w-fit rounded-lg px-4 py-1">
+      {["left", "center", "right", "justify"].map((align, index) => (
+        <Column key={index} customClassName="w-full border p-1 rounded-lg">
+          <Text align={align}>{align}</Text>
+        </Column>
+      ))}
+    </Grid>
+    <Column gap="4" customClassName="w-full">
+      <Text as="h3">
+        Example on
+        <a href={"#TextAlignment"} className={"text-blue-500"}> alignments </a>
+        using center
+      </Text>
+      <Text align="center">Welcome Ahmed, howdy?</Text>
+      <CodeBlock code={`
+import { Text } from "@flowui/react/basic";
+
+export default GreetingUser = () => {
+    return (
+        // center Alignment.
+        <Row customClassName="w-full"> // the parent must have width: 100%;
+            <Text align="center">Welcome Ahmed, howdy?</Text>
+        </Row>
+    );
+}
+`} />
+    </Column>
+  </Column>
+
+  <Column gap="6">
+    <Text>
+      Lets dive deep in using Text component through an advanced example 😃.
+    </Text>
+    <Column gap={3}>
+      <Text weight="semibold" size="3xl" align="center" color="primary">
+        Article Title
+      </Text>
+      <Text as="h2" size="lg">
+        Author Name: <Text as="span" weight="semibold">Michael Phillips</Text>
+      </Text>
+      <Text as="p" color="hint">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+        blanditiis deleniti distinctio incidunt labore odit porro, sapiente
+        veniam. Aspernatur delectus eligendi eum harum impedit incidunt
+        officiis sed ullam vel voluptas! A amet animi at delectus dolore ex
+        illum laudantium magni natus. Accusantium aliquid aperiam, beatae
+        culpa dolor, dolores error excepturi facere fugit hic inventore
+        ipsam ipsum libero natus nobis optio placeat porro quas qui
+        quibusdam, quidem quo ratione rerum suscipit vel veritatis
+        voluptatem voluptates. A, animi consequatur dolorum ea enim est, et
+        explicabo molestiae nemo placeat praesentium sequi unde
+        voluptatibus.
+      </Text>
+      <Text align="right" weight="light" color="hint" size="sm">
+        Posted at {new Date().toDateString()}
+      </Text>
+    </Column>
+
+    <CodeBlock code={`
+import { Text, Column } from "@flowui/react/basic";
+
+export default const ArticleItem = () => {
+    return (
+        <Column gap={3}>
+          <Text weight="semibold" size="3xl" align="center" color="primary">Article Title</Text>
+          <Text as="h2" size="lg">Author Name: <Text as="span" weight="semibold">Michael Phillips</Text></Text>
+          <Text as="p" color="hint">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis deleniti distinctio incidunt labore odit porro, sapiente veniam. Aspernatur delectus eligendi eum harum impedit incidunt officiis sed ullam vel voluptas! A amet animi at delectus dolore ex illum laudantium magni natus. Accusantium aliquid aperiam, beatae culpa dolor, dolores error excepturi facere fugit hic inventore ipsam ipsum libero natus nobis optio placeat porro quas qui quibusdam, quidem quo ratione rerum suscipit vel veritatis voluptatem voluptates. A, animi consequatur dolorum ea enim est, et explicabo molestiae nemo placeat praesentium sequi unde voluptatibus.</Text>
+          <Text align="right" weight="light" color="hint" size="sm">Posted at {new Date().toDateString()}</Text>
+        </Column>
+    );
+}
+`} />
+  </Column>
+
+  <Column gap="8">
+    <Text as="h2" size="2xl">
+      API
+    </Text>
+
+    <Column gap="4">
+      <Text as="h3" size="xl">
+        Import
+      </Text>
+      <CodeBlock code={`
+import { Text } from "@flowui/react";
+// or
+import { Text } from "@flowui/react/basic";
+// or
+import Text from "@flowui/react/basic/text";
+`} />
+    </Column>
+
+    <Column gap="4">
+      <Text as="h3" size="xl">
+        Props
+      </Text>
+      <Table
+        columns={[
+          { label: "Name", dataKey: "name" },
+          { label: "Type", dataKey: "type" },
+          { label: "Required", dataKey: "required" },
+          { label: "Default", dataKey: "default" },
+          { label: "Description", dataKey: "description" },
+        ]}
+        data={[
+          {
+            name: "as",
+            type: "React.ElementType",
+            default: '"p"',
+            required: false,
+            description: "Changes which tag component outputs",
+          },
+          {
+            name: "size",
+            type: "TextSize",
+            default: '"none"',
+            required: false,
+            description:
+              "Several options to change the font size like: xs, sm, lg, xl, etc...",
+          },
+          {
+            name: "color",
+            type: "Color",
+            default: '"none"',
+            required: false,
+            description: "A property to change the font color",
+          },
+          {
+            name: "weight",
+            type: "FontWeight",
+            default: '"none"',
+            required: false,
+            description: "A property to change the font weight ",
+          },
+          {
+            name: "align",
+            type: "TextAlignment",
+            default: '"none"',
+            required: false,
+            description: "Change the font alignment",
+          },
+          {
+            name: "transform",
+            type: "TextTransform",
+            default: '"none"',
+            required: false,
+            description:
+              "Change the font transform-property from several options",
+          },
+        ]}
+        shadow={4}
+      />
+    </Column>
+
+    <Column gap="4">
+      <Text as="h3" size="xl">
+        Types
+      </Text>
+
+      <Column gap="4" id="TextVariant">
+        <Text>Text Variant</Text>
+        <CodeBlock code={`
+type TextVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
+`} />
+      </Column>
+
+      <Column gap="4" id="FontWeight">
+        <Text>Font Weight</Text>
+        <CodeBlock code={`
+type FontWeight = "thin" | "extraLight" | "light" | "normal" | "medium" | "semibold" | "bold" | "extraBold";
+`} />
+      </Column>
+
+      <Column gap="4" id="TextTransform">
+        <Text>Text Transform</Text>
+        <CodeBlock code={`
+type TextTransform = "uppercase" | "lowercase" | "capitalize";
+`} />
+      </Column>
+
+      <Column gap="4" id="TextSize">
+        <Text>Text Size</Text>
+        <CodeBlock code={`
+type TextSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl" | "7xl" | "8xl" | "9xl";
+`} />
+      </Column>
+
+      <Column gap="4" id="Color">
+        <Text>Color</Text>
+        <CodeBlock code={`
+type Color = "basic" | "primary" | "secondary" | "hint";
+`} />
+      </Column>
+
+      <Column gap="4" id="TextAlignment">
+        <Text>Text Alignment</Text>
+        <CodeBlock code={`
+type TextAlignment = "left" | "center" | "right" | "justify";
+`} />
+      </Column>
+    </Column>
+  </Column>
+</Column>

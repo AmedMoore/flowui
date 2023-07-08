@@ -1,3 +1,50 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "extends": [
+    "next",
+    "prettier"
+  ],
+  "rules": {
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "max-len": [
+      "error",
+      80,
+      {
+        "ignorePattern": "^(import|export)\\s.+\\sfrom\\s.+;$"
+      }
+    ],
+    "max-lines": [
+      "error",
+      300
+    ],
+    "max-depth": [
+      "error",
+      2
+    ],
+    "react-hooks/exhaustive-deps": [
+      "error"
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ]
+  }
 }

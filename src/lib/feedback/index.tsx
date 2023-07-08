@@ -1,5 +1,17 @@
-export { default as Spinner } from "./spinner";
-export { default as ProgressCircle } from "./progress-circle";
+import Alert, { type AlertProps } from "./alert";
+import ProgressCircle, { type ProgressCircleProps } from "./progress-circle";
+import Spinner, { type SpinnerProps } from "./spinner";
+import Skeleton from "./skeleton";
 
-export { type SpinnerProps } from "./spinner";
-export { type ProgressCircleProps } from "./progress-circle";
+export { Alert, ProgressCircle, Spinner, Skeleton };
+
+export type { AlertProps, ProgressCircleProps, SpinnerProps };
+
+const Feedback = {
+  Alert,
+  ProgressCircle,
+  Spinner,
+  Skeleton,
+};
+
+export default Feedback;

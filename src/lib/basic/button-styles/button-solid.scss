@@ -1,0 +1,65 @@
+.button {
+  &.solid {
+    @apply text-white;
+
+    &.basic {
+      @apply bg-basic-500 hover:bg-basic-600;
+    }
+
+    &.primary {
+      @apply bg-primary-500 hover:bg-primary-600;
+    }
+
+    &.secondary {
+      @apply bg-secondary-500 hover:bg-secondary-600;
+    }
+
+    &.success {
+      @apply bg-success-500 hover:bg-success-600;
+    }
+
+    &.warning {
+      @apply bg-warn-500 hover:bg-warn-600;
+    }
+
+    &.error {
+      @apply bg-error-500 hover:bg-error-600;
+    }
+
+    &.gradient {
+      @apply bg-gradient-to-tl from-secondary-500 to-primary-500;
+      @apply hover:bg-gradient-to-tl hover:from-secondary-600 hover:to-primary-600;
+    }
+  }
+}
+
+:global(.dark) {
+  .button {
+    &.solid {
+      &.primary {
+        @apply bg-primary-600 hover:bg-primary-700;
+      }
+
+      &.secondary {
+        @apply bg-secondary-600 hover:bg-secondary-700;
+      }
+
+      &.success {
+        @apply bg-success-600 hover:bg-success-700;
+      }
+
+      &.warning {
+        @apply bg-warn-600 hover:bg-warn-700;
+      }
+
+      &.error {
+        @apply bg-error-600 hover:bg-error-700;
+      }
+
+      &.gradient {
+        @apply bg-gradient-to-tl from-secondary-600 to-primary-600;
+        @apply hover:bg-gradient-to-tl hover:from-secondary-700 hover:to-primary-700;
+      }
+    }
+  }
+}

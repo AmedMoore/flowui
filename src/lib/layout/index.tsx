@@ -1,30 +1,55 @@
-export { default as AccordionMenu } from "./accordion-menu";
-export { default as Card } from "./card";
-export { default as Column } from "./column";
-export { default as Grid } from "./grid";
-export { default as Dropdown } from "./dropdown";
-export { default as Paper } from "./paper";
-export { default as Row } from "./row";
-export { default as SideMenu } from "./side-menu";
-export { default as SideMenuItem } from "./side-menu-item";
-export { default as Skeleton } from "./skeleton";
-export { default as Spacer } from "./spacer";
-
-export {
+import AccordionMenu, {
+  AccordionMenuContent,
+  AccordionMenuToggleButton,
+} from "./accordion-menu";
+import Card from "./card";
+import Column from "./column";
+import Grid from "./grid";
+import Dropdown, {
   DropdownMenu,
   DropdownMenuItem,
   DropdownToggleButton,
 } from "./dropdown";
+import Paper from "./paper";
+import Row from "./row";
+import Spacer from "./spacer";
+import DarkModeSwitch from "./dark-mode-switch";
+import Divider from "./divider";
 
 export {
+  AccordionMenu,
   AccordionMenuContent,
   AccordionMenuToggleButton,
-} from "./accordion-menu";
+  Card,
+  Column,
+  Grid,
+  Dropdown,
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownToggleButton,
+  Paper,
+  Row,
+  Spacer,
+  DarkModeSwitch,
+  Divider,
+};
 
-export { type CardProps } from "./card";
-export { type ColumnProps } from "./column";
-export { type GridProps } from "./grid";
-export { type PaperProps } from "./paper";
-export { type RowProps } from "./row";
-export { type SideMenuProps } from "./side-menu";
-export { type SideMenuItemProps } from "./side-menu-item";
+const Layout = {
+  AccordionMenu,
+  AccordionMenuContent,
+  AccordionMenuToggleButton,
+  Card,
+  Column,
+  Grid,
+  Dropdown,
+  DropdownMenu,
+  DropdownMenuItem,
+  DropdownToggleButton,
+  Paper,
+  Row,
+  Spacer,
+  DarkModeSwitch,
+  Divider,
+};
+
+export default Layout;

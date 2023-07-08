@@ -1,0 +1,7 @@
+.content {
+  @apply p-6 w-full;
+
+  @media screen and (min-width: 1536px) {
+    max-width: 1536px;
+  }
+}

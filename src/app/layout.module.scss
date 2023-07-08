@@ -1,0 +1,40 @@
+.html,
+.body {
+  @apply antialiased min-h-screen w-screen overflow-x-hidden;
+}
+
+.html {
+  @apply bg-basic-100;
+
+  @media (prefers-color-scheme: dark) {
+    @apply bg-black;
+  }
+}
+
+.body {
+  @apply flex;
+}
+
+.background {
+  @apply fixed w-full h-full left-0 top-0 bg-gradient-to-br from-transparent via-transparent to-primary-50 z-10;
+}
+
+.content {
+  @apply z-20;
+
+  *::selection {
+    @apply bg-warn-200;
+  }
+}
+
+:global(.dark) {
+  .background {
+    @apply from-transparent via-transparent to-primary-950/50;
+  }
+
+  .content {
+    *::selection {
+      @apply bg-secondary-400;
+    }
+  }
+}

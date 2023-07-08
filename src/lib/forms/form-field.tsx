@@ -19,9 +19,9 @@ export default function FormField({ name, ...props }: InputProps) {
   );
 
   const handleChange = React.useCallback(
-    (value: string) => {
+    (event: React.ChangeEvent<HTMLInputElement>) => {
       if (hasField(name)) {
-        setValue(name, value as unknown);
+        setValue(name, event.target.value);
       }
     },
     [name, hasField, setValue],

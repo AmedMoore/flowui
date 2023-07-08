@@ -1,12 +1,11 @@
 import React from "react";
-import clsx from "clsx";
-
 import { justifyStyleName } from "./justify-style-name";
 import { itemsStyleName } from "./items-style-name";
 import { type FlexGap, gapStyleName } from "./gap-style-name";
 import styles from "./row.module.scss";
 import flexStyles from "./flex.module.scss";
 import type { ElementPropsWithChildren } from "../types/element-props";
+import clsx from "clsx";
 
 export type RowProps = ElementPropsWithChildren<{
   expand?: boolean;
@@ -15,16 +14,10 @@ export type RowProps = ElementPropsWithChildren<{
   gap?: FlexGap;
 }>;
 
-export type RowComponent = (
-  props: React.PropsWithRef<
-    RowProps & { ref?: React.ForwardedRef<HTMLDivElement> }
-  >,
-) => React.ReactNode;
-
 function RowWithForwardedRef(
   props: RowProps,
   ref: React.ForwardedRef<HTMLDivElement>,
-) {
+): JSX.Element {
   const {
     children,
     expand,
@@ -53,6 +46,6 @@ function RowWithForwardedRef(
   );
 }
 
-const Row: RowComponent = React.forwardRef(RowWithForwardedRef);
+const Row = React.forwardRef(RowWithForwardedRef);
 
 export default Row;

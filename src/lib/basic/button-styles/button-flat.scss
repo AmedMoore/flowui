@@ -1,0 +1,67 @@
+.button {
+  &.flat {
+    &.basic {
+      @apply text-basic-700 bg-basic-200 hover:bg-basic-300;
+    }
+
+    &.primary {
+      @apply text-primary-700 bg-primary-200 hover:bg-primary-300;
+    }
+
+    &.secondary {
+      @apply text-secondary-700 bg-secondary-200 hover:bg-secondary-300;
+    }
+
+    &.success {
+      @apply text-success-700 bg-success-200 hover:bg-success-300;
+    }
+
+    &.warning {
+      @apply text-warn-700 bg-warn-200 hover:bg-warn-300;
+    }
+
+    &.error {
+      @apply text-error-700 bg-error-200 hover:bg-error-300;
+    }
+
+    &.gradient {
+      @apply text-secondary-700 bg-gradient-to-tl from-secondary-200 to-primary-200;
+      @apply hover:bg-gradient-to-tl hover:from-secondary-300 hover:to-primary-300;
+    }
+  }
+}
+
+:global(.dark) {
+  .button {
+    &.flat {
+      &.basic {
+        @apply text-basic-100 bg-basic-800 hover:bg-basic-700;
+      }
+
+      &.primary {
+        @apply text-primary-100 bg-primary-950 hover:bg-primary-900;
+      }
+
+      &.secondary {
+        @apply text-secondary-100 bg-secondary-950 hover:bg-secondary-900;
+      }
+
+      &.success {
+        @apply text-success-100 bg-success-950 hover:bg-success-900;
+      }
+
+      &.warning {
+        @apply text-warn-100 bg-warn-950 hover:bg-warn-900;
+      }
+
+      &.error {
+        @apply text-error-100 bg-error-950 hover:bg-error-900;
+      }
+
+      &.gradient {
+        @apply text-secondary-100 bg-gradient-to-tl from-secondary-950 to-primary-950;
+        @apply hover:bg-gradient-to-tl hover:from-secondary-900 hover:to-primary-900;
+      }
+    }
+  }
+}
