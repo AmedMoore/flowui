@@ -11,6 +11,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeExternalLinks from "rehype-external-links";
+// @ts-ignore
 import rehypeFigure from "rehype-figure";
 import "./mdx-overrides.scss";
 
