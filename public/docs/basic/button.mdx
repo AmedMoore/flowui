@@ -11,13 +11,14 @@ description: "FlowUI Button component"
     </Column>
 
     <Column gap="8">
+        <Text>Button component helps you make a modern Button with a few props. Please give it a shot.</Text>
         <Text as="h2" size="2xl">
             Demos
         </Text>
 
         <Column gap="4">
-            <Text as="h3" size="xl">
-                Variants
+            <Text as="h3" size="xl" color="primary">
+                <a href="#ButtonVariant">Variants</a>
             </Text>
             <Grid>
                 {["solid", "flat", "bordered", "text"].map((variant) => (
@@ -53,8 +54,8 @@ export default ButtonVariants = () => {
         </Column>
 
         <Column gap="8">
-            <Text as="h3" size="xl">
-                Colors
+            <Text as="h3" size="xl" color="primary">
+                <a href="#Color">Colors</a>
             </Text>
             <Column gap="8">
                 {["solid", "flat", "bordered", "text"].map((variant) => (
@@ -86,8 +87,8 @@ export default ButtonVariants = () => {
         </Column>
 
         <Column gap="4">
-            <Text as="h3" size="xl">
-                Sizes
+            <Text as="h3" size="xl" color="primary">
+                <a href="#Size">Sizes</a>
             </Text>
             <Grid>
                 <Button size="xs">Tiny</Button>
@@ -267,16 +268,16 @@ import Button from "@flowui/react/basic/button";
                     {
                         name: "disabled",
                         type: "boolean",
-                        default: "false",
+                        default: false,
                         required: false,
-                        description: "",
+                        description: "disabled prop is for controlling the disable state for the button.",
                     },
                     {
                         name: "loading",
                         type: "boolean",
-                        default: "false",
+                        default: false,
                         required: false,
-                        description: "",
+                        description: "button component provides a loading icon spinner that indicates the state of button you can control it using this prop.",
                     },
                     {
                         name: "iconOnly",
