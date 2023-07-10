@@ -31,6 +31,7 @@ async function readDocsDir() {
       slug: dir.name,
       icon: IconIconStar,
       links: [],
+      order: 0,
     };
 
     const files = await readdir(join(docsPath, dir.name), {
@@ -47,7 +48,7 @@ async function readDocsDir() {
       if (filename === "index") {
         const { data } = await readMdxFile(join(docsPath, dir.name, file.name));
         item.title = data.title;
-        item.order = data.order;
+        item.order = data.order ?? item.order;
         continue;
       }
 
@@ -55,11 +56,14 @@ async function readDocsDir() {
       item.links.push({
         label: data.title ?? filename,
         slug: filename,
+        order: data.order ?? 0,
       });
     }
+
+    item.links.sort((a, b) => (a.order > b.order ? 1 : -1));
 
     items.push(item);
   }
 
-  return items.sort((a, b) => ((a.order ?? 0) > (b.order ?? 0) ? 1 : -1));
+  return items.sort((a, b) => (a.order > b.order ? 1 : -1));
 }

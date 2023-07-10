@@ -3,24 +3,16 @@ import type { PropsWithChildren } from "react";
 import { headers } from "next/headers";
 import { Row } from "@flowui/react/layout";
 import { SideMenu } from "./side-menu";
-import { ContentsMenu } from "./contents-menu";
+import { getClientPlatform, Platform } from "@/services/get-client-platform";
 import styles from "./docs-layout.module.scss";
-import Bowser from "bowser";
 
 export default function DocsLayout({ children }: PropsWithChildren) {
-  const userAgent = headers().get("user-agent");
-
-  let hasCustomScrollBar = false;
-  if (userAgent) {
-    const browser = Bowser.parse(userAgent);
-    hasCustomScrollBar = browser.os.name?.toUpperCase() === "WINDOWS";
-  }
+  const platform = getClientPlatform(headers());
 
   return (
-    <Row expand customClassName={styles.content}>
-      <SideMenu hasCustomScrollBar={hasCustomScrollBar} />
-      <div className="float-left flex-1 mt-16 px-4">{children}</div>
-      <ContentsMenu hasCustomScrollBar={hasCustomScrollBar} />
+    <Row expand customClassName={styles.layout}>
+      <SideMenu hasCustomScrollBar={platform !== Platform.Darwin} />
+      <div className={styles.content}>{children}</div>
     </Row>
   );
 }

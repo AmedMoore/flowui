@@ -5,6 +5,7 @@ import { type FlexGap, gapStyleName } from "./gap-style-name";
 import styles from "./row.module.scss";
 import flexStyles from "./flex.module.scss";
 import type { ElementPropsWithChildren } from "../types/element-props";
+import type { ElementType } from "../types/element-type";
 import clsx from "clsx";
 
 export type RowProps = ElementPropsWithChildren<{
@@ -13,6 +14,8 @@ export type RowProps = ElementPropsWithChildren<{
   items?: keyof typeof itemsStyleName;
   gap?: FlexGap;
 }>;
+
+export type RowComponent = ElementType<RowProps, HTMLDivElement>;
 
 function RowWithForwardedRef(
   props: RowProps,
@@ -46,6 +49,6 @@ function RowWithForwardedRef(
   );
 }
 
-const Row = React.forwardRef(RowWithForwardedRef);
+const Row = React.forwardRef(RowWithForwardedRef) as RowComponent;
 
 export default Row;

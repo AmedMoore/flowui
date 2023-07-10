@@ -1,7 +1,11 @@
-.content {
+.layout {
   @apply p-6 w-full;
 
   @media screen and (min-width: 1536px) {
     max-width: 1536px;
+  }
+
+  .content {
+    @apply float-left flex-1 mt-16 px-4;
   }
 }
