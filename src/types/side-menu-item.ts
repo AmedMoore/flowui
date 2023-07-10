@@ -3,6 +3,7 @@ import type { SVGProps } from "@flowui/react/icons";
 export type SideMenuItem = {
   label: string;
   slug: string;
+  order: number;
 };
 
 export type SideMenuItemsGroup = {
@@ -10,5 +11,5 @@ export type SideMenuItemsGroup = {
   slug: string;
   icon: (props: SVGProps) => JSX.Element;
   links: SideMenuItem[];
-  order?: number;
+  order: number;
 };

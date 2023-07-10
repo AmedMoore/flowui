@@ -1,27 +1,32 @@
 ---
 title: "Text"
 description: "FlowUI Text component"
+order: 2
 ---
 
-<Column gap="12">
-  <Column gap="8">
-    <Text as="h1" size="5xl">Text</Text>
-  </Column>
+# Text
 
-  <Column gap="8">
-    <Text as="h2" size="2xl">Demos</Text>
-  </Column>
+<br />
+<br />
 
-  <Column gap="4">
-    <Text as="h3" size="xl">Variants</Text>
-    <Grid>
-      {["h1", "h2", "h3", "h4", "h5", "h6", "p", "span"].map(
-        (variant, index) => (
-          <Text key={index} as={variant}>{variant}</Text>
-        )
-      )}
-    </Grid>
+## Variants
 
+<br />
+
+<Grid>
+  <h1>h1</h1>
+  <h2>h2</h2>
+  <h3>h3</h3>
+  <h4>h4</h4>
+  <h5>h5</h5>
+  <h6>h6</h6>
+  <p>p</p>
+  <span>span</span>
+</Grid>
+
+<br />
+
+<Column gap="4">
     <Column gap="5">
       <Text as="h3">
         Example on
@@ -408,5 +413,4 @@ type TextAlignment = "left" | "center" | "right" | "justify";
 `} />
       </Column>
     </Column>
-  </Column>
 </Column>

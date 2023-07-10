@@ -1,0 +1,21 @@
+@import "highlight.js/styles/atom-one-dark.css";
+
+.mdx-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    @apply mb-4;
+  }
+
+  button p {
+    @apply m-0;
+  }
+
+  pre {
+    @apply mb-4 rounded-lg overflow-hidden;
+  }
+}
