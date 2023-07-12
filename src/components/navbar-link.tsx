@@ -21,7 +21,7 @@ export function NavbarLink({ label, href }: NavbarLinkProps) {
     <Link href={href} size="sm">
       <span
         className={clsx("transition-all", {
-          "text-primary-500 dark:text-primary-400": active,
+          "text-basic-900 dark:text-basic-100": active,
           "text-basic-500 hover:text-basic-900": !active,
           "dark:text-basic-400 dark:hover:text-basic-50": !active,
         })}

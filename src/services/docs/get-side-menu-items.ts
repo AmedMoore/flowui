@@ -3,7 +3,6 @@ import "server-only";
 import { cache } from "react";
 import { join, parse } from "node:path";
 import { readdir } from "node:fs/promises";
-import { IconIconStar } from "@flowui/react/icons";
 import { readMdxFile } from "@/services/docs/read-mdx-file";
 import type { SideMenuItemsGroup } from "@/types/side-menu-item";
 
@@ -29,7 +28,6 @@ async function readDocsDir() {
     const item: SideMenuItemsGroup = {
       title: dir.name,
       slug: dir.name,
-      icon: IconIconStar,
       links: [],
       order: 0,
     };

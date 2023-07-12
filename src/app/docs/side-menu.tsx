@@ -20,12 +20,9 @@ export function SideMenu({
       })}
     >
       <Column scrollable gap={10} customClassName={styles.contentContainer}>
-        {items.map(({ icon: Icon, ...section }) => (
+        {items.map((section) => (
           <Column key={section.title} gap={4}>
             <Row gap={3} items="center">
-              <div className={styles.sectionIconContainer}>
-                <Icon size={14} />
-              </div>
               <Text weight="semibold" color="basic">
                 {section.title}
               </Text>

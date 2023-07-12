@@ -16,18 +16,16 @@ export function ContentsMenuItem({
         <Row
           gap={2}
           items="center"
-          customClassName={clsx(
-            "transition-all hover:text-basic-900 dark:hover:text-basic-50",
-          )}
+          customClassName={clsx("transition-all", {
+            "text-primary-500 dark:text-primary-400": active,
+            "text-basic-500 hover:text-basic-900": !active,
+            "dark:text-basic-300 dark:hover:text-basic-50": !active,
+          })}
         >
-          <Text
-            size="xs"
-            customClassName="opacity-25 dark:opacity-35"
-            color={active ? "primary" : "basic"}
-          >
+          <Text size="xs" customClassName="opacity-25 dark:opacity-35">
             &#x2022;
           </Text>
-          <Text size="sm" weight="medium" color={active ? "primary" : "basic"}>
+          <Text size="sm" weight="medium">
             {item.label}
           </Text>
         </Row>
