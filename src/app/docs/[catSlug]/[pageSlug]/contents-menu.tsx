@@ -1,7 +1,11 @@
+"use client";
+
+import { useLayoutEffect, useState } from "react";
 import type { DocPageTocItem } from "@/types/doc-page-content";
 import { Column, Row } from "@flowui/react/layout";
 import { Text } from "@flowui/react/basic";
 import { IconGithub } from "@flowui/react/icons";
+import { ContentsMenuItem } from "./contents-menu-item";
 import type { Props } from "./props";
 import styles from "../../side-menu.module.scss";
 import clsx from "clsx";
@@ -20,6 +24,20 @@ export function ContentsMenu({
   toc: DocPageTocItem[];
 }) {
   const sourceUrl = getSourceFileUrl({ params });
+  const [activeEl, setActiveEl] = useState("");
+
+  useLayoutEffect(() => {
+    const handler = () => {
+      const anchorTags = [
+        ...document.querySelectorAll<HTMLAnchorElement>(".mdx-content a"),
+      ].filter(isInViewport);
+      setActiveEl(anchorTags[0]?.getAttribute("href") ?? "");
+    };
+    document.addEventListener("scroll", handler);
+    return () => {
+      document.removeEventListener("scroll", handler);
+    };
+  }, []);
 
   return (
     <Column
@@ -33,7 +51,11 @@ export function ContentsMenu({
         </Text>
         <Column gap={2}>
           {toc.map((item) => (
-            <ContentsMenuItem key={item.slug} item={item} />
+            <ContentsMenuItem
+              key={item.slug}
+              item={item}
+              active={activeEl === item.slug}
+            />
           ))}
         </Column>
         <Column gap={2}>
@@ -51,25 +73,11 @@ export function ContentsMenu({
   );
 }
 
-function ContentsMenuItem({ item }: { item: DocPageTocItem }) {
+function isInViewport(el: HTMLAnchorElement) {
+  const rect = el.getBoundingClientRect();
   return (
-    <a href={item.slug}>
-      <Row
-        gap={2}
-        items="center"
-        customClassName={clsx(
-          "transition-all",
-          "text-basic-500 hover:text-basic-900",
-          "dark:text-basic-400 dark:hover:text-basic-50",
-        )}
-      >
-        <Text size="xs" customClassName="opacity-25 dark:opacity-35">
-          &#x2022;
-        </Text>
-        <Text size="sm" weight="medium">
-          {item.label}
-        </Text>
-      </Row>
-    </a>
+    el.getAttribute("href")?.startsWith("#") &&
+    rect.top >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
   );
 }

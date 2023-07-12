@@ -33,16 +33,16 @@ export default function Mdx({ source }: { source: string }) {
             rehypeHighlight,
             rehypeSlug,
             [
-              rehypeAutolinkHeadings,
-              {
-                behavior: "wrap",
-              },
-            ],
-            [
               rehypeExternalLinks,
               {
                 target: "_blank",
                 rel: "nofollow",
+              },
+            ],
+            [
+              rehypeAutolinkHeadings,
+              {
+                behavior: "wrap",
               },
             ],
           ],
