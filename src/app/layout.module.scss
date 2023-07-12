@@ -23,7 +23,7 @@
   @apply z-20;
 
   *::selection {
-    @apply bg-warn-200;
+    @apply bg-secondary-200;
   }
 }
 
@@ -34,7 +34,7 @@
 
   .content {
     *::selection {
-      @apply bg-secondary-400;
+      @apply bg-secondary-900;
     }
   }
 }

@@ -31,7 +31,11 @@ export function ContentsMenu({
         <Text weight="semibold" color="basic">
           On this page
         </Text>
-        <ContentsMenuGroup items={toc} />
+        <Column gap={2}>
+          {toc.map((item) => (
+            <ContentsMenuItem key={item.slug} item={item} />
+          ))}
+        </Column>
         <Column gap={2}>
           <a href={sourceUrl} target="_blank" rel="nofollow">
             <Text as="span" color="basic">
@@ -47,36 +51,25 @@ export function ContentsMenu({
   );
 }
 
-function ContentsMenuGroup({ items }: { items: DocPageTocItem[] }) {
-  return (
-    <Column gap={2}>
-      {items.map((item) => (
-        <ContentsMenuItem key={item.slug} item={item} />
-      ))}
-    </Column>
-  );
-}
-
 function ContentsMenuItem({ item }: { item: DocPageTocItem }) {
   return (
-    <Column style={{ marginLeft: `${item.level - 1}em` }}>
-      <a href={item.slug}>
-        <Row
-          gap={2}
-          items="center"
-          customClassName={clsx(
-            "transition-all",
-            "text-basic-500 hover:text-basic-900",
-            "dark:text-basic-400 dark:hover:text-basic-50",
-          )}
-        >
-          <Text size="xs">&#x2022;</Text>
-          <Text size="sm" weight="medium">
-            {item.label}
-          </Text>
-        </Row>
-      </a>
-      {item.children.length > 0 && <ContentsMenuGroup items={item.children} />}
-    </Column>
+    <a href={item.slug}>
+      <Row
+        gap={2}
+        items="center"
+        customClassName={clsx(
+          "transition-all",
+          "text-basic-500 hover:text-basic-900",
+          "dark:text-basic-400 dark:hover:text-basic-50",
+        )}
+      >
+        <Text size="xs" customClassName="opacity-25 dark:opacity-35">
+          &#x2022;
+        </Text>
+        <Text size="sm" weight="medium">
+          {item.label}
+        </Text>
+      </Row>
+    </a>
   );
 }

@@ -7,7 +7,7 @@ import { join } from "node:path";
 import { readMdxFile } from "@/services/docs/read-mdx-file";
 import type { DocPageContent } from "@/types/doc-page-content";
 
-const RegexCleanUrlSegmentName = /[^a-zA-Z0-9-]/g;
+const RegexCleanUrlSegmentName = /[^a-zA-Z0-9-_]/g;
 
 /** @see https://regex101.com/r/n6XQub/4 */
 const RegexMdxHeadings = /(?<flag>#{1,6})\s+(?<label>.+)/g;
@@ -50,10 +50,10 @@ export const getDocPageContent = cache(
         page.toc.push({
           label: label.trim(),
           slug: `#${label
-            .replace(RegexCleanUrlSegmentName, "-")
+            .replace(/\s/g, "-")
+            .replace(RegexCleanUrlSegmentName, "")
             .toLowerCase()}`,
           level: flag.length,
-          children: [],
         });
       }
 

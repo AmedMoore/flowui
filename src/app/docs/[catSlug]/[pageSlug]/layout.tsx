@@ -21,9 +21,7 @@ export default function DocsPageLayout({
 
   return (
     <Row expand gap={4}>
-      <Column expand customClassName="mdx-content">
-        {children}
-      </Column>
+      <Column expand>{children}</Column>
       <ContentsMenu
         params={params}
         toc={page.toc}
