@@ -3,36 +3,26 @@ title: "Button"
 description: "FlowUI Button component"
 ---
 
-<Column gap="12">
-    <Column gap="8">
-        <Text as="h1" size="5xl">
-            Button
-        </Text>
-    </Column>
+# Button
 
-    <Column gap="8">
-        <Text>Button component helps you make a modern Button with a few props. Please give it a shot.</Text>
-        <Text as="h2" size="2xl">
-            Demos
-        </Text>
+> Button component helps you make a modern Button with a few props. Please give it a shot.
 
-        <Column gap="4">
-            <Text as="h3" size="xl" color="primary">
-                <a href="#ButtonVariant">Variants</a>
-            </Text>
-            <Grid>
-                {["solid", "flat", "bordered", "text"].map((variant) => (
-                    <Button variant={variant} key={variant}>
-                        <Text transform="capitalize">{variant}</Text>
-                    </Button>
-                ))}
-            </Grid>
-            <CodeBlock code={`
+## Demos
 
+### Variants
+
+<Grid customClassName="mb-8">
+    <Button variant="solid">solid</Button>
+    <Button variant="flat">flat</Button>
+    <Button variant="bordered">bordered</Button>
+    <Button variant="text">text</Button>
+</Grid>
+
+```javascript
 import { Grid } from "@flowui/react/layout";
 import { Button, Text } from "@flowui/react/basic";
 
-export default ButtonVariants = () => {
+export const ButtonVariants = () => {
     return (
       <Grid>
         <Button variant="solid">
@@ -50,59 +40,261 @@ export default ButtonVariants = () => {
       </Grid>
     );
 }
-`}/>
-        </Column>
+```
 
-        <Column gap="8">
-            <Text as="h3" size="xl" color="primary">
-                <a href="#Color">Colors</a>
-            </Text>
-            <Column gap="8">
-                {["solid", "flat", "bordered", "text"].map((variant) => (
-                    <Column gap="4" key={variant}>
-                        <Text transform="capitalize">{variant} colors</Text>
-                        <Grid>
-                            {[
-                                "basic",
-                                "primary",
-                                "secondary",
-                                "success",
-                                "warning",
-                                "error",
-                                "gradient",
-                            ].map((color) => (
-                                <Button
-                                    variant={variant}
-                                    color={color}
-                                    key={color}
-                                    shadow={variant == "solid"}
-                                >
-                                    {color}
-                                </Button>
-                            ))}
-                        </Grid>
-                    </Column>
-                ))}
-            </Column>
-        </Column>
+### Colors
 
-        <Column gap="4">
-            <Text as="h3" size="xl" color="primary">
-                <a href="#Size">Sizes</a>
-            </Text>
-            <Grid>
-                <Button size="xs">Tiny</Button>
-                <Button size="sm">Small</Button>
-                <Button size="md">Medium</Button>
-                <Button size="lg">Large</Button>
-                <Button size="xl">Extra Large</Button>
-            </Grid>
-            <CodeBlock code={`
+Solid Buttons
 
+<Grid customClassName="mb-8">
+    <Button variant="solid" color="basic">
+        basic
+    </Button>
+    <Button variant="solid" color="primary">
+        primary
+    </Button>
+    <Button variant="solid" color="secondary">
+        secondary
+    </Button>
+    <Button variant="solid" color="success">
+        success
+    </Button>
+    <Button variant="solid" color="warning">
+        warning
+    </Button>
+    <Button variant="solid" color="error">
+        error
+    </Button>
+    <Button variant="solid" color="gradient">
+        gradient
+    </Button>
+</Grid>
+
+```javascript
 import { Grid } from "@flowui/react/layout";
 import { Button, Text } from "@flowui/react/basic";
 
-export default ButtonSizes = () => {
+export const SolidBasic = () => {
+    return (
+      <Grid>
+        <Button variant="solid" color="basic">
+          basic
+        </Button>
+        <Button variant="solid" color="primary">
+          primary
+        </Button>
+        <Button variant="solid" color="secondary">
+          secondary
+        </Button>
+        <Button variant="solid" color="success">
+          success
+        </Button>
+        <Button variant="solid" color="warning">
+          warning
+        </Button>
+        <Button variant="solid" color="error">
+          error
+        </Button>
+        <Button variant="solid" color="gradient">
+          gradient
+        </Button>
+      </Grid>
+    );
+}
+```
+
+Flat Buttons
+
+<Grid customClassName="mb-8">
+    <Button variant="flat" color="basic">
+        basic
+    </Button>
+    <Button variant="flat" color="primary">
+        primary
+    </Button>
+    <Button variant="flat" color="secondary">
+        secondary
+    </Button>
+    <Button variant="flat" color="success">
+        success
+    </Button>
+    <Button variant="flat" color="warning">
+        warning
+    </Button>
+    <Button variant="flat" color="error">
+        error
+    </Button>
+    <Button variant="flat" color="gradient">
+        gradient
+    </Button>
+</Grid>
+
+```javascript
+import { Grid } from "@flowui/react/layout";
+import { Button } from "@flowui/react/basic";
+
+export const FlatButtons = () => {
+    return (
+      <Grid>
+        <Button variant="flat" color="basic">
+          basic
+        </Button>
+        <Button variant="flat" color="primary">
+          primary
+        </Button>
+        <Button variant="flat" color="secondary">
+          secondary
+        </Button>
+        <Button variant="flat" color="success">
+          success
+        </Button>
+        <Button variant="flat" color="warning">
+          warning
+        </Button>
+        <Button variant="flat" color="error">
+          error
+        </Button>
+        <Button variant="flat" color="gradient">
+          gradient
+        </Button>
+      </Grid>
+    );
+}
+```
+
+Bordered Buttons
+
+<Grid customClassName="mb-8">
+    <Button variant="bordered" color="basic">
+        basic
+    </Button>
+    <Button variant="bordered" color="primary">
+        primary
+    </Button>
+    <Button variant="bordered" color="secondary">
+        secondary
+    </Button>
+    <Button variant="bordered" color="success">
+        success
+    </Button>
+    <Button variant="bordered" color="warning">
+        warning
+    </Button>
+    <Button variant="bordered" color="error">
+        error
+    </Button>
+    <Button variant="bordered" color="gradient">
+        gradient
+    </Button>
+</Grid>
+
+```javascript
+import { Grid } from "@flowui/react/layout";
+import { Button } from "@flowui/react/basic";
+
+export const BorderedButtons = () => {
+    return (
+      <Grid>
+        <Button variant="bordered" color="basic">
+          basic
+        </Button>
+        <Button variant="bordered" color="primary">
+          primary
+        </Button>
+        <Button variant="bordered" color="secondary">
+          secondary
+        </Button>
+        <Button variant="bordered" color="success">
+          success
+        </Button>
+        <Button variant="bordered" color="warning">
+          warning
+        </Button>
+        <Button variant="bordered" color="error">
+          error
+        </Button>
+        <Button variant="bordered" color="gradient">
+          gradient
+        </Button>
+      </Grid>
+    );
+}
+```
+
+Text Buttons
+
+<Grid customClassName="mb-8">
+    <Button variant="text" color="basic">
+        basic
+    </Button>
+    <Button variant="text" color="primary">
+        primary
+    </Button>
+    <Button variant="text" color="secondary">
+        secondary
+    </Button>
+    <Button variant="text" color="success">
+        success
+    </Button>
+    <Button variant="text" color="warning">
+        warning
+    </Button>
+    <Button variant="text" color="error">
+        error
+    </Button>
+    <Button variant="text" color="gradient">
+        gradient
+    </Button>
+</Grid>
+
+```javascript
+import { Grid } from "@flowui/react/layout";
+import { Button } from "@flowui/react/basic";
+
+export const TextButtons = () => {
+    return (
+      <Grid>
+        <Button variant="text" color="basic">
+          basic
+        </Button>
+        <Button variant="text" color="primary">
+          primary
+        </Button>
+        <Button variant="text" color="secondary">
+          secondary
+        </Button>
+        <Button variant="text" color="success">
+          success
+        </Button>
+        <Button variant="text" color="warning">
+          warning
+        </Button>
+        <Button variant="text" color="error">
+          error
+        </Button>
+        <Button variant="text" color="gradient">
+          gradient
+        </Button>
+      </Grid>
+    );
+}
+```
+
+### Sizes
+
+<Grid customClassName="mb-8">
+    <Button size="xs">Tiny</Button>
+    <Button size="sm">Small</Button>
+    <Button size="md">Medium</Button>
+    <Button size="lg">large</Button>
+    <Button size="xl">Extra Large</Button>
+</Grid>
+
+```javascript
+import { Grid } from "@flowui/react/layout";
+import { Button } from "@flowui/react/basic";
+
+export const ButtonSizes = () => {
     return (
       <Grid>
         <Button size="xs">Tiny</Button>
@@ -113,23 +305,20 @@ export default ButtonSizes = () => {
       </Grid>
     );
 }
-`}/>
-        </Column>
+```
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Status
-            </Text>
-            <Grid>
-                <Button disabled>Disabled</Button>
-                <Button loading>Loading</Button>
-            </Grid>
-            <CodeBlock code={`
+### Status
 
+<Grid customClassName="mb-8">
+    <Button disabled>Disabled</Button>
+    <Button loading>Loading</Button>
+</Grid>
+
+```javascript
 import { Grid } from "@flowui/react/layout";
-import { Button, Text } from "@flowui/react/basic";
+import { Button } from "@flowui/react/basic";
 
-export default ButtonStatus = () => {
+export const ButtonStatus = () => {
     return (
       <Grid>
         <Button disabled>Disabled</Button>
@@ -137,31 +326,27 @@ export default ButtonStatus = () => {
       </Grid>
     );
 }
+```
 
-`}/>
-        </Column>
+### Icons
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Icons
-            </Text>
-            <Grid>
-                <Button leadingIcon={<IconUser/>}>Leading Icon</Button>
-                <Button trailingIcon={<IconUser/>}>Trailing Icon</Button>
-                <Button iconOnly>
-                    <IconUser/>
-                </Button>
-                <Button iconOnly circle>
-                    <IconUser/>
-                </Button>
-            </Grid>
-            <CodeBlock code={`
+<Grid customClassName="mb-8">
+    <Button leadingIcon={<IconUser/>}>Leading Icon</Button>
+    <Button trailingIcon={<IconUser/>}>Trailing Icon</Button>
+    <Button iconOnly>
+        <IconUser/>
+    </Button>
+    <Button iconOnly circle>
+        <IconUser/>
+    </Button>
+</Grid>
 
+```javascript
 import { Grid } from "@flowui/react/layout";
-import { Button, Text } from "@flowui/react/basic";
+import { Button } from "@flowui/react/basic";
 import { IconUser } from "@flowui/react/icons";
 
-export default ButtonStatus = () => {
+export const ButtonStatus = () => {
     return (
       <Grid>
         <Button leadingIcon={<IconUser />}>Leading Icon</Button>
@@ -175,199 +360,70 @@ export default ButtonStatus = () => {
       </Grid>
     );
 }
+```
 
-`}/>
-        </Column>
-    </Column>
 
-    <Column gap="8">
-        <Text as="h2" size="2xl">
-            API
-        </Text>
+## API
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Import
-            </Text>
-            <CodeBlock code={`
+### Import
 
+```javascript
 import { Button } from "@flowui/react";
 // or
 import { Button } from "@flowui/react/basic";
 // or
 import Button from "@flowui/react/basic/button";
-`}/>
-        </Column>
+```
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Props
-            </Text>
-            <Table
-                columns={[
-                    {label: "Name", dataKey: "name"},
-                    {label: "Type", dataKey: "type"},
-                    {label: "Required", dataKey: "required"},
-                    {
-                        label: "Default",
-                        dataKey: "default",
-                        format: (value) => JSON.stringify(value),
-                    },
-                    {label: "Description", dataKey: "description"},
-                ]}
-                data={[
-                    {
-                        name: "as",
-                        type: "React.ElementType",
-                        default: "button",
-                        required: false,
-                        description: "Changes which tag component outputs",
-                    },
-                    {
-                        name: "variant",
-                        type: "ButtonVariant",
-                        default: "solid",
-                        required: false,
-                        description: "",
-                    },
-                    {
-                        name: "color",
-                        type: "Color",
-                        default: "primary",
-                        required: false,
-                        description: "Button color",
-                    },
-                    {
-                        name: "size",
-                        type: "Size",
-                        default: "md",
-                        required: false,
-                        description: "Button size",
-                    },
-                    {
-                        name: "width",
-                        type: "ButtonWidth",
-                        default: "auto",
-                        required: false,
-                        description: "Button width",
-                    },
-                    {
-                        name: "shadow",
-                        type: "boolean",
-                        default: "none",
-                        required: false,
-                        description: "",
-                    },
-                    {
-                        name: "type",
-                        type: "ButtonType",
-                        default: "button",
-                        required: false,
-                        description: "",
-                    },
-                    {
-                        name: "disabled",
-                        type: "boolean",
-                        default: false,
-                        required: false,
-                        description: "disabled prop is for controlling the disable state for the button.",
-                    },
-                    {
-                        name: "loading",
-                        type: "boolean",
-                        default: false,
-                        required: false,
-                        description: "button component provides a loading icon spinner that indicates the state of button you can control it using this prop.",
-                    },
-                    {
-                        name: "iconOnly",
-                        type: "boolean",
-                        default: "false",
-                        required: false,
-                        description: "",
-                    },
-                    {
-                        name: "circle",
-                        type: "boolean",
-                        default: "false",
-                        required: false,
-                        description: "",
-                    },
-                    {
-                        name: "focusable",
-                        type: "boolean",
-                        default: "false",
-                        required: false,
-                        description: "",
-                    },
-                    {
-                        name: "leadingIcon",
-                        type: "JSX.Element",
-                        default: "undefined",
-                        required: false,
-                        description: "",
-                    },
-                    {
-                        name: "trailingIcon",
-                        type: "JSX.Element",
-                        default: "undefined",
-                        required: false,
-                        description: "",
-                    },
-                ]}
-                shadow={4}
-            />
-        </Column>
+### Props
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Types
-            </Text>
 
-            <Column gap="4" id="ButtonVariant">
-                <Text>ButtonVariant</Text>
-                <CodeBlock code={`
+| Name         | Type              | Required  | Default     | Description                                                                                                            |
+| ------------ | ----------------- |  -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
+| as           | React.ElementType | false     | "button"    | Changes which tag component outputs                                                                                    |
+| variant      | ButtonVariant     | false     | "solid"     | you can change the variant of button using this prop.                                                                  |
+| color        | Color             | false     | "primary"   | update the button color depending on Color type                                                                        |
+| size         | Size              | false     | "md"        | button size prop                                                                                                       |
+| width        | ButtonWidth       | false     | "auto"      | Button size: "auto" or "full"                                                                                          |
+| shadow       | boolean           | false     | "none"      | this prop let's you have an awesome shadow beyond the button                                                           |
+| type         | ButtonType        | false     | "button"    | button type: "submit" or "button"                                                                                      |
+| disabled     | boolean           | false     | false       | disabled prop is for controlling the disable state for the button                                                      |
+| loading      | boolean           | false     | false       | button component provides a loading icon spinner that indicates the state of button you can control it using this prop |
+| iconOnly     | boolean           | false     | false       | it makes the button act as icon only. so you can wrap any icon with the button and it'll act as icon                   |
+| circle       | boolean           | false     | false       | it makes the button have a circle shape                                                                                |
+| focusable    | boolean           | false     | true        | this property gives a border to the button when it's focused                                                           |
+| leadingIcon  | JSX.Element       | false     | "undefined" | to have a icon in the beginning of button send the icon element in this prop                                           |
+| trailingIcon | JSX.Element       | false     | "undefined" | to have a icon in the end of button send the icon element in this prop                                                 |
 
+
+## Types
+
+### Button Variant
+
+```typescript
 type ButtonVariant = "solid" | "bordered" | "flat" | "text";
-`}/>
+```
 
-            </Column>
+### Color
 
-            <Column gap="4" id="Color">
-                <Text>Color</Text>
-                <CodeBlock code={`
-
+```typescript
 type Color = "basic" | "primary" | "secondary" | "success" | "warning" | "error" | "gradient";
-`}/>
+```
 
-            </Column>
+### Size
 
-            <Column gap="4" id="Size">
-                <Text>Size</Text>
-                <CodeBlock code={`
-
+```typescript
 type Size = "auto" | "xs" | "sm" | "md" | "lg" | "xl";
-`}/>
+```
 
-            </Column>
+### Button Width
 
-            <Column gap="4" id="ButtonWidth">
-                <Text>ButtonWidth</Text>
-                <CodeBlock code={`
-
+```typescript
 type ButtonWidth = "auto" | "full";
-`}/>
+```
 
-            </Column>
+### Button Type
 
-            <Column gap="4" id="ButtonType">
-                <Text>ButtonType</Text>
-                <CodeBlock code={`
-
+```typescript
 type ButtonType = "button" | "submit";
-`}/>
-
-            </Column>
-        </Column>
-    </Column>
-</Column>
+```
