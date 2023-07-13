@@ -6,6 +6,9 @@
 .html {
   @apply bg-basic-100;
 
+  /* @see https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my */
+  scroll-padding-top: 5rem; // height of the navbar + 1rem of padding
+
   @media (prefers-color-scheme: dark) {
     @apply bg-black;
   }

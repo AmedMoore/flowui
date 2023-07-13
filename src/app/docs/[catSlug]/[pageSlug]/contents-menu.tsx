@@ -77,7 +77,7 @@ function isInViewport(el: HTMLAnchorElement) {
   const rect = el.getBoundingClientRect();
   return (
     el.getAttribute("href")?.startsWith("#") &&
-    rect.top >= 0 &&
+    rect.top > 64 && // account for the navbar height
     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
   );
 }
