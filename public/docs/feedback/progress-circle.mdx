@@ -1,27 +1,28 @@
 ---
 title: "Progress Circle"
 ---
-<Column gap="12">
-    <Column gap="8">
-        <Text as="h1" size="5xl">Progress Circle</Text>
-    </Column>
-    <Column gap="8">
-        <Text>Sometimes you are wasting time in creating a progress loader for operations like download or upload. You have it now with just 1 property.</Text>
-        <Text as="h2" size="2xl">Demos</Text>
-    </Column>
-    <Row items="center" customClassName="flex-wrap" gap={3}>
-        {[20,40,60,80,100].map(progress => (
-            <ProgressCircle value={progress} />
-        ))}
-    </Row>
-    <Column gap={5}>
-        <Text>Code</Text>
 
-        <CodeBlock code={`
+# Progress Circle
 
+> Sometimes you are wasting time in creating a progress loader for operations like download or upload. You have it now with just 1 property.
+
+<br />
+
+## Demos
+
+<Row items="center" customClassName="flex-wrap" gap={3}>
+    <ProgressCircle value={20} />
+    <ProgressCircle value={40} />
+    <ProgressCircle value={60} />
+    <ProgressCircle value={80} />
+    <ProgressCircle value={100} />
+</Row>
+
+```javascript
+import { Row } from '@flowui/react/layout'
 import { ProgressCircle } from "@flowui/react/feedback";
 
-export default LoadingComponent = () => {
+export const LoadingComponent = () => {
     return (
         <Row items="center" customClassName="flex-wrap" gap={3}>
             <ProgressCircle value={20} />
@@ -31,56 +32,23 @@ export default LoadingComponent = () => {
             <ProgressCircle value={100} />
         </Row>
     );
-]
-        `} />
-    </Column>
+}
+```
 
-    <Column gap="8">
-        <Text as="h2" size="2xl">
-            API
-        </Text>
+## API
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Import
-            </Text>
-            <CodeBlock code={`
+### Import
+
+```javascript
 import { ProgressCircle } from "@flowui/react";
 // or
 import { ProgressCircle } from "@flowui/react/feedback";
 // or
 import ProgressCircle from "@flowui/react/feedback/progress-circle";
-`}/>
-        </Column>
+```
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Props
-            </Text>
-            <Table
-                columns={[
-                    {label: "Name", dataKey: "name"},
-                    {label: "Type", dataKey: "type"},
-                    {label: "Required", dataKey: "required"},
-                    {
-                        label: "Default",
-                        dataKey: "default",
-                        format: (value) => JSON.stringify(value),
-                    },
-                    {label: "Description", dataKey: "description"},
-                ]}
-                data={[
-                    {
-                        name: "value",
-                        type: "number",
-                        default: 0,
-                        required: true,
-                        description: "loading progress state",
-                    },
-                ]}
-                shadow={4}
-            />
-        </Column>
-    </Column>
+### Props
 
-</Column>
+| Name | Type | Required | Default | Description |
+| ---- | ---- | -------- | ----------- | ------- |
+| value | number | true  | 0 | loading progress state |
