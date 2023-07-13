@@ -1,23 +1,33 @@
 ---
 title: "Spinner"
 ---
-<Column gap="12">
-    <Column gap="8">
-        <Text as="h1" size="5xl">Spinner</Text>
-    </Column>
-    <Column gap="8">
-        <Text>A simple component that requires only the size from you. </Text>
-        <Text as="h2" size="2xl">Demos</Text>
-    </Column>
-    <Text>A Small example with several sizes.</Text>
-    <Row expand items="center" justify="between">
-        {[20, 25, 30, 40, 50, 60].map((size) => ( <Spinner size={size} /> ))}
-    </Row>
-    <CodeBlock code={`
 
+# Spinner
+
+> A simple component that requires only the size from you.
+
+<br />
+
+## Demo
+
+### Size Demo
+
+A Small example with several sizes.
+
+<Row justify="between" customClassName="my-8">
+    <Spinner size={20} />
+    <Spinner size={25} />
+    <Spinner size={30} />
+    <Spinner size={40} />
+    <Spinner size={50} />
+    <Spinner size={60} />
+</Row>
+
+```javascript
+import { Row } from '@flowui/react/layout';
 import { Spinner } from '@flowui/react/feedback';
 
-export default Spinners = () => {
+export const Spinners = () => {
     return (
         <Row expand items="center" justify="between">
             <Spinner size={20} />
@@ -29,53 +39,22 @@ export default Spinners = () => {
         </Row>
     );
 };
-    `} />
+```
 
-    <Column gap="8">
-        <Text as="h2" size="2xl">
-            API
-        </Text>
+## API
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Import
-            </Text>
-            <CodeBlock code={`
+### Import
+
+```javascript
 import { Spinner } from "@flowui/react";
 // or
 import { Spinner } from "@flowui/react/feedback";
 // or
 import Spinner from "@flowui/react/feedback/spinner";
-`}/>
-        </Column>
+```
 
-        <Column gap="4">
-            <Text as="h3" size="xl">
-                Props
-            </Text>
-            <Table
-                columns={[
-                    {label: "Name", dataKey: "name"},
-                    {label: "Type", dataKey: "type"},
-                    {label: "Required", dataKey: "required"},
-                    {
-                        label: "Default",
-                        dataKey: "default",
-                        format: (value) => JSON.stringify(value),
-                    },
-                    {label: "Description", dataKey: "description"},
-                ]}
-                data={[
-                    {
-                        name: "size",
-                        type: "number",
-                        default: 30,
-                        required: false,
-                        description: "Spinner size",
-                    },
-                    ]}
-                shadow={4}
-            />
-        </Column>
-    </Column>
-</Column>
+### Props
+
+| Name | Type | Required | Default | Description |
+| ---- | ---- | -------- | ----------- | ------- |
+| size | number | false  | 30 | Spinner Size |
