@@ -1,17 +1,19 @@
-import type { AriaRole, PropsWithChildren } from "react";
+import React from "react";
 
 export type ElementProps<Props = unknown> = {
   id?: string;
-  role?: AriaRole;
+  role?: React.AriaRole;
   tabIndex?: -1 | 0;
   title?: string;
   customClassName?: string;
-  onClick?: () => void;
-  onDoubleClick?: () => void;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  onDoubleClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  onMouseEnter?: (event: React.MouseEvent<HTMLElement>) => void;
+  onMouseLeave?: (event: React.MouseEvent<HTMLElement>) => void;
+  onMouseMove?: (event: React.MouseEvent<HTMLElement>) => void;
+  style?: React.CSSProperties;
 } & Props;
 
-export type ElementPropsWithChildren<Props = unknown> = PropsWithChildren<
+export type ElementPropsWithChildren<Props = unknown> = React.PropsWithChildren<
   ElementProps<Props>
 >;

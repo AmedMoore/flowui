@@ -1,15 +1,16 @@
 import React from "react";
 import clsx from "clsx";
-
 import styles from "./text.module.scss";
 import type { ElementPropsWithChildren } from "../types/element-props";
+import type Color from "../types/color";
 
 export type TextProps = ElementPropsWithChildren<{
   as?: TextVariant;
   size?: TextSize;
   weight?: FontWeight;
-  color?: TextColor;
+  color?: Color | "hint";
   align?: TextAlignment;
+  transform?: TextTransform;
 }>;
 
 export default function Text({
@@ -18,6 +19,7 @@ export default function Text({
   weight,
   color,
   align,
+  transform,
   customClassName,
   children,
   ...restProps
@@ -32,6 +34,7 @@ export default function Text({
         size && styles[textSizeClassName[size]],
         color && styles[color],
         align && styles[align],
+        transform && styles[textTransformClassName[transform]],
         customClassName,
       ),
     },
@@ -72,12 +75,19 @@ export type FontWeight =
   | "medium"
   | "semibold"
   | "bold"
-  | "extraBold"
-  | "black";
+  | "extraBold";
 
-export type TextColor = "primary" | "secondary" | "hint";
+export type TextColor = "basic" | "primary" | "secondary" | "hint";
 
 export type TextAlignment = "left" | "center" | "right" | "justify";
+
+export type TextTransform = "uppercase" | "lowercase" | "capitalize";
+
+const textTransformClassName: Record<TextTransform, string> = {
+  uppercase: "upper",
+  lowercase: "lower",
+  capitalize: "capital",
+};
 
 const textSizeClassName: Record<TextSize, string> = {
   xs: "xs",

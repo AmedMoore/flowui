@@ -2,19 +2,28 @@
 
 import React from "react";
 import clsx from "clsx";
-
 import { Column, Row } from "../layout";
 import { useManagedInputType } from "../hooks";
 import { useReadonlyInput } from "./input/use-readonly-input";
 import InputLabel from "./input/input-label";
+import InputInlineLabel from "./input/input-inline-label";
 import PasswordToggleButton from "./input/password-toggle-button";
 import ClearButton from "./input/clear-button";
+import type { ElementType } from "../types/element-type";
 import styles from "./input.module.scss";
 
-export type InputProps = {
+export type InputType =
+  | "number"
+  | "password"
+  | "search"
+  | "tel"
+  | "text"
+  | "url";
+
+export type InputProps = React.ComponentProps<"input"> & {
   ref?: React.ForwardedRef<HTMLInputElement>;
   name: string;
-  type?: "text" | "number" | "email" | "password";
+  type?: InputType;
   label?: React.ReactNode;
   placeholder?: string;
   helperText?: string;
@@ -28,11 +37,14 @@ export type InputProps = {
   autoComplete?: string;
   value?: string;
   error?: string | null;
-  onChange?: (value: string) => void;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onValueChange?: (value: string) => void;
   onClear?: () => void;
   onFocus?: () => void;
   onBlur?: () => void;
 };
+
+export type InputComponent = ElementType<InputProps, HTMLInputElement>;
 
 function InputWithForwardedRed(
   {
@@ -52,6 +64,7 @@ function InputWithForwardedRed(
     value,
     error,
     onChange,
+    onValueChange,
     onClear,
     onFocus,
     onBlur,
@@ -71,10 +84,13 @@ function InputWithForwardedRed(
   const handleChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement>) => {
       if (onChange) {
-        onChange(event.target.value);
+        onChange(event);
+      }
+      if (onValueChange) {
+        onValueChange(event.target.value);
       }
     },
-    [onChange],
+    [onChange, onValueChange],
   );
 
   return (
@@ -92,14 +108,14 @@ function InputWithForwardedRed(
           {(Boolean(leadingIcon) || Boolean(leadingLabel)) && (
             <Row customClassName={styles.inlineLabel} gap="1" items="center">
               {Boolean(leadingIcon) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={leadingIcon}
                   name={name}
                 />
               )}
               {Boolean(leadingLabel) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={leadingLabel}
                   name={name}
@@ -124,7 +140,7 @@ function InputWithForwardedRed(
               value={value}
             />
             {Boolean(placeholder) && (
-              <Label floating label={placeholder} name={name} />
+              <InputInlineLabel floating label={placeholder} name={name} />
             )}
             {(clearable || isPassword) && (
               <Row
@@ -144,14 +160,14 @@ function InputWithForwardedRed(
           {(Boolean(trailingLabel) || Boolean(trailingIcon)) && (
             <Row customClassName={styles.inlineLabel} gap="1" items="center">
               {Boolean(trailingLabel) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={trailingLabel}
                   name={name}
                 />
               )}
               {Boolean(trailingIcon) && (
-                <Label
+                <InputInlineLabel
                   hasErrors={Boolean(error)}
                   label={trailingIcon}
                   name={name}
@@ -174,31 +190,6 @@ function InputWithForwardedRed(
   );
 }
 
-function Label({
-  name,
-  label,
-  floating,
-  hasErrors,
-}: {
-  name?: string;
-  label?: string | JSX.Element;
-  floating?: boolean;
-  hasErrors?: boolean;
-}) {
-  if (!label) return null;
-  return (
-    <label
-      className={clsx(styles.placeholder, {
-        [styles.floatingLabel]: floating,
-        [styles.errorText]: hasErrors,
-      })}
-      htmlFor={name}
-    >
-      {label}
-    </label>
-  );
-}
-
-const Input = React.forwardRef(InputWithForwardedRed);
+const Input = React.forwardRef(InputWithForwardedRed) as InputComponent;
 
 export default Input;

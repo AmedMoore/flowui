@@ -1,0 +1,67 @@
+.button {
+  &.shadow {
+    @apply shadow-lg;
+
+    &.basic {
+      @apply shadow-basic-500/50;
+    }
+
+    &.primary {
+      @apply shadow-primary-500/50;
+    }
+
+    &.secondary {
+      @apply shadow-secondary-500/50;
+    }
+
+    &.success {
+      @apply shadow-green-500/50;
+    }
+
+    &.warning {
+      @apply shadow-yellow-500/50;
+    }
+
+    &.error {
+      @apply shadow-red-500/50;
+    }
+
+    &.gradient {
+      @apply shadow-secondary-500/50;
+    }
+  }
+}
+
+:global(.dark) {
+  .button {
+    &.shadow {
+      &.basic {
+        @apply shadow-basic-900/50;
+      }
+
+      &.primary {
+        @apply shadow-primary-900/50;
+      }
+
+      &.secondary {
+        @apply shadow-secondary-900/50;
+      }
+
+      &.success {
+        @apply shadow-green-900/50;
+      }
+
+      &.warning {
+        @apply shadow-yellow-900/50;
+      }
+
+      &.error {
+        @apply shadow-red-900/50;
+      }
+
+      &.gradient {
+        @apply shadow-secondary-900/50;
+      }
+    }
+  }
+}

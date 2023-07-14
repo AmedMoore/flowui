@@ -1,9 +1,0 @@
-.divider {
-  @apply bg-basic-200;
-}
-
-:global(.dark) {
-  .divider {
-    @apply bg-basic-600;
-  }
-}

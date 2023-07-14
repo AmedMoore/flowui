@@ -1,0 +1,269 @@
+---
+title: "Text"
+description: "FlowUI Text component"
+---
+
+# Text
+
+<br />
+
+## Demos
+
+### Variants
+
+> **h1** | **h2** | **h3** | **h4** | **h5** | **h6** | **span** | **p**
+
+Example on <a href="#text-variant" className="text-blue-500"> variants </a> using h1
+
+<Text as="h1">Welcome Ahmed, howdy?</Text>
+
+```javascript
+import { Text } from "@flowui/react/basic";
+
+export const GreetingUser = () => {
+    return (
+        // h1 variant
+        <Text as="h1">Welcome Ahmed, howdy?</Text>
+    );
+}
+```
+
+<br />
+
+### Sizes
+
+> **sm** | **md** | **lg** | **xl** | **2xl** | **3xl** | **4xl** | **5xl** | **6xl** | **7xl** | **8xl**
+
+
+Example on <a href="#text-size" className="text-blue-500"> sizes </a> using 3xl
+
+<Text as="h1" size="3xl">Welcome Ahmed, howdy?</Text>
+
+
+```javascript
+import { Text } from "@flowui/react/basic";
+
+export const GreetingUser = () => {
+    return (
+        // 2xl Size
+        <Text as="h1" size="3xl">Welcome Ahmed, howdy?</Text>
+    );
+}
+```
+
+<br />
+
+### Weight
+
+> **thin** | **extraLight** | **light** | **normal** | **medium** | **semibold** | **bold** | **extraBold**
+
+Example on <a href="#font-weight" className="text-blue-500"> weights </a> using extraBold
+
+<Text as="h1" weight="extraBold">Welcome Ahmed, howdy?</Text>
+
+```javascript
+import { Text } from "@flowui/react/basic";
+
+export const GreetingUser = () => {
+    return (
+        // extraBold weight
+        <Text as="h1" weight="extraBold">Welcome Ahmed, howdy?</Text>
+    );
+}
+```
+
+<br />
+
+### Transform
+
+> **uppercase** | **lowercase** | **capitalize**
+
+Example on <a href="#text-transform" className="text-blue-500"> transforms </a> using uppercase
+
+<Text as="h1" transform="uppercase">Welcome Ahmed, howdy?</Text>
+
+```javascript
+import { Text } from "@flowui/react/basic";
+
+export const GreetingUser = () => {
+    return (
+        // uppercase Transform
+        <Text as="h1" size="lg" transform="uppercase">Welcome Ahmed, howdy?</Text>
+    );
+}
+```
+<br />
+
+### Colors
+
+> **basic** | **primary** | **secondary** | **hint**
+
+Example on <a href="#color" className="text-blue-500"> colors </a> using primary
+
+<Text as="h1" size="lg" color="primary">Welcome Ahmed, howdy?</Text>
+
+```javascript
+import { Text } from "@flowui/react/basic";
+
+export const GreetingUser = () => {
+    return (
+        // primary color
+        <Text as="h1" size="lg" color="primary">Welcome Ahmed, howdy?</Text>
+    );
+}
+```
+
+<br />
+
+### Alignments
+
+> **left** | **center** | **right** | **justify**
+
+Example on <a href="#text-alignment" className="text-blue-500"> alignments </a> using center
+
+<Text as="h1" align="center">Welcome Ahmed, howdy?</Text>
+
+```javascript
+import { Text } from "@flowui/react/basic";
+
+export const GreetingUser = () => {
+    return (
+        // primary color
+        <Text as="h1" size="lg" color="primary" align="center">Welcome Ahmed, howdy?</Text>
+    );
+}
+```
+
+### Advanced Example
+
+Lets dive deep in using Text component through an advanced example 😃. We'll create an article component
+
+contains: _**article name**_, _**author name**_, _**body**_, and _**posted date**_. Hope you like it.
+
+
+<Text weight="extraBold" as="h1" align="center" color="primary" size="3xl">Article Title </Text>
+<Text size="lg">Author Name: <Text as="span" weight="semibold">Michael Phillips</Text></Text>
+<Text color="hint">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad blanditiis deleniti distinctio incidunt labore odit porro, sapiente veniam. Aspernatur delectus eligendi eum harum impedit incidunt officiis sed ullam vel voluptas! A amet animi at delectus dolore ex illum laudantium magni natus. Accusantium aliquid aperiam, beatae culpa dolor, dolores error excepturi facere fugit hic inventore ipsam ipsum libero natus nobis optio placeat porro quas qui quibusdam, quidem quo ratione rerum suscipit vel veritatis voluptatem voluptates. A, animi consequatur dolorum ea enim est, et explicabo molestiae nemo placeat praesentium sequi unde voluptatibus.</Text>
+<Text align="right" weight="light" color="hint" size="sm">Posted at {new Date().toDateString()}</Text>
+
+
+```javascript
+import { Text, Column } from "@flowui/react/basic";
+
+export const ArticleItem = () => {
+    return (
+        <Column gap={3}>
+          <Text
+            weight="semibold"
+            size="3xl"
+            align="center"
+            color="primary"
+          >
+            Article Title
+          </Text>
+          <Text as="h2" size="lg">
+            Author Name: <Text as="span" weight="semibold">Michael Phillips</Text>
+          </Text>
+          <Text as="p" color="hint">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
+            blanditiis deleniti distinctio incidunt labore odit porro, sapiente
+            veniam. Aspernatur delectus eligendi eum harum impedit incidunt
+            officiis sed ullam vel voluptas! A amet animi at delectus dolore ex
+            illum laudantium magni natus. Accusantium aliquid aperiam, beatae
+            culpa dolor, dolores error excepturi facere fugit hic inventore
+            ipsam ipsum libero natus nobis optio placeat porro quas qui
+            quibusdam, quidem quo ratione rerum suscipit vel veritatis
+            voluptatem voluptates. A, animi consequatur dolorum ea enim est, et
+            explicabo molestiae nemo placeat praesentium sequi unde
+            voluptatibus.
+          </Text>
+          <Text
+            align="right"
+            weight="light"
+            color="hint"
+            size="sm"
+          >
+            Posted at {new Date().toDateString()}
+          </Text>
+        </Column>
+    );
+}
+```
+
+## API
+
+### Import
+
+```javascript
+import { Text } from "@flowui/react";
+// or
+import { Text } from "@flowui/react/basic";
+// or
+import Text from "@flowui/react/basic/text";
+```
+
+
+### Props
+
+
+| Name      | Type              | Required  | Default | Description                                                          |
+| --------- | ----------------- |  -------- | ------- | -------------------------------------------------------------------- |
+| as        | React.ElementType | false     | "p"     | Changes which tag component outputs                                  |
+| size      | SizeText          | false     | "none"  | Several options to change the font size like: xs, sm, lg, xl, etc... |
+| color     | Color             | false     | "none"  | A property to change the font color                                  |
+| weight    | FontWeight        | false     | "none"  | A property to change the font weight                                 |
+| align     | TextAlignment     | false     | "none"  | Change the font alignment                                            |
+| transform | TextTransform     | false     | "none"  | Change the font transform-property from several options              |
+
+
+
+## Types
+
+### Text Variant
+
+```typescript
+type TextVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
+```
+
+### Font Weight
+
+```typescript
+type FontWeight =
+| "thin"
+| "extraLight"
+| "light"
+| "normal"
+| "medium"
+| "semibold"
+| "bold"
+| "extraBold";
+```
+
+### Text Transform
+
+```typescript
+type TextTransform = "uppercase" | "lowercase" | "capitalize";
+```
+
+### Text Size
+
+```typescript
+type TextSize = "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl"
+| "5xl"
+| "6xl"
+| "7xl"
+| "8xl"
+| "9xl";
+```
+
+### Color
+
+```typescript
+type Color = "basic" | "primary" | "secondary" | "hint";
+```
+
+### Text Alignment
+
+```typescript
+type TextAlignment = "left" | "center" | "right" | "justify";
+```

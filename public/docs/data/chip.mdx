@@ -1,0 +1,144 @@
+---
+title: "Chip"
+description: ""
+---
+
+# Chip
+
+test inline `chip`
+
+## Use Cases
+
+### Basic
+
+```tsx
+import { Chip } from "@flowui/react/data";
+
+export default SingleChip = () => {
+  return <Chip>Basic</Chip>;
+};
+```
+
+### Colors
+
+<Grid gap="2">
+  <Chip color="primary">Primary</Chip>
+  <Chip color="secondary">Secondary</Chip>
+  <Chip color="success">Success</Chip>
+  <Chip color="warning">Warning</Chip>
+  <Chip color="error">Error</Chip>
+  <Chip color="gradient">Gradient</Chip>
+</Grid>
+
+<br />
+
+```tsx
+import { Chip } from "@flowui/react/data";
+import { Grid } from "@flowui/react/layout";
+
+export default Chips = () => {
+  return (
+    <Grid gap="2">
+      <Chip color="primary">Primary</Chip>
+      <Chip color="secondary">Secondary</Chip>
+      <Chip color="success">Success</Chip>
+      <Chip color="warning">Warning</Chip>
+      <Chip color="error">Error</Chip>
+      <Chip color="gradient">Gradient</Chip>
+    </Grid>
+  );
+};
+```
+
+### Sizes
+
+<Grid gap="2">
+  <Chip size="xs">Extra Small</Chip>
+  <Chip size="sm">Small</Chip>
+  <Chip size="md">Medium</Chip>
+  <Chip size="lg">Large</Chip>
+  <Chip size="xl">Extra Large</Chip>
+</Grid>
+
+<br />
+
+```tsx
+import { Chip } from "@flowui/react/data";
+import { Grid } from "@flowui/react/layout";
+
+export default Chips = () => {
+  return (
+    <Grid gap="2">
+      <Chip size="xs">Extra Small</Chip>
+      <Chip size="sm">Small</Chip>
+      <Chip size="md">Medium</Chip>
+      <Chip size="lg">Large</Chip>
+      <Chip size="xl">Extra Large</Chip>
+    </Grid>
+  );
+};
+```
+
+## API
+
+### Import
+
+```ts
+import { Chip } from "@flowui/react/data";
+// or
+import Chip from "@flowui/react/data/chip";
+```
+
+### Types
+
+#### Props
+
+<Table
+  columns={[
+    { label: "Name", dataKey: "name" },
+    { label: "Type", dataKey: "type" },
+    { label: "Required", dataKey: "required" },
+    { label: "Default", dataKey: "default" },
+    { label: "Description", dataKey: "description" },
+  ]}
+  data={[
+    {
+      name: "color",
+      default: '"basic"',
+      type: "Color",
+      required: false,
+      description: "property to change the chip background color",
+    },
+    {
+      name: "size",
+      default: '"md"',
+      type: "Size",
+      required: false,
+      description: "property to change the Chip element size",
+    },
+  ]}
+  shadow={4}
+/>
+
+<br />
+
+#### Size
+
+```ts
+type Size = "auto" | "xs" | "sm" | "md" | "lg" | "xl";
+```
+
+#### Color
+
+```ts
+type Color =
+  | "basic"
+  | "white"
+  | "black"
+  | "primary"
+  | "secondary"
+  | "success"
+  | "warning"
+  | "error"
+  | "gradient";
+```

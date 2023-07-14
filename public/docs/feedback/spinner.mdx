@@ -1,0 +1,60 @@
+---
+title: "Spinner"
+---
+
+# Spinner
+
+> A simple component that requires only the size from you.
+
+<br />
+
+## Demo
+
+### Size Demo
+
+A Small example with several sizes.
+
+<Row justify="between" customClassName="my-8">
+    <Spinner size={20} />
+    <Spinner size={25} />
+    <Spinner size={30} />
+    <Spinner size={40} />
+    <Spinner size={50} />
+    <Spinner size={60} />
+</Row>
+
+```javascript
+import { Row } from '@flowui/react/layout';
+import { Spinner } from '@flowui/react/feedback';
+
+export const Spinners = () => {
+    return (
+        <Row expand items="center" justify="between">
+            <Spinner size={20} />
+            <Spinner size={25} />
+            <Spinner size={30} />
+            <Spinner size={40} />
+            <Spinner size={50} />
+            <Spinner size={60} />
+        </Row>
+    );
+};
+```
+
+## API
+
+### Import
+
+```javascript
+import { Spinner } from "@flowui/react";
+// or
+import { Spinner } from "@flowui/react/feedback";
+// or
+import Spinner from "@flowui/react/feedback/spinner";
+```
+
+### Props
+
+| Name | Type | Required | Default | Description |
+| ---- | ---- | -------- | ----------- | ------- |
+| size | number | false  | 30 | Spinner Size |

@@ -1,0 +1,9 @@
+.code {
+  @apply px-2 py-1 rounded-lg bg-error-50 text-error-950 font-mono;
+}
+
+:global(.dark) {
+  .code {
+    @apply bg-error-950 text-error-50;
+  }
+}

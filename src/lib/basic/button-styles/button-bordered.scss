@@ -1,0 +1,223 @@
+.button {
+  &.bordered {
+    @apply border-2;
+
+    &.basic {
+      @apply text-basic-600 border-basic-500;
+      &:not(:disabled):hover {
+        @apply bg-basic-500/10;
+      }
+    }
+
+    &.primary {
+      @apply text-primary-600 border-primary-500;
+      &:not(:disabled):hover {
+        @apply bg-primary-500/10;
+      }
+    }
+
+    &.secondary {
+      @apply text-secondary-600 border-secondary-500;
+      &:not(:disabled):hover {
+        @apply bg-secondary-500/10;
+      }
+    }
+
+    &.success {
+      @apply text-success-600 border-green-500;
+      &:not(:disabled):hover {
+        @apply bg-green-500/10;
+      }
+    }
+
+    &.warning {
+      @apply text-warn-600 border-yellow-500;
+      &:not(:disabled):hover {
+        @apply bg-yellow-500/10;
+      }
+    }
+
+    &.error {
+      @apply text-error-600 border-red-500;
+      &:not(:disabled):hover {
+        @apply bg-red-500/10;
+      }
+    }
+
+    &.gradient {
+      @apply border-0 p-0.5 text-secondary-600 bg-gradient-to-tl from-secondary-500 to-primary-500;
+
+      &:not(:disabled):hover {
+        .buttonContent {
+          @apply bg-gradient-to-tl from-secondary-500/10 to-primary-500/10;
+        }
+      }
+
+      &.auto {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-1 py-0.5 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.xs {
+        @apply text-xs;
+        border-radius: 0.5rem;
+        .buttonContent {
+          @apply px-2 py-1 bg-white;
+          border-radius: 0.4rem;
+        }
+      }
+
+      &.sm {
+        @apply text-sm;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-3 py-1 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.md {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-4 py-1.5 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.lg {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-5 py-2 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+
+      &.xl {
+        @apply text-base;
+        border-radius: 0.75rem;
+        .buttonContent {
+          @apply px-6 py-2.5 bg-white;
+          border-radius: 0.65rem;
+        }
+      }
+    }
+
+    &:not(.iconOnly):not(.gradient) {
+      &.auto {
+        @apply px-2 py-1 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.xs {
+        @apply px-2 py-1 text-xs;
+
+        &:not(.circle) {
+          @apply rounded-lg;
+        }
+      }
+
+      &.sm {
+        @apply px-3 py-1 text-sm;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.md {
+        @apply px-4 py-1.5 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.lg {
+        @apply px-5 py-2 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+
+      &.xl {
+        @apply px-6 py-2.5 text-base;
+
+        &:not(.circle) {
+          @apply rounded-xl;
+        }
+      }
+    }
+  }
+}
+
+:global(.dark) {
+  .button {
+    &.bordered {
+      &.basic {
+        @apply text-basic-400 border-basic-400;
+        &:not(:disabled):hover {
+          @apply bg-basic-500/20;
+        }
+      }
+
+      &.primary {
+        @apply text-primary-400 border-primary-400;
+        &:not(:disabled):hover {
+          @apply bg-primary-500/20;
+        }
+      }
+
+      &.secondary {
+        @apply text-secondary-400 border-secondary-400;
+        &:not(:disabled):hover {
+          @apply bg-secondary-500/20;
+        }
+      }
+
+      &.success {
+        @apply text-success-400 border-success-400;
+        &:not(:disabled):hover {
+          @apply bg-success-500/20;
+        }
+      }
+
+      &.warning {
+        @apply text-warn-400 border-warn-400;
+        &:not(:disabled):hover {
+          @apply bg-warn-500/20;
+        }
+      }
+
+      &.error {
+        @apply text-error-400 border-error-400;
+        &:not(:disabled):hover {
+          @apply bg-error-500/20;
+        }
+      }
+
+      &.gradient {
+        @apply text-secondary-400;
+
+        .buttonContent {
+          @apply bg-black;
+        }
+
+        &:hover {
+          .buttonContent {
+            @apply bg-gradient-to-tl from-basic-500/20 to-primary-500/20;
+          }
+        }
+      }
+    }
+  }
+}

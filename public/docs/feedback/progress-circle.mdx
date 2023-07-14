@@ -1,0 +1,54 @@
+---
+title: "Progress Circle"
+---
+
+# Progress Circle
+
+> Sometimes you are wasting time in creating a progress loader for operations like download or upload. You have it now with just 1 property.
+
+<br />
+
+## Demos
+
+<Row items="center" customClassName="flex-wrap" gap={3}>
+    <ProgressCircle value={20} />
+    <ProgressCircle value={40} />
+    <ProgressCircle value={60} />
+    <ProgressCircle value={80} />
+    <ProgressCircle value={100} />
+</Row>
+
+```javascript
+import { Row } from '@flowui/react/layout'
+import { ProgressCircle } from "@flowui/react/feedback";
+
+export const LoadingComponent = () => {
+    return (
+        <Row items="center" customClassName="flex-wrap" gap={3}>
+            <ProgressCircle value={20} />
+            <ProgressCircle value={40} />
+            <ProgressCircle value={60} />
+            <ProgressCircle value={80} />
+            <ProgressCircle value={100} />
+        </Row>
+    );
+}
+```
+
+## API
+
+### Import
+
+```javascript
+import { ProgressCircle } from "@flowui/react";
+// or
+import { ProgressCircle } from "@flowui/react/feedback";
+// or
+import ProgressCircle from "@flowui/react/feedback/progress-circle";
+```
+
+### Props
+
+| Name | Type | Required | Default | Description |
+| ---- | ---- | -------- | ----------- | ------- |
+| value | number | true  | 0 | loading progress state |

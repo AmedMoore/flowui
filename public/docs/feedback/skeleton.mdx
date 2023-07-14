@@ -1,0 +1,122 @@
+---
+title: "Skeleton"
+---
+
+# Skeleton
+
+<br />
+
+## Demos
+
+<Column gap={4} customClassName={"mb-8"}>
+    <Skeleton width="25rem" height="2rem" />
+    <Skeleton width="40rem" />
+    <Skeleton width="35rem" />
+    <Skeleton width="40rem" />
+    <Skeleton width="35rem" />
+</Column>
+
+To make a skeleton like this, your code will be looks like the following one.
+
+```javascript
+import { Skeleton } from '@flowui/react/feedback';
+import { Column } from '@flowui/react/layout';
+
+export const Skeletons = () => {
+    return (
+        <Column>
+            <Skeleton width="25rem" height="2rem" />
+            <Skeleton width="40rem" />
+            <Skeleton width="35rem" />
+            <Skeleton width="40rem" />
+            <Skeleton width="35rem" />
+        </Column>
+    );
+};
+```
+
+### Circle Example
+
+
+<div className="w-[3rem] h-[3rem] rounded-full overflow-hidden">
+    <Skeleton width="3rem" height="3rem" />
+</div>
+
+<br />
+<br />
+
+### Advanced Example
+
+<Column gap={5} customClassName="mb-6">
+    <Text >What about another one? But actually it will be more advanced.</Text>
+    <Text color="hint" weight="thin">We will try to create a skeleton for a card like a post card.</Text>
+    <Column gap={4} customClassName={"mx-3"}>
+        <Row items="center" gap={3}>
+            <div className="w-[3rem] h-[3rem] rounded-full overflow-hidden">
+                <Skeleton width="3rem" height="3rem" />
+            </div>
+            <Column gap={3}>
+                <Skeleton width="10rem" />
+                <Skeleton width="4rem" />
+            </Column>
+        </Row>
+        <Skeleton width="14rem" />
+        <Skeleton />
+        <Skeleton width="20rem" />
+        <Skeleton />
+        <Skeleton />
+        <Skeleton />
+        <Column items="end" gap={3}>
+            <Skeleton height=".4rem" width="4rem" />
+            <Skeleton height=".4rem" width="2rem" />
+        </Column>
+    </Column>
+</Column>
+
+```javascript
+import { Column, Row } from '@flowui/react/layout';
+import { Skeleton } from '@flowui/react/feedback';
+
+export const PostSkeleton = () => {
+    return (
+        <Column gap={4} customClassName={"mx-3"}>
+            <Row items="center" gap={3}>
+                <div className="w-[3rem] h-[3rem] rounded-full overflow-hidden">
+                    <Skeleton width="3rem" height="3rem" />
+                </div>
+                <Column gap={3}>
+                    <Skeleton width="10rem" />
+                    <Skeleton width="4rem" />
+                </Column>
+            </Row>
+            <Skeleton width="14rem" />
+            <Skeleton />
+            <Skeleton width="20rem" />
+            <Skeleton />
+            <Column items="end" gap={3}>
+                <Skeleton height=".4rem" width="4rem" />
+                <Skeleton height=".4rem" width="2rem" />
+            </Column>
+        </Column>
+    );
+};
+```
+
+## API
+
+### Import
+
+```javascript
+import { Skeleton } from "@flowui/react";
+// or
+import { Skeleton } from "@flowui/react/feedback";
+// or
+import Skeleton from "@flowui/react/feedback/skeleton";
+```
+
+### Props
+
+| Name | Type | Required | Default | Description |
+| ---- | ---- | -------- | ----------- | ------- |
+| width | number - string | false  | "100%" | A prop to control the skeleton width |
+| height | number - string | false | "0.625rem" | A prop to control the skeleton height |

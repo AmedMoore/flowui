@@ -1,0 +1,83 @@
+---
+title: "Quickstart"
+description: "How to install FlowUI?"
+order: 1
+---
+
+# FlowUI - Quickstart
+
+**FlowUI** is a library of components built to work seamlessly with [Next.js](https://nextjs.org).
+It utilizes [TailwindCSS](http://tailwindcss.com) and [TypeScript](http://typescriptlang.org)
+to deliver visually-appealing, highly-performant, and fully-customizable components.
+
+Learn how to get started by following this quickstart guide.
+
+## Getting started
+
+**FlowUI** is a _"plug and play"_ library; It can be integrated into your project as easily as
+installing [NPM](https://www.npmjs.com/package/@flowui/react) package and importing
+the components you want to use.
+
+### Installation
+
+1. Install **FlowUI** as a dependency using NPM, Yarn or PNPM by running the following command:
+
+   ```bash
+   $ npm install @flowui/react
+   ```
+
+2. Use **FlowUI** as a `preset` in your `tailwind.config.js` file:
+
+   ```js
+   const flowUiConfig = require("@flowui/react/tailwind.config");
+
+   module.exports = {
+     presets: [flowUiConfig],
+     // other TailwindCSS config...
+   };
+   ```
+
+3. Import **FlowUI**'s styles to your project:
+
+   In layout file
+
+   ```tsx
+   // your-layout-file.tsx
+   import "@flowui/react/styles.css";
+   ```
+
+   In global style file
+
+   ```scss
+   // your-global-styles-file.css
+   @import "@flowui/react/styles.css";
+   ```
+
+   <Alert title="Good to know" variant="flat" color="primary" customClassName="px-6 py-4">
+     Note that in Next.js 13 (App Router) you can import global styles file from
+     anywhere in your app.
+   </Alert>
+
+   <br />
+
+4. Import the components you want to use in your project:
+
+   ```tsx
+   import { Card, Text } from "@flowui/react";
+
+   const MyComponent = () => (
+     <Card shadow>
+       <Text as="h1" size="xl">
+         FlowUI is awesome!
+       </Text>
+     </Card>
+   );
+   ```
+
+## Customization
+
+**FlowUI** can be easily customized to your taste by overriding the TailwindCSS theme.
+
+### Theme Customization
+
+

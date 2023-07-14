@@ -1,0 +1,830 @@
+---
+title: "Button Group"
+description: "FlowUI ButtonGroup component"
+order: 1
+---
+
+# Button Group
+
+> Button Group is an awesome component that helps you combine a group of buttons instead of using another div and some custom CSS. Sounds good? Let's see some examples using all variants and colors. I Hope it fulfils your needs 😃.
+
+## Demos
+
+### Variants
+
+Solid Group
+
+<ButtonGroup variant={"solid"}>
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidGroup = () => {
+    return (
+        <ButtonGroup variant={"solid"}>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Group
+
+<ButtonGroup variant={"flat"}>
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+export const FlatGroup = () => {
+    return (
+        <ButtonGroup variant={"flat"}>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Bordered Group
+
+<ButtonGroup variant={"bordered"}>
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+export const BorderedGroup = () => {
+    return (
+        <ButtonGroup variant={"bordered"}>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Group
+
+<ButtonGroup variant={"text"}>
+    <Button>One</Button>
+    <Button>Two</Button>
+    <Button>Three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+export const TextGroup = () => {
+    return (
+        <ButtonGroup variant={"text"}>
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+### Colors
+
+Solid Basic Group
+
+<ButtonGroup variant="solid" color="basic">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidBasic = () => {
+    return (
+        <ButtonGroup variant="solid" color="basic">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Solid Primary Group
+
+<ButtonGroup variant="solid" color="primary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidPrimary = () => {
+    return (
+        <ButtonGroup variant="solid" color="primary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Solid Secondary Group
+
+<ButtonGroup variant="solid" color="secondary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidSecondary = () => {
+    return (
+        <ButtonGroup variant="solid" color="secondary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Solid Success Group
+
+<ButtonGroup variant="solid" color="success">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidSuccess = () => {
+    return (
+        <ButtonGroup variant="solid" color="success">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Solid Warning Group
+
+<ButtonGroup variant="solid" color="warning">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidWarning = () => {
+    return (
+        <ButtonGroup variant="solid" color="warning">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Solid Error Group
+
+<ButtonGroup variant="solid" color="error">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidError = () => {
+    return (
+        <ButtonGroup variant="solid" color="error">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Solid Gradient Group
+
+<ButtonGroup variant="solid" color="gradient">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const SolidGradient = () => {
+    return (
+        <ButtonGroup variant="solid" color="gradient">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Basic Group
+
+<ButtonGroup variant="flat" color="basic">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const FlatBasic = () => {
+    return (
+        <ButtonGroup variant="flat" color="basic">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Primary Group
+
+<ButtonGroup variant="flat" color="primary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const FlatPrimary = () => {
+    return (
+        <ButtonGroup variant="flat" color="primary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Secondary Group
+
+<ButtonGroup variant="flat" color="secondary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const FlatSecondary = () => {
+    return (
+        <ButtonGroup variant="flat" color="secondary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Success Group
+
+<ButtonGroup variant="flat" color="success">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const FlatSuccess = () => {
+    return (
+        <ButtonGroup variant="flat" color="success">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Warning Group
+
+<ButtonGroup variant="flat" color="warning">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const FlatWarning = () => {
+    return (
+        <ButtonGroup variant="flat" color="warning">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Error Group
+
+<ButtonGroup variant="flat" color="error">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const FlatError = () => {
+    return (
+        <ButtonGroup variant="flat" color="error">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Flat Gradient Group
+
+<ButtonGroup variant="flat" color="gradient">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const FlatGradient = () => {
+    return (
+        <ButtonGroup variant="flat" color="gradient">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+
+Bordered Basic Group
+
+<ButtonGroup variant="bordered" color="basic">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const BorderedBasic = () => {
+    return (
+        <ButtonGroup variant="bordered" color="basic">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Bordered Primary Group
+
+<ButtonGroup variant="bordered" color="primary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const BorderedPrimary = () => {
+    return (
+        <ButtonGroup variant="bordered" color="primary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Bordered Secondary Group
+
+<ButtonGroup variant="bordered" color="secondary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const BorderedSecondary = () => {
+    return (
+        <ButtonGroup variant="bordered" color="secondary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Bordered Success Group
+
+<ButtonGroup variant="bordered" color="success">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const BorderedSuccess = () => {
+    return (
+        <ButtonGroup variant="bordered" color="success">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Bordered Warning Group
+
+<ButtonGroup variant="bordered" color="warning">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const BorderedWarning = () => {
+    return (
+        <ButtonGroup variant="bordered" color="warning">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Bordered Error Group
+
+<ButtonGroup variant="bordered" color="error">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const BorderedError = () => {
+    return (
+        <ButtonGroup variant="bordered" color="error">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Bordered Gradient Group
+
+<ButtonGroup variant="bordered" color="gradient">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const BorderedGradient = () => {
+    return (
+        <ButtonGroup variant="bordered" color="gradient">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Basic Group
+
+<ButtonGroup variant="text" color="basic">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const TextBasic = () => {
+    return (
+        <ButtonGroup variant="text" color="basic">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Primary Group
+
+<ButtonGroup variant="text" color="primary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const TextPrimary = () => {
+    return (
+        <ButtonGroup variant="text" color="primary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Secondary Group
+
+<ButtonGroup variant="text" color="secondary">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const TextSecondary = () => {
+    return (
+        <ButtonGroup variant="text" color="secondary">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Success Group
+
+<ButtonGroup variant="text" color="success">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const TextSuccess = () => {
+    return (
+        <ButtonGroup variant="text" color="success">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Warning Group
+
+<ButtonGroup variant="text" color="warning">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const TextWarning = () => {
+    return (
+        <ButtonGroup variant="text" color="warning">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Error Group
+
+<ButtonGroup variant="text" color="error">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const TextError = () => {
+    return (
+        <ButtonGroup variant="text" color="error">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+Text Gradient Group
+
+<ButtonGroup variant="text" color="gradient">
+    <Button>one</Button>
+    <Button>two</Button>
+    <Button>three</Button>
+</ButtonGroup>
+
+<br />
+
+```javascript
+import { Button, ButtonGroup } from "@flowui/react/basic";
+
+export const TextGradient = () => {
+    return (
+        <ButtonGroup variant="text" color="gradient">
+            <Button>One</Button>
+            <Button>Two</Button>
+            <Button>Three</Button>
+        </ButtonGroup>
+    );
+}
+```
+
+## API
+
+### Import
+
+```javascript
+import { ButtonGroup } from "@flowui/react";
+// or
+import { ButtonGroup } from "@flowui/react/basic";
+// or
+import ButtonGroup from "@flowui/react/basic/button-group";
+```
+
+### Props
+
+| Name         | Type              | Required  | Default     | Description                                                                                                            |
+| ------------ | ----------------- |  -------- | ----------- | ---------------------------------------------------------------------------------------------------------------------- |
+| size         | Size              | false     | "md"        | Button size for the whole div                                                                                                       |
+| color        | Color             | false     | "primary"   | Button color prop                                                                        |
+| variant      | ButtonVariant     | false     | "text"      | same as button prop                                                                  |
+| iconOnly     | boolean           | false     | false       | this prop help you to make it act as icons only                   |
+| disabled     | boolean           | false     | false       | disabled prop is for controlling the disable state for the button                                                      |
+| loading      | boolean           | false     | false       | control the loading state |
+| width        | ButtonWidth       | false     | "auto"      | Button size: "auto" or "full"                                                                                          |
+| children     | React.ReactElement - React.ReactElement[] - null - false  | false     | "none"      | The ButtonGroup children that will be wrapped and sent as a children. |
+
+
+## Types
+
+### Size
+
+```typescript
+type Size = "auto" | "xs" | "sm" | "md" | "lg" | "xl";
+```
+
+### Color
+
+```typescript
+type Color = "basic" | "primary" | "secondary" | "success" | "warning" | "error" | "gradient";
+```
+
+### Button Variant
+
+```typescript
+type ButtonVariant = "solid" | "bordered" | "flat" | "text";
+```
+
+### Button Width
+
+```typescript
+type ButtonWidth = "auto" | "full";
+```

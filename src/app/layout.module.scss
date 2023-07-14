@@ -1,0 +1,43 @@
+.html,
+.body {
+  @apply antialiased min-h-screen w-screen overflow-x-hidden;
+}
+
+.html {
+  @apply bg-basic-100;
+
+  /* @see https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my */
+  scroll-padding-top: 5rem; // height of the navbar + 1rem of padding
+
+  @media (prefers-color-scheme: dark) {
+    @apply bg-black;
+  }
+}
+
+.body {
+  @apply flex;
+}
+
+.background {
+  @apply fixed w-full h-full left-0 top-0 bg-gradient-to-br from-transparent via-transparent to-primary-50 z-10;
+}
+
+.content {
+  @apply z-20;
+
+  *::selection {
+    @apply bg-secondary-200;
+  }
+}
+
+:global(.dark) {
+  .background {
+    @apply from-transparent via-transparent to-primary-950/50;
+  }
+
+  .content {
+    *::selection {
+      @apply bg-secondary-900;
+    }
+  }
+}

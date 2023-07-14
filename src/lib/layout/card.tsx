@@ -1,26 +1,22 @@
 import React from "react";
-import clsx from "clsx";
-
 import Column, { type ColumnProps } from "./column";
 import { shadowStyleName, type Shadow } from "./shadow-style-name";
+import type { ElementType } from "../types/element-type";
 import styles from "./card.module.scss";
+import clsx from "clsx";
 
 export type CardProps = ColumnProps & {
-  readonly bordered?: boolean;
-  readonly shadow?: true | Shadow;
-  readonly fullWidth?: boolean;
+  bordered?: boolean;
+  shadow?: true | Shadow;
+  fullWidth?: boolean;
 };
 
-export type CardComponent = (
-  props: React.PropsWithRef<
-    CardProps & { ref?: React.ForwardedRef<HTMLDivElement> }
-  >,
-) => React.ReactNode;
+export type CardComponent = ElementType<CardProps, HTMLDivElement>;
 
 function CardWithForwardedRef(
   props: CardProps,
   ref: React.ForwardedRef<HTMLDivElement>,
-) {
+): JSX.Element {
   const {
     children,
     bordered = true,
@@ -47,6 +43,6 @@ function CardWithForwardedRef(
   );
 }
 
-const Card: CardComponent = React.forwardRef(CardWithForwardedRef);
+const Card = React.forwardRef(CardWithForwardedRef) as CardComponent;
 
 export default Card;
