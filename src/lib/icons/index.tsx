@@ -23,6 +23,7 @@ import IconBold from "./icon-bold";
 import IconBookOpen from "./icon-book-open";
 import IconCircle from "./icon-circle";
 import IconCode from "./icon-code";
+import IconCopy from "./icon-copy";
 import IconCross from "./icon-cross";
 import IconCrossCircle from "./icon-cross-circle";
 import IconCrossSmall from "./icon-cross-small";
@@ -85,6 +86,7 @@ export {
   IconBookOpen,
   IconCircle,
   IconCode,
+  IconCopy,
   IconCross,
   IconCrossCircle,
   IconCrossSmall,
@@ -148,6 +150,7 @@ const Icons = {
   IconBookOpen,
   IconCircle,
   IconCode,
+  IconCopy,
   IconCross,
   IconCrossCircle,
   IconCrossSmall,

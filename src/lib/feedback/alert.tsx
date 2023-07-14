@@ -40,21 +40,27 @@ export default function Alert({
           // flat primary
           "border-primary-500 bg-primary-400/40 dark:bg-primary-900/40":
             variant === "flat" && color === "primary",
+
+          // flat success
+          "border-success-500 bg-success-400/40 dark:bg-success-900/40":
+            variant === "flat" && color === "success",
         },
         customClassName,
       )}
     >
       <Column gap={2}>
-        <Text
-          size="xl"
-          customClassName={clsx({
-            // border error
-            "text-error-500 dark:text-error-100":
-              variant === "bordered" && color === "error",
-          })}
-        >
-          {title}
-        </Text>
+        {title && (
+          <Text
+            size="xl"
+            customClassName={clsx({
+              // border error
+              "text-error-500 dark:text-error-100":
+                variant === "bordered" && color === "error",
+            })}
+          >
+            {title}
+          </Text>
+        )}
         <Text
           customClassName={clsx({
             // border error
