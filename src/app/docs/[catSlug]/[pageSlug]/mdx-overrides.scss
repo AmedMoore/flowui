@@ -83,7 +83,7 @@
   }
 
   code:not(.hljs) {
-    @apply text-sm font-mono px-1.5 py-0.5 rounded-md bg-primary-100 text-primary-900 dark:bg-primary-900 dark:text-primary-50;
+    @apply text-sm font-mono px-1.5 py-0.5 rounded-md bg-basic-200 text-basic-900 dark:bg-basic-800 dark:text-basic-100;
   }
 
   table {
@@ -136,6 +136,12 @@
 
     p {
       @apply text-sm;
+    }
+  }
+
+  div[role="alert"] {
+    p {
+      @apply m-0;
     }
   }
 }

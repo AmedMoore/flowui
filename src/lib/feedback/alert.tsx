@@ -23,8 +23,9 @@ export default function Alert({
   return (
     <div
       {...props}
+      role="alert"
       className={clsx(
-        "px-3 py-1 rounded-lg",
+        "p-2 rounded-lg",
         {
           // solid primary
           "bg-primary-500": variant === "solid" && color === "primary",
@@ -35,13 +36,17 @@ export default function Alert({
           border: variant === "bordered",
           // bordered error
           "border-error-500": variant === "bordered" && color === "error",
+
+          // flat primary
+          "border-primary-500 bg-primary-400/40 dark:bg-primary-900/40":
+            variant === "flat" && color === "primary",
         },
         customClassName,
       )}
     >
       <Column gap={2}>
         <Text
-          size="2xl"
+          size="xl"
           customClassName={clsx({
             // border error
             "text-error-500 dark:text-error-100":
