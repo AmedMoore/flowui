@@ -1,6 +1,8 @@
 @import "highlight.js/styles/github-dark.css";
 
 .mdx-content {
+  @apply w-full max-w-full;
+
   h1,
   h2,
   h3,

@@ -1,6 +1,6 @@
 .sideMenu {
-  float: left;
   min-width: 16rem;
+  width: 16rem;
 
   &.customScrollBar {
     &:hover {
@@ -29,8 +29,8 @@
   .contentContainer {
     @apply fixed pb-4;
     top: 6rem;
-    max-height: calc(100vh - 7rem);
     width: 16rem;
+    max-height: calc(100vh - 7rem);
   }
 
   .sectionIconContainer {

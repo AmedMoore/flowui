@@ -4,18 +4,21 @@ import type Color from "../types/color";
 import Column from "../layout/column";
 import Text from "../basic/text";
 import clsx from "clsx";
+import { Row } from "@flowui/react/layout";
 
 export type AlertProps = ElementPropsWithChildren<{
   title?: string;
   content?: string;
   variant?: "solid" | "flat" | "bordered";
   color?: Color;
+  leadingIcon?: JSX.Element;
 }>;
 
 export default function Alert({
   title,
   variant = "solid",
   color = "basic",
+  leadingIcon,
   customClassName,
   children,
   ...props
@@ -25,7 +28,7 @@ export default function Alert({
       {...props}
       role="alert"
       className={clsx(
-        "p-2 rounded-lg",
+        "p-4 rounded-lg max-w-full",
         {
           // solid primary
           "bg-primary-500": variant === "solid" && color === "primary",
@@ -50,26 +53,33 @@ export default function Alert({
     >
       <Column gap={2}>
         {title && (
+          <Row items="center" gap={2}>
+            {leadingIcon}
+            <Text
+              size="xl"
+              customClassName={clsx({
+                // border error
+                "text-error-500 dark:text-error-100":
+                  variant === "bordered" && color === "error",
+              })}
+            >
+              {title}
+            </Text>
+          </Row>
+        )}
+        <Row items="center" gap={2}>
+          {!title && leadingIcon}
           <Text
-            size="xl"
+            size="sm"
             customClassName={clsx({
               // border error
               "text-error-500 dark:text-error-100":
                 variant === "bordered" && color === "error",
             })}
           >
-            {title}
+            {children}
           </Text>
-        )}
-        <Text
-          customClassName={clsx({
-            // border error
-            "text-error-500 dark:text-error-100":
-              variant === "bordered" && color === "error",
-          })}
-        >
-          {children}
-        </Text>
+        </Row>
       </Column>
     </div>
   );
