@@ -1,4 +1,3 @@
-import { indices } from "@/utils/array";
 import { Row, DarkModeSwitch } from "@flowui/react/layout";
 import { Button, Link, Text } from "@flowui/react/basic";
 import { Chip } from "@flowui/react/data";
@@ -23,7 +22,7 @@ function Navbar() {
             {links.map((link, index) => (
               <Row key={link.href} gap="2" items="center">
                 <NavbarLink {...link} />
-                {indices(links).includes(index) && (
+                {index < links.length && (
                   <Text
                     size="xs"
                     customClassName="select-none cursor-default opacity-25"
@@ -55,7 +54,7 @@ function Navbar() {
 const links: NavbarLinkProps[] = [
   { label: "Docs", href: "/docs" },
   { label: "Blog", href: "/blog" },
-  { label: "About FlowUI", href: "/about" },
+  // { label: "About FlowUI", href: "/about" },
   { label: "Feedback", href: "/feedback" },
 ];
 
