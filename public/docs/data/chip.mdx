@@ -5,16 +5,19 @@ description: ""
 
 # Chip
 
-test inline `chip`
-
-## Use Cases
+## Demos
 
 ### Basic
 
-```tsx
+<Chip>Basic</Chip>
+
+<br />
+<br />
+
+```javascript
 import { Chip } from "@flowui/react/data";
 
-export default SingleChip = () => {
+export const SingleChip = () => {
   return <Chip>Basic</Chip>;
 };
 ```
@@ -32,11 +35,11 @@ export default SingleChip = () => {
 
 <br />
 
-```tsx
+```javascript
 import { Chip } from "@flowui/react/data";
 import { Grid } from "@flowui/react/layout";
 
-export default Chips = () => {
+export const Chips = () => {
   return (
     <Grid gap="2">
       <Chip color="primary">Primary</Chip>
@@ -62,11 +65,11 @@ export default Chips = () => {
 
 <br />
 
-```tsx
+```javascript
 import { Chip } from "@flowui/react/data";
 import { Grid } from "@flowui/react/layout";
 
-export default Chips = () => {
+export const Chips = () => {
   return (
     <Grid gap="2">
       <Chip size="xs">Extra Small</Chip>
@@ -83,52 +86,32 @@ export default Chips = () => {
 
 ### Import
 
-```ts
+```javascript
+import { Chip } from "@flowui/react";
+// or
 import { Chip } from "@flowui/react/data";
 // or
 import Chip from "@flowui/react/data/chip";
 ```
 
-### Types
+## Types
 
-#### Props
+### Props
 
-<Table
-  columns={[
-    { label: "Name", dataKey: "name" },
-    { label: "Type", dataKey: "type" },
-    { label: "Required", dataKey: "required" },
-    { label: "Default", dataKey: "default" },
-    { label: "Description", dataKey: "description" },
-  ]}
-  data={[
-    {
-      name: "color",
-      default: '"basic"',
-      type: "Color",
-      required: false,
-      description: "property to change the chip background color",
-    },
-    {
-      name: "size",
-      default: '"md"',
-      type: "Size",
-      required: false,
-      description: "property to change the Chip element size",
-    },
-  ]}
-  shadow={4}
-/>
+| Name  | Type  | Required | Default | Description                                  |
+| ----- | ----- | -------- | ------- | -------------------------------------------- |
+| color | Color | false    | "basic" | property to change the chip background color |
+| size  | Size  | false    | "md"    | property to change the Chip element size     |
 
 <br />
 
-#### Size
+### Size
 
 ```ts
 type Size = "auto" | "xs" | "sm" | "md" | "lg" | "xl";
 ```
 
-#### Color
+### Color
 
 ```ts
 type Color =
