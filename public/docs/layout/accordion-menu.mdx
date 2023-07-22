@@ -1,3 +1,97 @@
 ---
 title: "Accordion Menu"
+order: 1
 ---
+
+# Accordion Menu
+> a simple menu component with toggle button and content item that you can customize as you need.
+
+## Demo
+
+<br />
+
+<AccordionMenu open>
+    <Row>
+        <AccordionMenuToggleButton>Toggle Menu</AccordionMenuToggleButton>
+    </Row>
+    <Row customClassName={" mt-2 ml-2 w-fit  rounded-lg border-primary"}>
+        <AccordionMenuContent>
+            <ul className="mt-2">
+                <li>Menu Item 1</li>
+                <li>Menu Item 2</li>
+                <li>Menu Item 3</li>
+            </ul>
+        </AccordionMenuContent>
+    </Row>
+</AccordionMenu>
+
+<br />
+
+```javascript
+import {
+    AccordionMenu,
+    AccordionMenuContent,
+    AccordionMenuToggleButton,
+    Row
+ } from '@flowui/react/layout';
+
+export const AccordionMenu = () => {
+    return (
+        <AccordionMenu open>
+            <Row>
+                <AccordionMenuToggleButton>Toggle Menu</AccordionMenuToggleButton>
+            </Row>
+            <Row customClassName={"border-2 mt-2 ml-2 px-3 w-fit  rounded-lg border-primary"}>
+                <AccordionMenuContent>
+                    <ul className="mt-2">
+                        <li>Menu Item 1</li>
+                        <li>Menu Item 2</li>
+                        <li>Menu Item 3</li>
+                    </ul>
+                </AccordionMenuContent>
+            </Row>
+        </AccordionMenu>
+    );
+}
+```
+
+## API
+
+### Import
+
+```javascript
+import {
+    AccordionMenu,
+    AccordionMenuContent,
+    AccordionMenuToggleButton
+} from "@flowui/react";
+// or
+import {
+    AccordionMenu,
+    AccordionMenuContent,
+    AccordionMenuToggleButton
+} from "@flowui/react/layout";
+// or
+import AccordionMenu from "@flowui/react/layout/accordion-menu";
+import { AccordionMenuContent } from "@flowui/react/layout/accordion-menu";
+import { AccordionMenuToggleButton } from "@flowui/react/layout/accordion-menu";
+```
+
+## Types
+
+| Name    | Type         | Required  | Default     | Description                                                                                  |
+| ------- | ------------ | --------- | ----------- |----------------------------------------------------------------------------------------------|
+| open    | boolean      | false     | false      | card width size: true or false                                                               |
+| onOpen  | `() => void` | false     | undefined      | this prop let's you have an awesome shadow beyond the table                                  |
+| onClose | `() => void` | false     | undefined      | this prop let's you make a border to the table                                               |
+
+
+### AccordionMenuProps
+
+```ts
+type AccordionMenuProps = React.PropsWithChildren<{
+  open?: boolean;
+  onOpen?: () => void;
+  onClose?: () => void;
+}>
+```

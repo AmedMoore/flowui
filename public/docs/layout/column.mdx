@@ -1,3 +1,103 @@
 ---
 title: "Column"
+order: 3
 ---
+# Column
+
+> Column is a pretty good component that will help you to use flex with direction column. Sounds good!
+
+## Demo
+
+<br />
+
+`We'll make a list of items in a column.`
+
+<Column expand items="center">
+    <li>Hello</li>
+    <li>Hello</li>
+    <li>Hello</li>
+    <li>Hello</li>
+    <li>Hello</li>
+</Column>
+
+<br />
+
+```javascript
+import { Column } from "@flowui/react/layout"
+
+export const ProductItem = () => {
+    return (
+        <Column expand items="center">
+            <li>Hello</li>
+            <li>Hello</li>
+            <li>Hello</li>
+            <li>Hello</li>
+            <li>Hello</li>
+        </Column>
+    );
+}
+```
+
+## API
+
+### Import
+
+```javascript
+import { Column } from "@flowui/react";
+// or
+import { Column } from "@flowui/react/layout"
+// or
+import Column from "@flowui/react/layout/column"
+```
+
+<br />
+
+## Types
+
+| Name       | Type                          | Required  | Default | Description                                                                                                                                                      |
+| ---------- | ----------------------------- | --------- | ------- |------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| expand     | boolean                       | false     | false   | it's a flex-1 prop to the column                                                                                                                                 |
+| scrollable | boolean                       | false     | false   | it gives the column the scroll option                                                                                                                            |
+| justify    | keyof typeof justifyStyleName | false     | "none"    | You can adjust the justify-content property to the column                                                                                                                      |
+| items      | keyof typeof itemsStyleName   | false     | "none"    | You can adjust the align-items property to the column                                                                                                                   |
+| gap        | FlexGap                       | false     | "none"    | adjust the gap between items                                                                                                                   |
+
+
+<br />
+
+### FlexGap
+
+```ts
+type FlexGapValue =  0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 14 | 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48 | 52 | 56 | 60 | 64 | 72 | 80 | 96;
+```
+
+<br />
+
+### justifyStyleName
+
+```ts
+const justifyStyleName = {
+  normal: "justify_normal",
+  start: "justify_start",
+  end: "justify_end",
+  center: "justify_center",
+  between: "justify_between",
+  around: "justify_around",
+  evenly: "justify_evenly",
+  stretch: "justify_stretch",
+};
+```
+
+<br />
+
+### itemsStyleName
+
+```ts
+const itemsStyleName = {
+  start: "items_start",
+  end: "items_end",
+  center: "items_center",
+  baseline: "items_baseline",
+  stretch: "items_stretch",
+};
+```
