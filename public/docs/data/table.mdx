@@ -4,3 +4,146 @@ description: ""
 ---
 
 # Table
+
+## Demo
+
+<Table
+    columns={[
+        { label: "First Name", dataKey: "firstName" },
+        { label: "Last Name", dataKey: "lastName" },
+        { label: "Age", dataKey: "age" },
+        { label: "City", dataKey: "city" },
+    ]}
+    data={[
+        {
+            firstName: "John",
+            lastName: "Smith",
+            age: 32,
+            city: "New York"
+        },
+        {
+            firstName: "Emily",
+            lastName: "Johnson",
+            age: 26,
+            city: "Los Angeles"
+        },
+        {
+            firstName: "Michael",
+            lastName: "Williams",
+            age: 45,
+            city: "Chicago"
+        },
+        {
+            firstName: "Sophia",
+            lastName: "Brown",
+            age: 29,
+            city: "Houston"
+        },
+        {
+            firstName: "Daniel",
+            lastName: "Miller",
+            age: 38,
+            city: "Philadelphia"
+        },
+        {
+            firstName: "Olivia",
+            lastName: "Anderson",
+            age: 31,
+            city: "Phoenix"
+        },
+        {
+            firstName: "David",
+            lastName: "Martinez",
+            age: 37,
+            city: "San Antonio"
+        },
+        {
+            firstName: "Emma",
+            lastName: "Taylor",
+            age: 27,
+            city: "San Diego"
+        },
+        {
+            firstName: "Christopher",
+            lastName: "Clark",
+            age: 33,
+            city: "Dallas"
+        },
+        {
+            firstName: "Ava",
+            lastName: "Lewis",
+            age: 24,
+            city: "San Jose"
+        },
+        {
+            firstName: "Matthew",
+            lastName: "Lee",
+            age: 41,
+            city: "Austin"
+        },
+        {
+            firstName: "Mia",
+            lastName: "Walker",
+            age: 30,
+            city: "Seattle"
+        }
+    ]}
+    shadow={4}
+/>
+
+<br />
+
+## API
+
+### Import
+
+```javascript
+import { Table } from "@flowui/react";
+// or
+import { Table } from "@flowui/react/data";
+// or
+import Table from "@flowui/react/data/table";
+```
+
+## Types
+
+### Props
+
+| Name    | Type           | Required | Default   | Description                                           |
+| ------- | -------------- | -------- | --------- |------------------------------------------------------ |
+| columns | ColumnData[]   | true     | undefined | property to change the chip background color          |
+| data    | TData[]        | true     | undefined | prop to control the data that you want to render it   |
+| caption | string         | false    | undefined | property to change the Chip element size              |
+| shadow  | true - Shadow  | false    | undefined | property to change the Table shadow                   |
+
+<br />
+
+### ColumnData
+```tsx
+type ColumnData<TData extends Record<string, unknown>> = {
+  label: string;
+  dataKey: keyof TData;
+  width?: number;
+  colSpan?: number;
+  format?: (value: TData[keyof TData]) => string;
+  component?: (props: React.PropsWithChildren) => React.ReactNode;
+};
+```
+
+### Shadow
+```tsx
+type Shadow =
+  | 0
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | "0"
+  | "1"
+  | "2"
+  | "3"
+  | "4"
+  | "5"
+  | "inner";
+```
